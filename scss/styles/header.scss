@@ -1,0 +1,90 @@
+@use 'root';
+@use 'partials';
+
+/* !!!!!! 
+
+CHECK THE CODE, FOR STYLES THAT CAN CHANGE, AND WRITE REUSABLE CODE. 
+
+!!!!!! */
+
+/*---- DON'T CHANGE THE ROOT STYLE INCASE OF ANY FUTURE CHANGES, INSTEAD THE EXACT FILE STYLES ---- */
+
+// All Variables for the color in this section.
+$header-color: root.$main-color-black;
+
+// For the Button (colors, background, and border) - COME BACK TO REVIEW THIS.
+$button-text-color: hsl(0, 0%, 100%);
+$black-color: black;
+
+// The Stying of this section
+.header {
+    @include partials.generalSpacing($padding: 1rem 3rem);
+
+    // The Navigation inside the header
+    .header__nav {
+        @include partials.flexDisplay($justify-content: space-between);
+        @include partials.generalSpacing($margin: 0 0 8rem 0);
+        // The Nav-List
+
+        .header__nav-list {
+            @include partials.flexDisplay();
+            @include partials.generalSpacing($gap: 2rem);
+            @include partials.formatListItems();
+            value: $black-color
+        }
+
+        // The Button Group - SignUp-Login and Download
+        .header__button-group {
+            @include partials.flexDisplay();
+            @include partials.generalSpacing($gap: .5rem);
+
+            // Each of the buttons
+            .header__button {
+                @include partials.generalSpacing($padding: .7rem .9rem);
+                @include partials.borderRadius($border-radius: 5px);
+                @include partials.fonts($weight: 600, $size: .8rem);
+                // hard-code
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// STANDALONE STYLES
+.header__nav-link,
+.header__button-link {
+    // The Button and Nav Link - For the Color
+    // @include body.colorSchemeMix($color: root.$main-color-black);
+    text-decoration: partials.$no-text-decoration;
+}
+
+// THE TWO HEADER BUTTON CONTAINERS INDIVIDUALLY, AND THE BUTTONS IN THEM
+.header__button:nth-of-type(1) {
+    @include partials.colorSchemeMix($background-clr: $button-text-color, $border: 1px solid $header-color);
+
+    .header__button-link {
+        @include partials.colorSchemeMix($color: $black-color)
+    }
+}
+
+.header__button:nth-of-type(2) {
+    @include partials.colorSchemeMix($background-clr: $header-color, $color: $button-text-color);
+
+    .header__button-link {
+        @include partials.colorSchemeMix($color: $button-text-color)
+    }
+}
+
+// AVOID OVER-NESTING (The Li and anchor tags - Navigation links)
+.header__nav-item {
+    @include partials.generalSpacing($margin: .2rem);
+
+    .header__naihtijhrjhitjhro4jihoijortiihithiritorooooototoyiytoyjiytoytihytoyhiyhoytiytoyiytotyityotyythoijhtoijythjohyoi {
+        // For the Color
+        @include partials.fonts($size: .9rem, $weight: 600);
+        @include partials.colorSchemeMix($color: root.$main-color-black);
+    }
+}
+
+
+// COME BACK TO REVIEW AND WRITE TESTS FOR THIS CODE.

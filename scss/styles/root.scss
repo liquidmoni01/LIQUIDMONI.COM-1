@@ -1,0 +1,39 @@
+// THE COLOR SCHEME OF THE WEBSITE.
+
+// Global Variables
+$wrapper-bg-color: hsla(0, 0%, 100%, 1);
+$main-color-black: hsla(240, 6%, 10%, 1);
+
+// The Font-Stacks
+$font-stack-1: sans-serif;
+// $font-stack-2:;
+// $font-stack-3:;
+// $font-stack-4:;
+$global-font-size: 18px;
+
+// Special Variables
+$button-text-color: hsla(210, 40%, 98%, 1);
+$button-bg-color: $main-color-black;
+$button-bg-color-2: hsla(205, 62%, 25%, 1);
+$form-bg-color: hsla(240, 5%, 65%, 1);
+$form-border-color: $form-bg-color;
+$yellow-highlight-color: hsla(43, 94%, 48%, 1);
+
+$feature-background-color: hsla(0, 0%, 97%, 1);
+
+// Pixel Like and Calculatory variables
+
+
+// Mixins
+
+// HTML Root Element
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: $global-font-size;
+    font-family: $font-stack-1;
+}

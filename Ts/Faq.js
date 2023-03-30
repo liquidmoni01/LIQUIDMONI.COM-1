@@ -1,0 +1,1 @@
+let FaqContent = document.querySelector('.Faq__item-content');

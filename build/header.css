@@ -1,0 +1,107 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+/* !!!!!! 
+
+CHECK THE CODE, FOR STYLES THAT CAN CHANGE, AND WRITE REUSABLE CODE. 
+
+!!!!!! */
+/*---- DON'T CHANGE THE ROOT STYLE INCASE OF ANY FUTURE CHANGES, INSTEAD THE EXACT FILE STYLES ---- */
+.header {
+  gap: 1rem;
+  padding: 1rem 3rem;
+  margin: 0;
+}
+.header .header__nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0;
+  margin: 0 0 8rem 0;
+}
+.header .header__nav .header__nav-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  value: black;
+}
+.header .header__nav .header__button-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+.header .header__nav .header__button-group .header__button {
+  gap: 1rem;
+  padding: 0.7rem 0.9rem;
+  margin: 0;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.header__nav-link,
+.header__button-link {
+  text-decoration: none;
+}
+
+.header__button:nth-of-type(1) {
+  color: none;
+  background-color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(240, 6%, 10%);
+  outline: 0;
+}
+.header__button:nth-of-type(1) .header__button-link {
+  color: black;
+  background-color: none;
+  border: 0;
+  outline: 0;
+}
+
+.header__button:nth-of-type(2) {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(240, 6%, 10%);
+  border: 0;
+  outline: 0;
+}
+.header__button:nth-of-type(2) .header__button-link {
+  color: hsl(0, 0%, 100%);
+  background-color: none;
+  border: 0;
+  outline: 0;
+}
+
+.header__nav-item {
+  gap: 1rem;
+  padding: 0;
+  margin: 0.2rem;
+}
+.header__nav-item .header__naihtijhrjhitjhro4jihoijortiihithiritorooooototoyiytoyjiytoytihytoyhiyhoytiytoyiytotyityotyythoijhtoijythjohyoi {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: hsl(240, 6%, 10%);
+  background-color: none;
+  border: 0;
+  outline: 0;
+}
+
+/*# sourceMappingURL=header.css.map */

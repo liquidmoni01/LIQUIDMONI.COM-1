@@ -1,0 +1,80 @@
+// THIS IS FOR LEARNING.
+
+// SASS CODE AT THE TOP.
+// $new-variable: red
+
+// body 
+//     color: $new-variable;
+
+// // THE OPERATORS IN SASS/
+// $fontSize: 28px;
+
+// $sizeOfFont = 31px
+
+// $fontSize == $sizeOfFont
+
+// // THE OPERATORS IN SASS/
+// $fontSize: 28px
+// $fontStyle: bold
+// $display: flex
+// $sizeOfFont: 31px
+
+// $fontSize == $sizeOfFont
+// $display != $fontStyle
+
+// and - true if both are true or - true if one is true not - inverse of (truth and false) - iness // Aliases in Git
+//  git p - git push
+// git st - git status
+// git pl - git pull
+// git s - git switch
+// git C - git clone
+// git sd - git switch develop
+// git sl - git switch main
+// git cempty - git commit --amend --noedit
+
+/* 
+    - git pl - git pull
+    - git cm - git commit
+    - git cl - git clone
+    - git pu - git push
+    - git br - git branch
+    - git sw - git switch (branch)
+    - git co - git checkout (branch)
+    - git ad - git add
+    - git st - git status
+*/
+
+// TO CREATE MY OWN ALIASES
+// git config --global alias.co commit
+// Where co is the alias, and commit is the command it expands to
+
+// WRITE GOOD CODE
+
+// Go Deep Into variables, mixins and understand functions, and some more on statements and expression
+
+// CREATE A _LIBRARY.SCSS FILE, AND STORE VARIABLES THAT CAN BE REUSED, WITH THEIR VALUES CHANGED IN DIFFERENT INSTANCES.
+
+// DEMONSTRATING SHADOWING
+$var1: red;
+
+.block1 {
+    $var1: blue;
+    // Specificity comes into play here, even it it's shadowing the first one created.
+    color: $var1 !global;
+}
+
+.block2 {
+    color: $var1;
+}
+
+// THE @IF CONTROL FLOW STATEMENT IN ACTION.
+$var2: green;
+$border: 1px solid $var2;
+
+.new-block {
+    @if ($var2) {
+        color: $var2;
+    }
+}
+
+// DO NOT GIVE UP ON YOUR GOALS.

@@ -1,0 +1,94 @@
+@use 'root';
+@use 'partials';
+// For Extension
+@use 'forms';
+
+// Mixins, Placeholder classes and Variables for this file (section)
+%notify__form-styles {
+    @include partials.borderRadius($border-radius: 15px);
+    @include partials.flexDisplay();
+    @include partials.colorSchemeMix($border: 1px solid black);
+    @include partials.generalSpacing($padding: .4rem);
+
+    label {
+        @include partials.changeDisplay($display: none);
+    }
+
+    // The Input inside this fieldset
+    input {
+        @include partials.colorSchemeMix($border: 0);
+        // @include partials.widthAndHeight($min-height: 100%);
+        @include partials.fonts($size: 1rem);
+        @include partials.generalSpacing($padding: .2rem);
+    }
+
+    // THE FORM BUTTON.
+    button {
+        @include partials.generalSpacing($padding: 1rem 1.2rem);
+        @include partials.fonts($size: .9rem, $weight: 600);
+        @include partials.borderRadius($border-radius: 10px);
+        @include partials.colorSchemeMix($border: 1px solid);
+    }
+}
+
+// The Hero Section
+.hero {
+    @include partials.flexDisplay($align-items: flex-start, $justify-content: space-between);
+}
+
+// Standalone Styles for both Compartments
+.hero__left-alignment {
+    @include partials.flexDisplay($flex-direction: column, $align-items: flex-start);
+    @include partials.generalSpacing($gap: 2rem);
+
+    .hero__header-text {
+        @include partials.fonts($size: 3rem, $weight: 600);
+        @include partials.generalSpacing();
+    }
+
+    .hero__content-text {
+        @include partials.generalSpacing($margin: 0 0 1rem 0);
+    }
+
+    // THE FORM THAT WILL USE AN EXTENDED CLASS.
+    .hero__fieldset {
+        @extend %notify__form-styles;
+    }
+}
+
+// The Iphone and its background, and the form inside it.=
+.hero__right-alignment {
+    @include partials.flexControl($basis: 1000);
+    @include partials.backgroundImage($bg: no-repeat url('./IPhone-Stripe-bg.svg'));
+
+    .hero__image-block {
+        @include partials.positioning($position: relative);
+        @include partials.widthAndHeight($max-width: 50%);
+    }
+}
+
+// COME BACK HERE CONCERNING THE IMAGE AND THE BACKGROUND.
+
+// AVOID OVERNESTING AND STANDALONE STYLES.
+.hero__text-group,
+.hero__text {
+    @include partials.flexDisplay($flex-direction: row)
+}
+
+// The Text Group Section, after standalone style of each.
+.hero__text-group {
+
+    .hero__big-text,
+    .hero__small-text {
+        @include partials.changeDisplay($display: inline-block, $space: 0 .5rem 0 0)
+    }
+
+    .hero__big-text {
+        @include partials.fonts($size: 2.5rem);
+    }
+
+    .hero__small-text {
+        @include partials.fonts($size: .8rem);
+        @include partials.widthAndHeight($max-width: 16ch)
+    }
+}

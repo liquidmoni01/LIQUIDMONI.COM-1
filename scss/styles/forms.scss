@@ -1,0 +1,17 @@
+// This is the form for the hero and the notification sections.
+
+@use 'partials';
+
+// An extendable Class for the forms to be applied to the forms in each section (respectively)
+// %notify__form-styles {
+//     @include partials.borderRadius($border-radius: 12px);
+//     // The Input inside this fieldset
+
+//     &__form-label {
+//         @include partials.changeDisplay($display: none);
+//     }
+
+//     &__form__input {
+//         @include partials.colorSchemeMix($border: 0);
+//     }
+// }

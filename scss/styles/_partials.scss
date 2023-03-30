@@ -1,0 +1,77 @@
+// FOR EVERY SINGLE STYLE, VARIABLES MIXINS, AND FUNCTIONS THAT WILL BE USED THROUGHOUT THE WEBSITE.
+
+// Variables
+$no-text-decoration: none;
+
+// Mixins
+@mixin fonts($size: 1rem, $weight: 500) {
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin changeDisplay($display: block, $space: 0) {
+    display: $display;
+    // FOR THE SAKE OF LATER, ADD MARGINS AND PADDINGS TO BE CHANGED LATER.
+    // padding: $space;
+    margin: $space;
+}
+
+// Add a Boolean Operator to this mixin, and transfer it to the appropriate stylesheet.
+@mixin visibility($isVisible) {
+    visibility: $isVisible;
+}
+
+@mixin colorSchemeMix($color: none, $background-clr: none, $border: 0, $outline: 0) {
+    color: $color;
+    background-color: $background-clr;
+    border: $border;
+    outline: $outline;
+}
+
+@mixin backgroundImage($bg: no-repeat none cover) {
+    background-image: $bg;
+    // $image: none, $position: cover, $repeat: no-repeat,
+}
+
+@mixin widthAndHeight($max-width: 100%, $min-height: 100%) {
+    width: $max-width;
+    max-width: $max-width;
+    min-height: $min-height;
+}
+
+@mixin positioning($position: relative, $top: 0, $bottom: 0, $left: 0, $right: 0) {
+    position: $position;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+}
+
+
+@mixin flexDisplay($display: flex, $flex-direction: row, $align-items: center, $justify-content: center) {
+    display: $display;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+@mixin flexControl($grow: 1, $basis: 1, $shrink: 1) {
+    flex-grow: $grow;
+    flex-basis: $basis;
+    flex-shrink: $shrink;
+}
+
+@mixin generalSpacing($gap: 1rem, $padding: 0, $margin: 0) {
+    gap: $gap;
+    padding: $padding;
+    margin: $margin;
+}
+
+@mixin formatListItems() {
+    // These ones are here to remove unnecessary spacing
+    list-style: none;
+}
+
+@mixin borderRadius($border-radius: 0) {
+    border-radius: $border-radius;
+}
