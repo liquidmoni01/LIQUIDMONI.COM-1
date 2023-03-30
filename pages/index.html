@@ -7,21 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIQUIDMONI PROJECT</title>
     <!-- Stylesheets (From The Header to the contents to the footer) -->
-    <link rel="stylesheet" href="./build/body.css">
-    <link rel="stylesheet" href="./build/header.css">
-    <link rel="stylesheet" href="./build/hero.css">
-    <link rel="stylesheet" href="./build/main.css">
     <link rel="stylesheet" href="./build/benefits.css">
+    <link rel="stylesheet" href="./build/body.css">
     <link rel="stylesheet" href="./build/connect.css">
-    <link rel="stylesheet" href="./build/notify.css">
-    <link rel="stylesheet" href="./build/faq.css">
     <link rel="stylesheet" href="./build/footer.css">
+    <link rel="stylesheet" href="./build/forms.css">
+    <link rel="stylesheet" href="./build/header.css">
+    <link rel="stylesheet" href="./build/notify.css">
+    <link rel="stylesheet" href="./build/root.css">
+    <link rel="stylesheet" href="./build/hero.css">
 
     <!-- For the Mobile and Tablet view (and any other view) - For Responsiveness -->
-    <link rel="stylesheet" href="./build/responsiveness.css">
-
-    <!-- FOR THE FORM - THE CALL TO ACTION -->
-    <link rel="stylesheet" href="./build/forms.css">
 
     <!-- Google Fonts -->
 
@@ -69,8 +65,8 @@
                     <form data-form action="#" class="hero__form form">
                         <div data-field class="hero__fieldset">
                             <label class="hero__label" for="email">Email</label>
-                            <input data-email-input class="hero__email-input" type="email" id="email" name="email" placeholder="Enter email address"
-                                required>
+                            <input data-email-input class="hero__email-input" type="email" id="email" name="email"
+                                placeholder="Enter email address" required>
                             <button data-email-button>Get Notified</button>
                         </div>
                     </form>
@@ -95,36 +91,40 @@
                 </section>
 
                 <section class="hero__right-alignment">
+
+                    <!-- The IPhone XR -->
                     <div class="hero__image-block">
-                        <!-- The IPhone XR -->
-                        <img class="hero__image" src="./images/header/iPhone XR.png" alt="The IPhone XR and it's form">
+                        <img class="hero__image" src="./images/header/iPhone XR.png" alt="The IPhone XR and it's form"
+                            width="500px">
                         <!-- <img src="./scss/styles/IPhone-Stripe-bg.svg" alt=""> -->
+
+                        <!-- THE FORM INSIDE THE IMAGE -->
+                        <form class="hero__phone hero__phone-form">
+                            <fieldset class="hero__phone-fieldset">
+                                <legend class="hero__phone-label-container">
+                                    <label class="hero__phone-label" for="send">You Send</label>
+                                </legend>
+                                <input class="hero__phone-input" type="number" name="send" id="send">
+                                <select class="hero__phone-dropdown" name="dropdown" id="dropdown">
+                                    <option class="hero__phone-options" value="USA"><img src="" alt="country-logo"> USD
+                                    </option>
+                                    <option class="hero__phone-options" value="NGA"><img src="" alt="country-logo"> NGA
+                                    </option>
+                                    <option class="hero__phone-options" value="UK"><img src="" alt="country-logo"> UK
+                                    </option>
+                                </select>
+                            </fieldset>
+
+                            <fieldset class="hero__phone-fieldset">
+                                <legend class="hero__phone-label-container">
+                                    <label class="hero__phone-label" for="get"></label>
+                                </legend>
+                                <input class="hero__phone-input" type="number" id="get" name="get" required>
+                            </fieldset>
+                            <button class="cta"><a href="#">Get Started</a></button>
+                        </form>
                     </div>
                     <!-- THERE IS A BACKGROUND IMAGE HERE. -->
-
-                    <form class="hero__phone-form">
-                        <fieldset class="hero__phone-fieldset">
-                            <legend class="hero__phone-label-container">
-                                <label class="hero__phone-label" for="send">You Send</label>
-                            </legend>
-                            <input class="hero__phone-input" type="number" name="send" id="send">
-                            <select class="hero__phone-dropdown" name="dropdown" id="dropdown">
-                                <option class="hero__phone-options" value="USA"><img src="" alt="country-logo"> USD
-                                </option>
-                                <option class="hero__phone-options" value="NGA"><img src="" alt="country-logo"> NGA
-                                </option>
-                                <option class="hero__phone-options" value="UK"><img src="" alt="country-logo"> UK
-                                </option>
-                            </select>
-                        </fieldset>
-
-                        <fieldset class="hero__phone-fieldset">
-                            <legend class="hero__phone-label-container">
-                                <label class="hero__phone-label" for="get"></label>
-                            </legend>
-                            <input class="hero__phone-input" type="number" id="get" name="get" required>
-                        </fieldset>
-                        <button class="cta"><a href="#">Get Started</a></button>
                 </section>
 
             </section>

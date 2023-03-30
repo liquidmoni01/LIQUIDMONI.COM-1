@@ -1,0 +1,17 @@
+@use 'root';
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: root.$bg-color-white;
+    overflow-x: hidden;
+}
+
+// format all buttons
+button {
+    cursor: pointer;
+}
+
+img {
+    object-fit: scale-down;
+}

@@ -9,12 +9,12 @@ CHECK THE CODE, FOR STYLES THAT CAN CHANGE, AND WRITE REUSABLE CODE.
 
 /*---- DON'T CHANGE THE ROOT STYLE INCASE OF ANY FUTURE CHANGES, INSTEAD THE EXACT FILE STYLES ---- */
 
-// All Variables for the color in this section.
-$header-color: root.$main-color-black;
+/* === COLOR VARIABLES === */
+$header-color-black: hsla(240, 6%, 10%, 1);
 
-// For the Button (colors, background, and border) - COME BACK TO REVIEW THIS.
-$button-text-color: hsl(0, 0%, 100%);
-$black-color: black;
+// buttons
+$button-bg-color: $header-color-black;
+$button-text-color: hsla(210, 40%, 98%, 1);
 
 // The Stying of this section
 .header {
@@ -30,7 +30,6 @@ $black-color: black;
             @include partials.flexDisplay();
             @include partials.generalSpacing($gap: 2rem);
             @include partials.formatListItems();
-            value: $black-color
         }
 
         // The Button Group - SignUp-Login and Download
@@ -41,7 +40,7 @@ $black-color: black;
             // Each of the buttons
             .header__button {
                 @include partials.generalSpacing($padding: .7rem .9rem);
-                @include partials.borderRadius($border-radius: 5px);
+                @include partials.borderProps($borderRadVal: 5px);
                 @include partials.fonts($weight: 600, $size: .8rem);
                 // hard-code
                 cursor: pointer;
@@ -53,22 +52,22 @@ $black-color: black;
 // STANDALONE STYLES
 .header__nav-link,
 .header__button-link {
-    // The Button and Nav Link - For the Color
-    // @include body.colorSchemeMix($color: root.$main-color-black);
-    text-decoration: partials.$no-text-decoration;
+    text-decoration: none;
 }
 
 // THE TWO HEADER BUTTON CONTAINERS INDIVIDUALLY, AND THE BUTTONS IN THEM
 .header__button:nth-of-type(1) {
-    @include partials.colorSchemeMix($background-clr: $button-text-color, $border: 1px solid $header-color);
+    @include partials.colorSchemeMix($background-clr: $button-text-color);
+
+    @include partials.borderProps($border: 1px solid $header-color-black);
 
     .header__button-link {
-        @include partials.colorSchemeMix($color: $black-color)
+        @include partials.colorSchemeMix($color: $header-color-black)
     }
 }
 
 .header__button:nth-of-type(2) {
-    @include partials.colorSchemeMix($background-clr: $header-color, $color: $button-text-color);
+    @include partials.colorSchemeMix($background-clr: $header-color-black, $color: $button-text-color);
 
     .header__button-link {
         @include partials.colorSchemeMix($color: $button-text-color)
@@ -79,10 +78,10 @@ $black-color: black;
 .header__nav-item {
     @include partials.generalSpacing($margin: .2rem);
 
-    .header__naihtijhrjhitjhro4jihoijortiihithiritorooooototoyiytoyjiytoytihytoyhiyhoytiytoyiytotyityotyythoijhtoijythjohyoi {
+    .header__nav-link {
         // For the Color
         @include partials.fonts($size: .9rem, $weight: 600);
-        @include partials.colorSchemeMix($color: root.$main-color-black);
+        @include partials.colorSchemeMix($color: $header-color-black);
     }
 }
 

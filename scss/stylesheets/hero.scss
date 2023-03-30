@@ -1,0 +1,136 @@
+@use 'root';
+@use 'partials';
+@use 'header';
+
+// Variables
+$hero-text-color: hsla(215, 19%, 35%, 1);
+$button-bg-color: hsla(205, 62%, 25%, 1);
+$button-text-color: hsla(210, 40%, 98%, 1);
+
+// form
+$form-bg-color: hsla(0, 0%, 98%, 1);
+$form-border-color: hsla(240, 5%, 65%, 1);
+
+// Mixins, Placeholder classes and Variables for this file (section)
+@mixin backgroundImage($url) {
+    background-image: url('../images/svg-images/#{$url}.svg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+@mixin formElementBg($elements, $bg-color) {
+    @each $element in $elements {
+        background-color: grey;
+    }
+}
+
+// EXTEND THIS PLACEHOLDER TO NOTIFY.SCSS
+%notify__form-styles {
+    @include partials.borderProps($border: 1px solid $form-border-color, $borderRadVal: 15px);
+    @include partials.flexDisplay();
+    @include partials.colorSchemeMix($background-clr: $form-bg-color);
+    @include partials.generalSpacing($padding: .4rem);
+
+    label {
+        @include partials.changeDisplay($display: none);
+    }
+
+    // The Input inside this fieldset
+    input {
+        @include partials.borderProps($border: 0);
+        @include partials.colorSchemeMix($background-clr: $form-bg-color);
+        @include partials.fonts($size: 1rem);
+        @include partials.generalSpacing($padding: .3rem);
+    }
+
+    // THE FORM BUTTON.
+    button {
+        @include partials.generalSpacing($padding: 1rem 1.6rem);
+        @include partials.fonts($size: .9rem, $weight: 600);
+        @include partials.borderProps($borderRadVal: 10px);
+        @include partials.colorSchemeMix($background-clr: header.$button-bg-color, $color: $button-text-color);
+        // @include partials.borderRadius($border-radius: 10px);
+        // @include partials.colorSchemeMix($border: 1px solid);
+    }
+}
+
+// The Hero Section
+.hero {
+    @include partials.flexDisplay($align-items: flex-start, $justify-content: space-between);
+}
+
+// Standalone Styles for both Compartments
+.hero__left-alignment {
+    @include partials.flexDisplay($flex-direction: column, $align-items: flex-start);
+    @include partials.generalSpacing($gap: 2rem);
+
+    .hero__header-text {
+        @include partials.fonts($size: 2.9rem, $weight: 600);
+        @include partials.generalSpacing();
+    }
+
+    .hero__content-text {
+        @include partials.generalSpacing($margin: 0 0 1rem 0);
+    }
+
+    // THE FORM THAT WILL USE AN EXTENDED CLASS.
+    .hero__fieldset {
+        @extend %notify__form-styles;
+    }
+}
+
+// The Iphone and its background, and the form inside it.=
+.hero__right-alignment {
+    .hero__image-block {
+        @include partials.positioning($position: relative);
+        @include partials.widthAndHeight($width: 50%);
+        @include backgroundImage('Iphone-Stripe-bg');
+
+        // The Iphone Block.
+        .hero_image {
+            @include partials.positioning($position: relative)
+        }
+    }
+}
+
+// COME BACK HERE CONCERNING THE IMAGE AND THE BACKGROUND.
+
+// AVOID OVERNESTING AND STANDALONE STYLES.
+.hero__text-group,
+.hero__text {
+    @include partials.flexDisplay($flex-direction: row)
+}
+
+// The Text Group Section, after standalone style of each.
+.hero__text-group {
+
+    .hero__big-text,
+    .hero__small-text {
+        @include partials.changeDisplay($display: inline-block, $space: 0 .5rem 0 0)
+    }
+
+    .hero__big-text {
+        @include partials.fonts($size: 2.5rem);
+    }
+
+    .hero__small-text {
+        @include partials.fonts($size: .8rem);
+    }
+}
+
+// A SEPARATE STANDALONE FOR THE FORM INSIDE THE HERO IMAGE (IPHONE)
+.hero__phone-form {
+    @include partials.positioning($position: absolute);
+    @include partials.flexDisplay($flex-direction: column);
+
+    .hero__phone-fieldset {
+        @include partials.borderProps($border: 0);
+        @include partials.flexDisplay($flex-direction: row);
+
+        .hero__phone-input {
+            @include partials.borderProps($borderRadVal: 10px);
+            @include partials.generalSpacing($padding: 1.5rem);
+        }
+    }
+}
