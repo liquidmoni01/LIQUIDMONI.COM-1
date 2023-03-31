@@ -7,15 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIQUIDMONI PROJECT</title>
     <!-- Stylesheets (From The Header to the contents to the footer) -->
-    <link rel="stylesheet" href="./build/benefits.css">
-    <link rel="stylesheet" href="./build/body.css">
-    <link rel="stylesheet" href="./build/connect.css">
-    <link rel="stylesheet" href="./build/footer.css">
-    <link rel="stylesheet" href="./build/forms.css">
-    <link rel="stylesheet" href="./build/header.css">
-    <link rel="stylesheet" href="./build/notify.css">
-    <link rel="stylesheet" href="./build/root.css">
-    <link rel="stylesheet" href="./build/hero.css">
+    <link rel="stylesheet" href="../build/style.css">
+
 
     <!-- For the Mobile and Tablet view (and any other view) - For Responsiveness -->
 
@@ -34,10 +27,11 @@
                 <img class="header__logo" src="./images/header/Liquid-moni.png" alt="the logo">
 
                 <ul class="header__nav-list">
-                    <li class="header__nav-item"><a href="#" class="header__nav-link">Home</a></li>
-                    <li class="header__nav-item"><a href="#" class="header__nav-link">About</a></li>
-                    <li class="header__nav-item"><a href="#" class="header__nav-link">Contact</a></li>
-                    <li class="header__nav-item"><a href="#" class="header__nav-link">FAQ</a></li>
+                    <li class="header__nav-item"><a href="./index.html" class="header__nav-link">Home</a></li>
+                    <li class="header__nav-item"><a href="./pages/about.html" class="header__nav-link">About</a></li>
+                    <li class="header__nav-item"><a href="./pages/contact.html" class="header__nav-link">Contact</a>
+                    </li>
+                    <li class="header__nav-item"><a href="./pages/faq.html" class="header__nav-link">FAQ</a></li>
                     <li class="header__nav-item"><a href="#" class="header__nav-link">Support</a></li>
                 </ul>
 
@@ -46,7 +40,10 @@
                         <a href="" class="header__button-link">Login/Sign Up</a>
                     </button>
                     <button class="header__button">
-                        <a href="" class="header__button-link">Download App</a>
+                        <a href="" class="header__button-link">Send</a>
+                    </button>
+                    <button class="header__button">
+                        <a href="" class="header__button-link">Download Soon</a>
                     </button>
                 </div>
                 <!-- <a class="log-in" href="#">Login</a>
@@ -62,7 +59,7 @@
                         anywhere in the world.</p>
 
                     <!-- IN THIS FORM, WE HAVE A MODIFIER CLASS FOR BOTH OF THE FORMS (similar to each other.) - Use nested BEM for the sake of this form -->
-                    <form data-form action="#" class="hero__form form">
+                    <form data-form action="#" class="hero__form">
                         <div data-field class="hero__fieldset">
                             <label class="hero__label" for="email">Email</label>
                             <input data-email-input class="hero__email-input" type="email" id="email" name="email"
@@ -99,18 +96,21 @@
                         <!-- <img src="./scss/styles/IPhone-Stripe-bg.svg" alt=""> -->
 
                         <!-- THE FORM INSIDE THE IMAGE -->
-                        <form class="hero__phone hero__phone-form">
-                            <fieldset class="hero__phone-fieldset">
+                        <form class="hero__phone form">
+                            <fieldset class="hero__phone-fieldset form__fieldset">
                                 <legend class="hero__phone-label-container">
-                                    <label class="hero__phone-label" for="send">You Send</label>
+                                    <label class="hero__phone-label form__label" for="send">You Send</label>
                                 </legend>
-                                <input class="hero__phone-input" type="number" name="send" id="send">
-                                <select class="hero__phone-dropdown" name="dropdown" id="dropdown">
-                                    <option class="hero__phone-options" value="USA"><img src="" alt="country-logo"> USD
+                                <input class="hero__phone-input form__input" type="number" name="send" id="send">
+                                <select class="hero__phone-dropdown form__dropdown" name="dropdown" id="dropdown">
+                                    <option class="hero__phone-options form__option" value="USA"><img src=""
+                                            alt="country-logo"> USD
                                     </option>
-                                    <option class="hero__phone-options" value="NGA"><img src="" alt="country-logo"> NGA
+                                    <option class="hero__phone-options form__option" value="NGA"><img src=""
+                                            alt="country-logo"> NGA
                                     </option>
-                                    <option class="hero__phone-options" value="UK"><img src="" alt="country-logo"> UK
+                                    <option class="hero__phone-options form__option" value="UK"><img src=""
+                                            alt="country-logo"> UK
                                     </option>
                                 </select>
                             </fieldset>
@@ -209,12 +209,14 @@
                             other apps</li>
                     </ul>
 
-                    <form data-value class="notification__form" action="#">
-                        <fieldset data-value class="notification__fieldset">
-                            <legend class="notification__label-container"><label class="notification__label"
+                    <form data-value class="notification__form form" action="#">
+                        <fieldset data-value class="notification__fieldset form__fieldset">
+                            <legend class="notification__label-container"><label class="notification__label form__label"
                                     for="email">Email</label></legend>
-                            <input data-value class="notification__input" type="email" id="email" name="email" required>
-                            <button data-value class="notification__button"><a class="notification__link" href="#">Get
+                            <input data-value class="notification__input form__input" type="email" id="email"
+                                name="email" required>
+                            <button data-value class="notification__button form__button"><a
+                                    class="notification__link form__link`" href="#">Get
                                     Notified</a></button>
                         </fieldset>
                     </form>

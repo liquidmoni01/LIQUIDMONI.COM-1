@@ -10,6 +10,13 @@
 *.userosscache
 *.sln.docstates
 
+#Remove Scss and Sass Boiler-Plate files
+scss
+sass-boilerplate
+
+# AND MAPPED FILES.
+.map
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 

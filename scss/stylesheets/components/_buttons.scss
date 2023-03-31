@@ -1,0 +1,36 @@
+@use '../abstracts/colors';
+@use '../abstracts/mixins';
+
+// Create only file specific mixins, variables and function when needed
+
+// The Button Group - SignUp-Login and Download
+// .header__button-group {
+    //     @include mixins.generalSpacing($gap: .5rem);
+
+    //     // Each of the buttons
+    //     .header__button {
+    //         @include mixins.generalSpacing($padding: .7rem .9rem);
+    //         @include mixins.borderProps($borderRadVal: 5px);
+    //         @include mixins.fonts($weight: 600, $size: .8rem);
+    //         // hard-code
+    //         cursor: pointer;
+    //     }
+    // }
+
+    // .header__button:nth-of-type(1) {
+    //     @include mixins.colorSchemeMix($background-clr: $button-text-color);
+
+    //     @include mixins.borderProps($border: 1px solid $header-color-black);
+
+    //     .header__button-link {
+    //         @include mixins.colorSchemeMix($color: $header-color-black)
+    //     }
+    // }
+
+    // .header__button:nth-of-type(2) {
+    //     @include mixins.colorSchemeMix($background-clr: $header-color-black, $color: $button-text-color);
+
+    //     .header__button-link {
+    //         @include mixins.colorSchemeMix($color: $button-text-color)
+    //     }
+    // }

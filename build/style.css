@@ -1,0 +1,119 @@
+:root {
+  --var-General: -bg-color-light-gray hsl(0, 0%, 97%) ;
+  --var-General: -bg-color-black hsl(240, 6%, 10%) ;
+  --var-General: -general-color-black hsl(240, 6%, 10%) ;
+  --var-General: -general-color-white hsl(0, 0%, 100%) ;
+  --var-General: -text-color-grey hsl(240, 5%, 34%) ;
+  --var-Header: -header-color-black hsl(240, 6%, 10%) ;
+  --var-Header: -header-button-bg-color hsl(240, 6%, 10%) ;
+  --var-Header: -header-button-text-color hsl(210, 40%, 98%) ;
+  --var-Hero: -hero-text-color hsl(215, 19%, 35%) ;
+  --var-Hero: -button-bg-color hsl(205, 62%, 25%) ;
+  --var-Hero: -button-text-color hsl(210, 40%, 98%) ;
+  --var-Hero_form: -form-bg-color hsl(0, 0%, 98%) ;
+  --var-Hero_form: -form-border-color hsl(240, 5%, 65%) ;
+  --var-Footer: -footer-main-color hsl(16, 85%, 66%) ;
+}
+
+/* 
+    This file contains everything that is related to the base styles, and all that we need for our project (The Preset styles)
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  outline: 0;
+}
+
+input {
+  border: 0;
+}
+
+/*---- DON'T CHANGE THE ROOT STYLE INCASE OF ANY FUTURE CHANGES, INSTEAD THE EXACT FILE STYLES ---- */
+.header {
+  gap: 1rem;
+  padding: 2rem 3rem;
+  margin: 0;
+}
+
+.hero {
+  justify-content: space-between;
+}
+.hero .hero__left-alignment {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.hero .hero__left-alignment.__header-text {
+  font-weight: 600;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0;
+  margin: 0 0 8rem 0;
+}
+.header__nav .header__nav-list {
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__nav .header__nav-item {
+  gap: 1rem;
+  padding: 0;
+  margin: 0.2rem;
+}
+.header__nav .header__nav-item .header__nav-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=style.css.map */

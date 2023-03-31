@@ -1,0 +1,56 @@
+// THIS STYLESHEET IS CONCERNED WITH RESETTING ALL THE ELEMENTS TO THEIR DEFAULT STATE OF HOW WE WANT IT TO APPEAR ON THE WEBPAGE.
+// @use currentStyle;
+
+// @forward loads Every Loaded @use File In Current File If We LoadIt
+@use 'variables';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: variables.$global-font-size;
+    font-family: variables.$font-stack-1;
+}
+
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+
+    padding: {
+        bottom: 0;
+        left: 0;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    outline: 0;
+}
+
+input {
+    border: 0;
+}

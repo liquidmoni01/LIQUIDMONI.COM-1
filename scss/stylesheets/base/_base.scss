@@ -1,0 +1,9 @@
+/* 
+    This file contains everything that is related to the base styles, and all that we need for our project (The Preset styles)
+*/
+
+@mixin genStyles() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,29 @@
+// @use 'mixins';
+
+// // EXTEND THIS PLACEHOLDER TO NOTIFY.SCSS
+// %notify__form-styles {
+//     @include mixins.borderProps($border: 1px solid $form-border-color, $borderRadVal: 15px);
+//     @include mixins.flexDisplay();
+//     @include mixins.colorSchemeMix($background-clr: $form-bg-color);
+//     @include mixins.generalSpacing($padding: .4rem);
+
+//     label {
+//         @include mixins.changeDisplay($display: none);
+//     }
+
+//     // The Input inside this fieldset
+//     input {
+//         @include mixins.borderProps($border: 0);
+//         @include mixins.colorSchemeMix($background-clr: $form-bg-color);
+//         @include mixins.fonts($size: 1rem);
+//         @include mixins.generalSpacing($padding: .3rem);
+//     }
+
+//     // THE FORM BUTTON.
+//     button {
+//         @include mixins.generalSpacing($padding: 1rem 1.6rem);
+//         @include mixins.fonts($size: .9rem, $weight: 600);
+//         @include mixins.borderProps($borderRadVal: 10px);
+//         @include mixins.colorSchemeMix($background-clr: header.$button-bg-color, $color: $button-text-color);
+//     }
+// }
