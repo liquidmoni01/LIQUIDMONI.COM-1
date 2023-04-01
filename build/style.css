@@ -1,18 +1,776 @@
-/* Error: Undefined mixin.
- *   ,
- * 6 |     @include mixins.generalSpacing($padding: 2rem 3rem);
- *   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   scss\stylesheets\layout\_header.scss 6:5  @import
- *   scss\stylesheets\style.scss 25:9          root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a   \2577 \a 6 \2502      @include mixins.generalSpacing($padding: 2rem 3rem);\d\a   \2502      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   scss\\stylesheets\\layout\\_header.scss 6:5  @import\a   scss\\stylesheets\\style.scss 25:9          root stylesheet";
+html {
+  font-size: 16px;
+  font-family: sans-serif;
 }
+
+:root {
+  --General-bg-color-light-gray: hsl(0, 0%, 97%);
+  --General-bg-color-black: hsl(240, 6%, 10%);
+  --General-color-black: hsl(240, 6%, 10%);
+  --General-color-white: hsl(0, 0%, 100%);
+  --General-text-color-grey: hsl(240, 5%, 34%);
+  --Header-color-black: hsl(240, 6%, 10%);
+  --Header-nav-button-bg-color: hsl(240, 6%, 10%);
+  --Header-nav-button-text-color: hsl(210, 40%, 98%);
+  --Hero-header-text-color: hsl(222, 47%, 11%);
+  --Hero-text-color: hsl(215, 19%, 35%);
+  --Hero-input-label-text-color: hsl(0, 0%, 85%);
+  --Hero-input-bg-color: hsl(0, 0%, 93%);
+  --Hero-group-text-color: hsl(240, 6%, 10%);
+  --Hero-button-bg-color: hsl(205, 62%, 25%);
+  --Hero-button-text-color: hsl(210, 40%, 98%);
+  --Form-bg-color: hsl(0, 0%, 98%);
+  --Form-border-color: hsl(240, 5%, 65%);
+  --Benefits-bg-color: hsl(240, 6%, 90%);
+  --Benefits-upper-text-color: hsla(0, 0%, 0%, 0.78);
+  --Benefits-text-color: hsl(240, 40%, 6%);
+  --Benefits-rule-color: var(--bg-color);
+  --Benefits-yellow-text-color: hsl(43, 94%, 48%);
+  --Features-header-text-color: hsl(240, 40%, 6%);
+  --Features-text-color: hsl(240, 5%, 34%);
+  --Features-thick-color: hsl(0, 0%, 0%);
+  --Features-highlight-color: hsl(43, 85%, 48%);
+  --Features-card-background: hsl(210, 40%, 96%);
+  --Notify-header-text-color: hsl(0, 0%, 0%);
+  --Notify-text-color: hsl(240, 5%, 34%);
+  --Notify-list-text-color: hsl(0, 0%, 0%);
+  --Faq-text-color: hsl(220, 13%, 46%);
+  --Faq-question-text-color: hsl(221, 43%, 11%);
+  --Footer-main-color: hsl(16, 85%, 66%);
+  --Footer-background-color: hsl(0, 0%, 0%);
+  --Footer-color: hsl(0, 0%, 100%);
+  --Bonus-color: hsl(222, 47%, 11%);
+  --small-100: 16px;
+  --small-200: 17.6px;
+  --small-300: 19.2px;
+  --small-400: 20.8px;
+  --small-500: 22.4px;
+  --medium-100: 25.6px;
+  --medium-200: 27.2px;
+  --medium-300: 28.8px;
+  --medium-400: 30.4px;
+  --medium-500: 32px;
+  --large-100: 35.2px;
+  --large-200: 36.8px;
+  --large-300: 38.4px;
+  --large-400: 41.6px;
+  --large-500: 43.2px;
+  --extra-large-100: 48px;
+  --extra-large-200: 49.6px;
+  --extra-large-300: 52.8px;
+  --extra-large-400: 56px;
+  --extra-large-500: 57.6px;
+}
+
+.hero__fieldset,
+.notification__fieldset {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.4rem;
+  margin: 0;
+  border: 1px solid var(--Form-border-color);
+  outline: 0;
+  border-radius: 15px;
+  background-color: var(--Form-bg-color);
+}
+.hero__fieldset label,
+.notification__fieldset label {
+  display: none;
+  margin: 0;
+}
+.hero__fieldset input,
+.notification__fieldset input {
+  border: 0;
+  outline: 0;
+  border-radius: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  gap: 1rem;
+  padding: 0.3rem;
+  margin: 0;
+}
+.hero__fieldset input::placeholder,
+.notification__fieldset input::placeholder {
+  color: var(--General-color-black);
+}
+.hero__fieldset button,
+.notification__fieldset button {
+  gap: 1rem;
+  padding: 1rem 1.6rem;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid black;
+  outline: 0;
+  border-radius: 10px;
+  background-color: var(--General-color-black);
+}
+.hero__fieldset button a,
+.notification__fieldset button a {
+  color: var(--General-color-white);
+}
+
+:root {
+  --main: clr(normal);
+}
+
+.home {
+  --main: clr(home);
+}
+
+.about {
+  --main: clr(about);
+}
+
+.faq {
+  --main: clr(faq);
+}
+
+.contact {
+  --main: clr(contact);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+fieldset {
+  border: 0;
+}
+
+input {
+  border: 0;
+  outline: 0;
+}
+
+.header,
+.benefits,
+.features,
+.notification,
+.Faq,
+.footer {
+  gap: 1rem;
+  padding: 1.2rem 4rem;
+  margin: 0;
+}
+
+.highlight {
+  background-color: orange;
+}
+
+/*---- DON'T CHANGE THE ROOT STYLE INCASE OF ANY FUTURE CHANGES, INSTEAD THE EXACT FILE STYLES ---- */
+.main {
+  background-color: var(--);
+}
+
+.footer {
+  gap: 1rem;
+  padding: 1.5rem 4rem;
+  margin: 0;
+}
+
+.benefits {
+  gap: 1rem;
+  padding: 1.5rem 4rem;
+  margin: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.benefits__uptext {
+  color: var();
+  font-weight: 600;
+  display: block;
+  margin: 0;
+  margin-bottom: 1.5rem;
+}
+
+.benefits__text {
+  color: var();
+  font-size: var();
+  text-align: center;
+}
+
+.benefits__highlight {
+  color: orange;
+}
+
+.benefits__each,
+.benefits__each-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+}
+
+.map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.features {
+  margin-top: 2rem;
+}
+
+.features__detail-block {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.features__card-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.features__card-container .features__card {
+  background-color: grey;
+  overflow: hidden;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: none;
+  justify-content: center;
+  border-radius: 30px;
+}
+.features__card-container .features__card__text {
+  font-size: 1.5rem;
+}
+.features__card-container .features__card__image {
+  border-radius: 30px;
+  align-self: center;
+  object-fit: cover;
+}
+
+.highlight {
+  background-color: orange;
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+.hero .hero__left-alignment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+}
+.hero .hero__left-alignment .hero__header-text {
+  font-size: var(--extra-large-400);
+  font-weight: 600;
+  color: var(--Hero-header-text-color);
+}
+.hero .hero__left-alignment .hero__content-text {
+  color: var(--Hero-text-color);
+  line-height: var(--medium-200);
+  max-width: 50ch;
+  font-size: var(--small-200);
+}
+.hero .hero__left-alignment .hero__big-text {
+  font-size: 40px;
+  font-weight: 500;
+}
+.hero .hero__right-alignment {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hero .hero__right-alignment .hero__phone {
+  position: absolute;
+  top: 10rem;
+  bottom: 0;
+  left: 6rem;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 2rem;
+  margin: 0;
+  max-height: 300px;
+  color: white;
+  width: 60%;
+}
+.hero .hero__right-alignment .hero__phone .hero__phone-up,
+.hero .hero__right-alignment .hero__phone .hero__phone-down {
+  width: 100%;
+}
+.hero .hero__right-alignment .hero__phone .hero__phone-fieldset {
+  margin-bottom: 2rem;
+}
+.hero .hero__right-alignment .hero__phone .hero__phone-label {
+  color: var(--Hero-input-label-text-color);
+  font-weight: 500;
+  display: block;
+}
+.hero .hero__right-alignment .hero__phone .hero__phone-input-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.hero .hero__right-alignment .hero__phone .hero__phone-input {
+  gap: 1rem;
+  padding: 0.7rem;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  border-radius: 10px;
+  width: 100%;
+  background-color: var(--Hero-input-bg-color);
+}
+
+.notification {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.notification__right .notification__header {
+  font-size: 2rem;
+}
+
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+:root {
+  --General-bg-color-light-gray: hsl(0, 0%, 97%);
+  --General-bg-color-black: hsl(240, 6%, 10%);
+  --General-color-black: hsl(240, 6%, 10%);
+  --General-color-white: hsl(0, 0%, 100%);
+  --General-text-color-grey: hsl(240, 5%, 34%);
+  --Header-color-black: hsl(240, 6%, 10%);
+  --Header-nav-button-bg-color: hsl(240, 6%, 10%);
+  --Header-nav-button-text-color: hsl(210, 40%, 98%);
+  --Hero-header-text-color: hsl(222, 47%, 11%);
+  --Hero-text-color: hsl(215, 19%, 35%);
+  --Hero-input-label-text-color: hsl(0, 0%, 85%);
+  --Hero-input-bg-color: hsl(0, 0%, 93%);
+  --Hero-group-text-color: hsl(240, 6%, 10%);
+  --Hero-button-bg-color: hsl(205, 62%, 25%);
+  --Hero-button-text-color: hsl(210, 40%, 98%);
+  --Form-bg-color: hsl(0, 0%, 98%);
+  --Form-border-color: hsl(240, 5%, 65%);
+  --Benefits-bg-color: hsl(240, 6%, 90%);
+  --Benefits-upper-text-color: hsla(0, 0%, 0%, 0.78);
+  --Benefits-text-color: hsl(240, 40%, 6%);
+  --Benefits-rule-color: var(--bg-color);
+  --Benefits-yellow-text-color: hsl(43, 94%, 48%);
+  --Features-header-text-color: hsl(240, 40%, 6%);
+  --Features-text-color: hsl(240, 5%, 34%);
+  --Features-thick-color: hsl(0, 0%, 0%);
+  --Features-highlight-color: hsl(43, 85%, 48%);
+  --Features-card-background: hsl(210, 40%, 96%);
+  --Notify-header-text-color: hsl(0, 0%, 0%);
+  --Notify-text-color: hsl(240, 5%, 34%);
+  --Notify-list-text-color: hsl(0, 0%, 0%);
+  --Faq-text-color: hsl(220, 13%, 46%);
+  --Faq-question-text-color: hsl(221, 43%, 11%);
+  --Footer-main-color: hsl(16, 85%, 66%);
+  --Footer-background-color: hsl(0, 0%, 0%);
+  --Footer-color: hsl(0, 0%, 100%);
+  --Bonus-color: hsl(222, 47%, 11%);
+  --small-100: 16px;
+  --small-200: 17.6px;
+  --small-300: 19.2px;
+  --small-400: 20.8px;
+  --small-500: 22.4px;
+  --medium-100: 25.6px;
+  --medium-200: 27.2px;
+  --medium-300: 28.8px;
+  --medium-400: 30.4px;
+  --medium-500: 32px;
+  --large-100: 35.2px;
+  --large-200: 36.8px;
+  --large-300: 38.4px;
+  --large-400: 41.6px;
+  --large-500: 43.2px;
+  --extra-large-100: 48px;
+  --extra-large-200: 49.6px;
+  --extra-large-300: 52.8px;
+  --extra-large-400: 56px;
+  --extra-large-500: 57.6px;
+}
+
+.nav__button-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+.nav__button-group .nav__button {
+  gap: 1rem;
+  padding: 0.7rem 1rem;
+  margin: 0;
+  border: 1px solid black;
+  outline: 0;
+  border-radius: 5px;
+  background-color: var(--Header-nav-button-bg-color);
+  font-weight: 600;
+}
+.nav__button-group .nav__button-link {
+  color: var(--Header-nav-button-text-color);
+}
+.nav__button-group .nav__button:nth-of-type(2) {
+  background-color: var(--Header-nav-button-text-color);
+}
+.nav__button-group .nav__button:nth-of-type(2) .nav__button-link {
+  color: var(--Header-nav-button-bg-color);
+}
+
+.hero__button {
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  border-radius: 10px;
+  width: 100%;
+  background-color: var(--Hero-button-bg-color);
+}
+.hero__button-link {
+  color: var(--Hero-button-text-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.nav__logo {
+  width: 200px;
+  object-fit: scale-down;
+}
+
+.hero__image {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  object-fit: cover;
+}
+
+.notification__left-image {
+  position: relative;
+  left: 6rem;
+}
+
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+:root {
+  --General-bg-color-light-gray: hsl(0, 0%, 97%);
+  --General-bg-color-black: hsl(240, 6%, 10%);
+  --General-color-black: hsl(240, 6%, 10%);
+  --General-color-white: hsl(0, 0%, 100%);
+  --General-text-color-grey: hsl(240, 5%, 34%);
+  --Header-color-black: hsl(240, 6%, 10%);
+  --Header-nav-button-bg-color: hsl(240, 6%, 10%);
+  --Header-nav-button-text-color: hsl(210, 40%, 98%);
+  --Hero-header-text-color: hsl(222, 47%, 11%);
+  --Hero-text-color: hsl(215, 19%, 35%);
+  --Hero-input-label-text-color: hsl(0, 0%, 85%);
+  --Hero-input-bg-color: hsl(0, 0%, 93%);
+  --Hero-group-text-color: hsl(240, 6%, 10%);
+  --Hero-button-bg-color: hsl(205, 62%, 25%);
+  --Hero-button-text-color: hsl(210, 40%, 98%);
+  --Form-bg-color: hsl(0, 0%, 98%);
+  --Form-border-color: hsl(240, 5%, 65%);
+  --Benefits-bg-color: hsl(240, 6%, 90%);
+  --Benefits-upper-text-color: hsla(0, 0%, 0%, 0.78);
+  --Benefits-text-color: hsl(240, 40%, 6%);
+  --Benefits-rule-color: var(--bg-color);
+  --Benefits-yellow-text-color: hsl(43, 94%, 48%);
+  --Features-header-text-color: hsl(240, 40%, 6%);
+  --Features-text-color: hsl(240, 5%, 34%);
+  --Features-thick-color: hsl(0, 0%, 0%);
+  --Features-highlight-color: hsl(43, 85%, 48%);
+  --Features-card-background: hsl(210, 40%, 96%);
+  --Notify-header-text-color: hsl(0, 0%, 0%);
+  --Notify-text-color: hsl(240, 5%, 34%);
+  --Notify-list-text-color: hsl(0, 0%, 0%);
+  --Faq-text-color: hsl(220, 13%, 46%);
+  --Faq-question-text-color: hsl(221, 43%, 11%);
+  --Footer-main-color: hsl(16, 85%, 66%);
+  --Footer-background-color: hsl(0, 0%, 0%);
+  --Footer-color: hsl(0, 0%, 100%);
+  --Bonus-color: hsl(222, 47%, 11%);
+  --small-100: 16px;
+  --small-200: 17.6px;
+  --small-300: 19.2px;
+  --small-400: 20.8px;
+  --small-500: 22.4px;
+  --medium-100: 25.6px;
+  --medium-200: 27.2px;
+  --medium-300: 28.8px;
+  --medium-400: 30.4px;
+  --medium-500: 32px;
+  --large-100: 35.2px;
+  --large-200: 36.8px;
+  --large-300: 38.4px;
+  --large-400: 41.6px;
+  --large-500: 43.2px;
+  --extra-large-100: 48px;
+  --extra-large-200: 49.6px;
+  --extra-large-300: 52.8px;
+  --extra-large-400: 56px;
+  --extra-large-500: 57.6px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0;
+  margin: 0 0 3rem 0;
+}
+.nav .nav__list {
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav .nav__item {
+  gap: 1rem;
+  padding: 0;
+  margin: 0.2rem;
+}
+.nav .nav__item .nav__link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--Header-color-black);
+  transition: 0.2s ease-in-out;
+}
+.nav .nav__item .nav__link:hover {
+  color: var();
+  transform: scale(2);
+}
+
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+:root {
+  --General-bg-color-light-gray: hsl(0, 0%, 97%);
+  --General-bg-color-black: hsl(240, 6%, 10%);
+  --General-color-black: hsl(240, 6%, 10%);
+  --General-color-white: hsl(0, 0%, 100%);
+  --General-text-color-grey: hsl(240, 5%, 34%);
+  --Header-color-black: hsl(240, 6%, 10%);
+  --Header-nav-button-bg-color: hsl(240, 6%, 10%);
+  --Header-nav-button-text-color: hsl(210, 40%, 98%);
+  --Hero-header-text-color: hsl(222, 47%, 11%);
+  --Hero-text-color: hsl(215, 19%, 35%);
+  --Hero-input-label-text-color: hsl(0, 0%, 85%);
+  --Hero-input-bg-color: hsl(0, 0%, 93%);
+  --Hero-group-text-color: hsl(240, 6%, 10%);
+  --Hero-button-bg-color: hsl(205, 62%, 25%);
+  --Hero-button-text-color: hsl(210, 40%, 98%);
+  --Form-bg-color: hsl(0, 0%, 98%);
+  --Form-border-color: hsl(240, 5%, 65%);
+  --Benefits-bg-color: hsl(240, 6%, 90%);
+  --Benefits-upper-text-color: hsla(0, 0%, 0%, 0.78);
+  --Benefits-text-color: hsl(240, 40%, 6%);
+  --Benefits-rule-color: var(--bg-color);
+  --Benefits-yellow-text-color: hsl(43, 94%, 48%);
+  --Features-header-text-color: hsl(240, 40%, 6%);
+  --Features-text-color: hsl(240, 5%, 34%);
+  --Features-thick-color: hsl(0, 0%, 0%);
+  --Features-highlight-color: hsl(43, 85%, 48%);
+  --Features-card-background: hsl(210, 40%, 96%);
+  --Notify-header-text-color: hsl(0, 0%, 0%);
+  --Notify-text-color: hsl(240, 5%, 34%);
+  --Notify-list-text-color: hsl(0, 0%, 0%);
+  --Faq-text-color: hsl(220, 13%, 46%);
+  --Faq-question-text-color: hsl(221, 43%, 11%);
+  --Footer-main-color: hsl(16, 85%, 66%);
+  --Footer-background-color: hsl(0, 0%, 0%);
+  --Footer-color: hsl(0, 0%, 100%);
+  --Bonus-color: hsl(222, 47%, 11%);
+  --small-100: 16px;
+  --small-200: 17.6px;
+  --small-300: 19.2px;
+  --small-400: 20.8px;
+  --small-500: 22.4px;
+  --medium-100: 25.6px;
+  --medium-200: 27.2px;
+  --medium-300: 28.8px;
+  --medium-400: 30.4px;
+  --medium-500: 32px;
+  --large-100: 35.2px;
+  --large-200: 36.8px;
+  --large-300: 38.4px;
+  --large-400: 41.6px;
+  --large-500: 43.2px;
+  --extra-large-100: 48px;
+  --extra-large-200: 49.6px;
+  --extra-large-300: 52.8px;
+  --extra-large-400: 56px;
+  --extra-large-500: 57.6px;
+}
+
+.hero__fieldset,
+.notification__fieldset {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.4rem;
+  margin: 0;
+  border: 1px solid var(--Form-border-color);
+  outline: 0;
+  border-radius: 15px;
+  background-color: var(--Form-bg-color);
+}
+
+.hero__fieldset label,
+.notification__fieldset label {
+  display: none;
+  margin: 0;
+}
+
+.hero__fieldset input,
+.notification__fieldset input {
+  border: 0;
+  outline: 0;
+  border-radius: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  gap: 1rem;
+  padding: 0.3rem;
+  margin: 0;
+}
+
+.hero__fieldset input::placeholder,
+.notification__fieldset input::placeholder {
+  color: var(--General-color-black);
+}
+
+.hero__fieldset button,
+.notification__fieldset button {
+  gap: 1rem;
+  padding: 1rem 1.6rem;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid black;
+  outline: 0;
+  border-radius: 10px;
+  background-color: var(--General-color-black);
+}
+
+.hero__fieldset button a,
+.notification__fieldset button a {
+  color: var(--General-color-white);
+}
+
+:root {
+  --main: clr(normal);
+}
+
+.home {
+  --main: clr(home);
+}
+
+.about {
+  --main: clr(about);
+}
+
+.faq {
+  --main: clr(faq);
+}
+
+.contact {
+  --main: clr(contact);
+}
+
+/*# sourceMappingURL=style.css.map */

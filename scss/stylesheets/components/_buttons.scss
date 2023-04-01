@@ -1,0 +1,77 @@
+@use '../abstracts/mixins';
+@use '../root/root'as *;
+
+// Create only file specific mixins, variables and function when needed
+
+.nav__button-group {
+    @include mixins.flexDisplay($flex-direction: row, $justify-content: space-between);
+    @include mixins.generalSpacing($gap: 0.5rem);
+
+    .nav__button {
+        @include mixins.generalSpacing($padding: .7rem 1rem);
+        @include borderProps($borderRadVal: 5px);
+        background-color: var(--Header-nav-button-bg-color);
+        font-weight: 600;
+        // IF Button == Send Button 
+        // @if .nav__button::nth-of-type(2) {
+        //    background-color: ; 
+        // }
+
+        &-link {
+            color: var(--Header-nav-button-text-color);
+        }
+    }
+
+    .nav__button:nth-of-type(2) {
+        background-color: var(--Header-nav-button-text-color);
+
+        .nav__button-link {
+            color: var(--Header-nav-button-bg-color);
+        }
+    }
+}
+
+.hero__button {
+    @include mixins.generalSpacing($padding: .8rem 1rem);
+    @include borderProps($borderRadVal: 10px, $border: 0);
+    width: 100%;
+    background-color: var(--Hero-button-bg-color);
+
+    &-link {
+        color: var(--Hero-button-text-color);
+        @include mixins.fonts($size: 1.2rem);
+    }
+}
+
+//Button-padding: 12px, 18px, 12px, 18px
+
+// .header__button-group {
+//         @include mixins.generalSpacing($gap: .5rem);
+
+//         // Each of the buttons
+//         .header__button {
+//             @include mixins.generalSpacing($padding: .7rem .9rem);
+//             @include mixins.borderProps($borderRadVal: 5px);
+//             @include mixins.fonts($weight: 600, $size: .8rem);
+//             // hard-code
+//             cursor: pointer;
+//         }
+//     }
+
+//     .header__button:nth-of-type(1) {
+//         @include mixins.colorSchemeMix($background-clr: $button-text-color);
+
+//         @include mixins.borderProps($border: 1px solid $header-color-black);
+
+//         .header__button-link {
+//             @include mixins.colorSchemeMix($color: $header-color-black)
+//         }
+//     }
+
+//     .header__button:nth-of-type(2) {
+//         @include mixins.colorSchemeMix($background-clr: $header-color-black, $color: $button-text-color);
+
+//         .header__button-link {
+//             @include mixins.colorSchemeMix($color: $button-text-color)
+//         }
+//     }

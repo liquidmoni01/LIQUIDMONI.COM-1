@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../build/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <img class="nav__logo" src="../images/header/Liquid-moni.png" alt="the logo">
+
+            <ul class="nav__list">
+                <li class="nav__item"><a href="../index.html" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="./about.html" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="./contact.html" class="nav__link">Contact</a>
+                </li>
+                <li class="nav__item"><a href="./faq.html" class="nav__link">FAQ</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Support</a></li>
+            </ul>
+
+            <div class="nav__button-group">
+                <button class="nav__button">
+                    <a href="./sign-up.html" class="nav__button-link">Send</a>
+                </button>
+                <button class="nav__button">
+                    <a href="" class="nav__button-link">Login/Sign Up</a>
+                </button>
+                <!-- <button class="nav__button">
+                    <a href="" class="nav__button-link">Download Soon</a>
+                </button> -->
+            </div>
+            <!-- <a class="log-in" href="#">Login</a>
+            <a class="sign-up" href="#">Sign Up</a> -->
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="sign__up">
+            <form class="sign__up-form" action="#">
+                <section class="sign__up-form-action">
+
+                    <div class="email-phone-number-toggle">
+                        <!-- Let the user pick one to sign up with -->
+                    </div>
+
+                    <fieldset class="sign__up-field">
+                        <legend>
+                            <label class="sign__up-label" for="email">Email</label>
+                        </legend>
+                        <div class="sign__up-input-container">
+                            <input type="email" class="sign__up-input" id="email" name="new-user-email">
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="sign__up-field">
+                        <legend>
+                            <label class="sign__up-label" for="email">Phone Number</label>
+                        </legend>
+                        <div class="sign__up-dropdown-container">
+
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="sign__up-field">
+                        <legend>
+                            <label class="sign__up-label" for="password">Password</label>
+                        </legend>
+                        <div class="sign__up-input-container">
+                            <input type="password" class="sign__up-input" id="password" name="new-user-password">
+                        </div>
+                    </fieldset>
+
+                    <!-- <fieldset class="sign__up-field">
+                    <legend>
+                        <label class="sign__up-label" for="email">Email</label>
+                    </legend>
+                    <div class="sign__up-input-container">
+                        <input type="email" class="sign__up-input" id="email" name="new-user-email">
+                    </div>
+                </fieldset> -->
+                </section>
+
+                <!-- AUTHENTICATION -->
+                <section class="sign__up-form-option">
+                    <p class="sign__up-text">Already a user? <a href="#" class="sign__up-link">Login</a></p>
+
+                    <section class="sign__up-other-options">
+                        <button class="sign__up-option-button">
+                            <a href="#" class="sign__up-option-link">Sign Up with FaceBook</a>
+                        </button>
+
+                        <button class="sign__up-option-button">
+                            <a href="#" class="sign__up-option-link">Sign up with Google</a>
+                        </button>
+                    </section>
+                </section>
+            </form>
+        </div>
+    </main>
+
+</body>
+
+</html>
