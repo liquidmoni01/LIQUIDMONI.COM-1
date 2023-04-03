@@ -483,13 +483,33 @@ input {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 4rem;
+  gap: 2rem;
   padding: 0;
   margin: 0;
+  flex-grow: 1;
 }
 
 .notification__left .notification__header {
   font-size: var(--large-100);
+}
+
+.notification__left .notification__header__header-text {
+  font-size: 1.2em;
+  max-width: 60ch;
+}
+
+.notification__left .notification__text {
+  font-size: var(--small-400);
+}
+
+.notification__left .notification__feature {
+  gap: 1rem;
+  padding: 1rem 1rem 1rem 0;
+  margin: 0;
+  font-size: var(--small-400);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
 }
 
 .nav__button-group {
@@ -618,7 +638,7 @@ input {
 
 .notification__left-image {
   position: relative;
-  left: 6rem;
+  left: 8rem;
 }
 
 .nav {
