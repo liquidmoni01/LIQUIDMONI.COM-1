@@ -1,0 +1,52 @@
+// All General colors used throughout the website come in here.
+$colors:(General: (bg-color-light-gray: hsla(0, 0%, 97%, 1),
+                bg-color-black: hsla(240, 6%, 10%, 1),
+                color-black: hsla(240, 6%, 10%, 1),
+                color-white: hsla(0, 0%, 100%, 1),
+                text-color-grey: hsla(240, 5%, 34%, 1),
+        ),
+
+        Header: (color-black: hsla(240, 6%, 10%, 1),
+                nav-button-bg-color: hsla(240, 6%, 10%, 1),
+                nav-button-text-color: hsla(210, 40%, 98%, 1),
+        ),
+
+        Hero: (header-text-color: hsla(222, 47%, 11%, 1),
+                text-color: hsla(215, 19%, 35%, 1),
+                input-label-text-color: hsla(0, 0%, 85%, 1),
+                input-bg-color: hsla(0, 0%, 93%, 1),
+                group-text-color: hsla(240, 6%, 10%, 1),
+                button-bg-color: hsla(205, 62%, 25%, 1),
+                button-text-color: hsla(210, 40%, 98%, 1),
+        ),
+
+        Form: (bg-color: hsla(0, 0%, 98%, 1),
+                border-color: hsla(240, 5%, 65%, 1),
+        ),
+
+        Benefits: (bg-color: hsla(240, 6%, 90%, 1),
+                upper-text-color: hsla(0, 0%, 0%, 0.78),
+                text-color: hsla(240, 40%, 6%, 1),
+                rule-color: var(--bg-color),
+                yellow-text-color: hsla(43, 94%, 48%, 1),
+        ),
+
+        Features: (header-text-color: hsla(240, 40%, 6%, 1),
+                text-color: hsla(240, 5%, 34%, 1),
+                thick-color: hsla(0, 0%, 0%, 1),
+                highlight-color: hsla(43, 85%, 48%, 1),
+                card-background: hsla(210, 40%, 96%, 1)),
+
+        Notify: (header-text-color: hsla(0, 0%, 0%, 1),
+                text-color: hsla(240, 5%, 34%, 1),
+                list-text-color: hsla(0, 0%, 0%, 1)),
+
+        Faq: (text-color: hsla(220, 13%, 46%, 1),
+                question-text-color: hsla(221, 43%, 11%, 1),
+
+        ),
+        Footer: (main-color: hsla(16, 85%, 66%, 1),
+                background-color: hsla(0, 0%, 0%, 1),
+                color: hsla(0, 0%, 100%, 1)),
+
+        Bonus: (color: hsla(222, 47%, 11%, 1)))

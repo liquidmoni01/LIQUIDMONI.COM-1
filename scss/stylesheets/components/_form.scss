@@ -1,0 +1,8 @@
+// THE FORM STYLES
+@use '../abstracts/placeholders';
+
+// Hero Section Form
+.hero__fieldset,
+.notification__fieldset {
+    @extend %notify__form-styles;
+}

@@ -1,0 +1,10 @@
+@use '../base/variables'as global-font-size;
+
+// Define rule for the font sizes and line heights.
+@function getRem($Size, $multiplyValue: global-font-size.$global-font-size) {
+    @return $Size * $multiplyValue;
+}
+
+@function getCh($size) {
+    @return $size * 2;
+}

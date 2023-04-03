@@ -1,0 +1,32 @@
+@use '../abstracts/colors';
+@use '../abstracts/type'as *;
+@use '../base/variables';
+
+html {
+    font-size: variables.$global-font-size;
+    font-family: variables.$font-stack-1;
+}
+
+:root {
+
+    @each $colorGroup,
+    $colorMap in colors.$colors {
+
+        @each $colorMaps,
+        $value in $colorMap {
+            --#{$colorGroup}-#{$colorMaps}: #{$value};
+        }
+    }
+
+    // // Fonts Sizes.
+    @each $font-maps,
+    $font-size in $type {
+
+        @each $font-size,
+        $font-value in $font-size {
+            --#{$font-maps}-#{$font-size}: #{$font-value};
+        }
+    }
+
+    // MEDIA QUERIES
+}

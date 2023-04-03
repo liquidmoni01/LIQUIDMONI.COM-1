@@ -1,0 +1,36 @@
+// THE BENEFITS SECTION STYLES
+@use '../abstracts/mixins';
+
+.benefits {
+    @include mixins.flexDisplay($flex-direction:column);
+    gap: 1rem;
+}
+
+.benefits__uptext {
+    color: var();
+    font-weight: 600;
+    @include mixins.changeDisplay($display: block);
+    margin-bottom: 1.5rem;
+}
+
+.benefits__text {
+    color: var();
+    font-size: var();
+    text-align: center;
+}
+
+.benefits__highlight {
+    color: orange;
+}
+
+.benefits__each,
+.benefits__each-text {
+    @include mixins.flexDisplay($align-items: center);
+    @include mixins.generalSpacing($gap: 1rem);
+    font-weight: 600;
+}
+
+// specific image for this section.
+.map-image {
+    @include mixins.imageSize(100%, 100%, cover);
+}

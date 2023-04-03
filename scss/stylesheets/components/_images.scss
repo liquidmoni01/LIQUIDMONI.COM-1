@@ -1,0 +1,20 @@
+@use '../abstracts'as mixins;
+
+// Logo
+.nav__logo {
+    width: 200px;
+    object-fit: scale-down;
+}
+
+// Hero Iphone
+.hero__image {
+    @include mixins.positioning($position: relative);
+    width: 100%;
+    object-fit: cover;
+}
+
+// Notification Iphone
+.notification__left-image {
+    position: relative;
+    left: 6rem;
+}

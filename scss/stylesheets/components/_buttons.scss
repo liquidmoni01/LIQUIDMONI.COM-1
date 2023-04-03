@@ -1,5 +1,4 @@
 @use '../abstracts/mixins';
-@use '../root/root'as *;
 
 // Create only file specific mixins, variables and function when needed
 
@@ -9,7 +8,7 @@
 
     .nav__button {
         @include mixins.generalSpacing($padding: .7rem 1rem);
-        @include borderProps($borderRadVal: 5px);
+        @include mixins.borderProps($borderRadVal: 5px);
         background-color: var(--Header-nav-button-bg-color);
         font-weight: 600;
         // IF Button == Send Button 
@@ -33,7 +32,7 @@
 
 .hero__button {
     @include mixins.generalSpacing($padding: .8rem 1rem);
-    @include borderProps($borderRadVal: 10px, $border: 0);
+    @include mixins.borderProps($borderRadVal: 10px, $border: 0);
     width: 100%;
     background-color: var(--Hero-button-bg-color);
 

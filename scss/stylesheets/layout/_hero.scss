@@ -1,0 +1,156 @@
+// @use '../abstracts/colors'as*;
+@use '../abstracts/'as mixins;
+// @use '';
+
+.hero {
+    @include mixins.flexDisplay($flex-direction: row);
+
+    .hero__left-alignment {
+        @include mixins.flexDisplay($flex-direction: column, $align-items:flex-start);
+        gap: 2rem;
+        // align-items: flex-start;
+
+        .hero__header-text {
+            font-size: var(--extra-large-400);
+            font-weight: 600;
+            color: var(--Hero-header-text-color);
+        }
+
+        .hero__content-text {
+            color: var(--Hero-text-color);
+            line-height: var(--medium-200);
+            max-width: getCh(25ch);
+            font-size: var(--small-200);
+        }
+
+        .hero__big-text {
+            font-size: getRem(2.5);
+            font-weight: 500;
+        }
+    }
+
+    .hero__right-alignment {
+        @include mixins.positioning($position: relative);
+        @include mixins.flexDisplay($flex-direction: column);
+
+        // THE FORM (specific to this section)
+        .hero__phone {
+            @include mixins.positioning($position: absolute, $top: 10rem, $left: 6rem);
+            @include mixins.flexDisplay($flex-direction: column, $justify-content: space-between);
+            @include mixins.generalSpacing($padding: 2rem, $gap: 4rem);
+            max-height: 300px;
+            color: white;
+            width: 60%;
+
+            .hero__phone-up,
+            .hero__phone-down {
+                width: 100%;
+            }
+
+            .hero__phone-fieldset {
+                margin-bottom: 2rem;
+            }
+
+            .hero__phone-label {
+                color: var(--Hero-input-label-text-color);
+                font-weight: 500;
+                display: block;
+            }
+
+            .hero__phone-input-block {
+                @include mixins.flexDisplay();
+                gap: 1rem;
+            }
+
+            .hero__phone-input {
+                @include mixins.generalSpacing($padding: 0.7rem);
+                @include mixins.borderProps($borderRadVal: 10px, $border: 0);
+                width: 100%;
+                background-color: var(--Hero-input-bg-color);
+            }
+        }
+    }
+
+    justify-content: space-between;
+}
+
+// ================================================================================
+
+// .hero {
+//     @include mixins.flexDisplay($align-items: flex-start, $justify-content: space-between);
+// }
+
+// // Standalone Styles for both Compartments
+// .hero__left-alignment {
+//     @include mixins.flexDisplay($flex-direction: column, $align-items: flex-start);
+//     @include mixins.generalSpacing($gap: 2rem);
+
+//     .hero__header-text {
+//         @include mixins.fonts($size: 2.9rem, $weight: 600);
+//         @include mixins.generalSpacing();
+//     }
+
+//     .hero__content-text {
+//         @include mixins.generalSpacing($margin: 0 0 1rem 0);
+//     }
+
+//     // THE FORM THAT WILL USE AN EXTENDED CLASS.
+//     .hero__fieldset {
+//         @extend %notify__form-styles;
+//     }
+// }
+
+// // The Iphone and its background, and the form inside it.=
+// .hero__right-alignment {
+//     .hero__image-block {
+//         @include mixins.positioning($position: relative);
+//         @include mixins.widthAndHeight($width: 50%);
+//         @include backgroundImage('Iphone-Stripe-bg');
+
+//         // The Iphone Block.
+//         .hero_image {
+//             @include mixins.positioning($position: relative)
+//         }
+//     }
+// }
+
+// // COME BACK HERE CONCERNING THE IMAGE AND THE BACKGROUND.
+
+// // AVOID OVERNESTING AND STANDALONE STYLES.
+// .hero__text-group,
+// .hero__text {
+//     @include mixins.flexDisplay($flex-direction: row)
+// }
+
+// // The Text Group Section, after standalone style of each.
+// .hero__text-group {
+
+//     .hero__big-text,
+//     .hero__small-text {
+//         @include mixins.changeDisplay($display: inline-block, $space: 0 .5rem 0 0)
+//     }
+
+//     .hero__big-text {
+//         @include mixins.fonts($size: 2.5rem);
+//     }
+
+//     .hero__small-text {
+//         @include mixins.fonts($size: .8rem);
+//     }
+// }
+
+// // A SEPARATE STANDALONE FOR THE FORM INSIDE THE HERO IMAGE (IPHONE)
+// .hero__phone-form {
+//     @include mixins.positioning($position: absolute);
+//     @include mixins.flexDisplay($flex-direction: column);
+
+//     .hero__phone-fieldset {
+//         @include mixins.borderProps($border: 0);
+//         @include mixins.flexDisplay($flex-direction: row);
+
+//         .hero__phone-input {
+//             @include mixins.borderProps($borderRadVal: 10px);
+//             @include mixins.generalSpacing($padding: 1.5rem);
+//         }
+//     }
+// }

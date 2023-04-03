@@ -1,0 +1,30 @@
+@use '../abstracts/mixins';
+
+.nav {
+    @include mixins.flexDisplay($align-items: center, $justify-content: space-between);
+    @include mixins.generalSpacing($margin: 0 0 3rem 0);
+    // The Nav-List
+
+    .nav__list {
+        @include mixins.generalSpacing($gap: 2rem);
+        @include mixins.flexDisplay($align-items: center, $justify-content: space-between);
+    }
+
+    // AVOID OVER-NESTING (The Li and anchor tags - Navigation links)
+    .nav__item {
+        @include mixins.generalSpacing($margin: .2rem);
+        // font-size: ;
+
+        .nav__link {
+            // For the Color
+            @include mixins.fonts($size: 1rem, $weight: 600);
+            color: var(--Header-color-black);
+            transition: .2s ease-in-out;
+
+            &:hover {
+                color: var();
+                transform: scale(2);
+            }
+        }
+    }
+}

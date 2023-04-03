@@ -1,10 +1,8 @@
 @use './mixins';
-@use '../root/root';
 
 // EXTEND THIS PLACEHOLDER TO THE HERO AND NOTIFY SECTIONS.
 %notify__form-styles {
     @include mixins.flexDisplay();
-    // @include mixins.colorSchemeMix($background-clr: $form-bg-color);
     @include mixins.generalSpacing($padding: .4rem);
     @include mixins.borderProps($borderRadVal: 15px, $border: 1px solid var(--Form-border-color));
     background-color: var(--Form-bg-color);
@@ -13,10 +11,8 @@
         @include mixins.changeDisplay($display: none);
     }
 
-    // The Input inside this fieldset
     input {
         @include mixins.borderProps($border: 0);
-        // @include mixins.colorSchemeMix($background-clr: $form-bg-color);
         @include mixins.fonts($size: 1rem);
         @include mixins.generalSpacing($padding: .3rem);
     }
@@ -25,7 +21,6 @@
         color: var(--General-color-black);
     }
 
-    // THE FORM BUTTON.
     button {
         @include mixins.generalSpacing($padding: 1rem 1.6rem);
         @include mixins.fonts($size: .9rem, $weight: 600);
@@ -35,27 +30,29 @@
         a {
             color: var(--General-color-white);
         }
-
-        // @include mixins.colorSchemeMix($background-clr: header.$button-bg-color, $color: $button-text-color);
     }
 }
 
-:root {
-    --main: #{clr(normal)};
-}
+// :root {
+//     --main: #{clr(normal)};
+// }
 
-.home {
-    --main: #{clr(home)};
-}
-.about {
-    --main: #{clr(about)};
-}
-.faq {
-    --main: #{clr(faq)};
-}
-.contact {
-    --main: #{clr(contact)};
-}
+// .home {
+//     --main: #{clr(home)};
+// }
+
+// .about {
+//     --main: #{clr(about)};
+// }
+
+// .faq {
+//     --main: #{clr(faq)};
+// }
+
+// .contact {
+//     --main: #{clr(contact)};
+// }
+
 // . {
-    //     --main: #{clr(home)};
-    // }
+//     --main: #{clr(home)};
+// }
