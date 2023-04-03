@@ -1,1 +1,12 @@
-// THE HEADER 
+// Here will be the nav and the hero section
+@forward '../components/navigation';
+@forward './hero';
+@use '../abstracts/mixins';
+
+.header {
+    // compulsory
+    padding-bottom: 0 !important;
+    // @include mixins.backgroundImage('IPhone-Stripe-bg', 35rem 2rem);
+    // z-index: -1;
+
+}

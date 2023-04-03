@@ -7,10 +7,10 @@
     @include mixins.generalSpacing($gap: 0.5rem);
 
     .nav__button {
-        @include mixins.generalSpacing($padding: .7rem 1rem);
+        @include mixins.generalSpacing($padding: .7rem 2rem);
         @include mixins.borderProps($borderRadVal: 5px);
         background-color: var(--Header-nav-button-bg-color);
-        font-weight: 600;
+        @include mixins.fonts($size: inherit, $weight: 600);
         // IF Button == Send Button 
         // @if .nav__button::nth-of-type(2) {
         //    background-color: ; 

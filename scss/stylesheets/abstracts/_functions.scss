@@ -6,5 +6,5 @@
 }
 
 @function getCh($size) {
-    @return $size * 2;
+    @return $size * 8;
 }

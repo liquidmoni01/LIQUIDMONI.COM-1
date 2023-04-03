@@ -1,7 +1,14 @@
+@use './functions';
+
 // Mixins
 @mixin fonts($size: 1rem, $weight: 500) {
     font-size: $size;
     font-weight: $weight;
+}
+
+// Convert to pixels
+@mixin textMaxWidth($max-width) {
+    max-width: getCh($max-width);
 }
 
 @mixin changeDisplay($display: block, $space: 0) {
@@ -66,10 +73,10 @@
     border-radius: $border-radius;
 }
 
-@mixin backgroundImage($url) {
+@mixin backgroundImage($url, $position) {
     background-image: url("../images/svg-images/#{$url}.svg");
-    background-size: cover;
-    background-position: top;
+    background-size: contain;
+    background-position: $position;
     background-repeat: no-repeat;
 }
 

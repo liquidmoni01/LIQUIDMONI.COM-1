@@ -1,10 +1,11 @@
-@use '../abstracts/mixins';
+// In here comes utilities 
+$margin: ();
 
-.header,
-.benefits,
-.features,
-.notification,
-.Faq,
-.footer {
-    @include mixins.generalSpacing($padding: 1.2rem 4rem);
-}
+$padding: ("padding": ("prefix": "p",
+        "position": ("l",
+            "r",
+            "t",
+            "b",
+        ),
+
+    ))

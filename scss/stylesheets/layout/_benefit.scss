@@ -1,26 +1,33 @@
 // THE BENEFITS SECTION STYLES
 @use '../abstracts/mixins';
+@use 'sass:math';
 
 .benefits {
+    padding: calc(var(--large-400) * 3);
     @include mixins.flexDisplay($flex-direction:column);
     gap: 1rem;
+    background: var(--Benefits-bg-color);
 }
 
 .benefits__uptext {
-    color: var();
+    color: var(--Benefits-upper-text-color);
     font-weight: 600;
     @include mixins.changeDisplay($display: block);
     margin-bottom: 1.5rem;
+    font-weight: 600;
 }
 
 .benefits__text {
-    color: var();
-    font-size: var();
+    color: var(--Benefits-text-color);
+    font-size: var(--large-100);
     text-align: center;
+    max-width: 50ch;
+    border-bottom: 1px solid var(--Benefits-rule-color);
+    padding-bottom: var(--large-500);
 }
 
 .benefits__highlight {
-    color: orange;
+    color: var(--Benefits-yellow-text-color);
 }
 
 .benefits__each,

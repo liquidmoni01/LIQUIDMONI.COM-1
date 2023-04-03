@@ -25,7 +25,7 @@
     <!-- Support Modal. -->
     <div class="support">
         <section class="support__modal">
-            
+
         </section>
     </div>
     <!-- End of Support Modal -->
@@ -48,9 +48,9 @@
                     <button class="nav__button">
                         <a href="" class="nav__button-link">Send</a>
                     </button>
-                    <button class="nav__button">
+                    <!-- <button class="nav__button">
                         <a href="./pages/sign-up.html" class="nav__button-link">Login/Sign Up</a>
-                    </button>
+                    </button> -->
                     <!-- <button class="nav__button">
                         <a href="" class="nav__button-link">Download Soon</a>
                     </button> -->
@@ -68,12 +68,14 @@
                         anywhere in the world.</p>
 
                     <!-- IN THIS FORM, WE HAVE A MODIFIER CLASS FOR BOTH OF THE FORMS (similar to each other.) - Use nested BEM for the sake of this form -->
-                    <form data-form action="#" class="hero__form">
-                        <div data-field class="hero__fieldset">
-                            <label class="hero__label" for="email">Email</label>
-                            <input data-email-input class="hero__email-input" type="email" id="email" name="email"
-                                placeholder="Enter email address" required>
-                            <button data-email-button><a href="#" class="hero__link">Get Notified</a></button>
+                    <form data-form action="#" class="form">
+                        <div data-field class="form__fieldset">
+                            <label class="form__fieldset__label" for="email">Email</label>
+                            <input data-email-input class="form__fieldset__email-input" type="email" id="email"
+                                name="email" placeholder="Enter email address" required>
+                            <button data-email-button class="form__fieldset__button"><a href="#"
+                                    class="form__fieldset__button-link">Get
+                                    Notified</a></button>
                         </div>
                     </form>
 
@@ -99,53 +101,50 @@
                 <section class="hero__right-alignment">
 
                     <!-- The IPhone XR -->
-                    <div class="hero__image-block">
-                        <img class="hero__image" src="./images/header/iPhone XR.png" alt="The IPhone XR and it's form"
-                            width="500px">
-                        <!-- <img src="./scss/styles/IPhone-Stripe-bg.svg" alt=""> -->
+                    <img class="hero__image" src="./images/header/iPhone XR.png" alt="The IPhone XR and it's form"
+                        width="500px">
+                    <!-- <img src="./scss/styles/IPhone-Stripe-bg.svg" alt=""> -->
 
-                        <!-- THE FORM INSIDE THE IMAGE -->
-                        <form class="hero__phone form">
-                            <div class="hero__phone-up">
+                    <!-- THE FORM INSIDE THE IMAGE -->
+                    <form class="hero__phone form">
+                        <div class="hero__phone-up">
 
-                                <fieldset class="hero__phone-fieldset form__fieldset">
-                                    <legend class="hero__phone-label-container">
-                                        <label class="hero__phone-label form__label" for="send">You Send</label>
-                                    </legend>
+                            <fieldset class="hero__phone-fieldset form__fieldset">
+                                <legend class="hero__phone-label-container">
+                                    <label class="hero__phone-label form__label" for="send">You Send</label>
+                                </legend>
 
-                                    <div class="hero__phone-input-block">
+                                <div class="hero__phone-input-block">
 
-                                        <input class="hero__phone-input form__input" type="number" name="send" id="send"
-                                            value="100.00">
-                                        <select class="hero__phone-dropdown form__dropdown" name="dropdown"
-                                            id="dropdown">
-                                            <option class="hero__phone-options form__option" value="USA"><img src=""
-                                                    alt="country-logo"> USD
-                                            </option>
-                                            <option class="hero__phone-options form__option" value="NGA"><img src=""
-                                                    alt="country-logo"> NGA
-                                            </option>
-                                            <option class="hero__phone-options form__option" value="UK"><img src=""
-                                                    alt="country-logo"> UK
-                                            </option>
-                                        </select>
-                                    </div>
-                                </fieldset>
+                                    <input class="hero__phone-input form__input" type="number" name="send" id="send"
+                                        value="100.00">
+                                    <select class="hero__phone-dropdown form__dropdown" name="dropdown" id="dropdown">
+                                        <option class="hero__phone-options form__option" value="USA"><img src=""
+                                                alt="country-logo"> USD
+                                        </option>
+                                        <option class="hero__phone-options form__option" value="NGA"><img src=""
+                                                alt="country-logo"> NGA
+                                        </option>
+                                        <option class="hero__phone-options form__option" value="UK"><img src=""
+                                                alt="country-logo"> UK
+                                        </option>
+                                    </select>
+                                </div>
+                            </fieldset>
 
-                                <fieldset class="hero__phone-fieldset">
-                                    <legend class="hero__phone-label-container">
-                                        <label class="hero__phone-label" for="get">They Get</label>
-                                    </legend>
-                                    <input class="hero__phone-input" type="number" id="get" name="get" required>
-                                </fieldset>
-                            </div>
+                            <fieldset class="hero__phone-fieldset">
+                                <legend class="hero__phone-label-container">
+                                    <label class="hero__phone-label" for="get">They Get</label>
+                                </legend>
+                                <input class="hero__phone-input" type="number" id="get" name="get" required>
+                            </fieldset>
+                        </div>
 
-                            <div class="hero__phone-down">
-                                <button class="hero__button"><a class="hero__button-link" href="#">Get
-                                        Started</a></button>
-                            </div>
-                        </form>
-                    </div>
+                        <div class="hero__phone-down">
+                            <button class="hero__button"><a class="hero__button-link" href="#">Get
+                                    Started</a></button>
+                        </div>
+                    </form>
                     <!-- THERE IS A BACKGROUND IMAGE HERE. -->
                 </section>
 
@@ -217,7 +216,7 @@
 
             <!-- THE NOTIFICATION SECTION -->
             <section class="notification">
-                <div class="notification__right">
+                <div class="notification__left">
                     <h2 class="notification__header">What are you waiting for, get notified when we go live</h2>
 
                     <p class="notification__text">With our virtual transaction mechanism, you can receive payments in
@@ -235,16 +234,15 @@
                             other apps</li>
                     </ul>
 
-                    <form data-value class="notification__form form" action="#">
-                        <fieldset data-value class="notification__fieldset form__fieldset">
-                            <legend class="notification__label-container"><label class="notification__label form__label"
-                                    for="email">Email</label></legend>
-                            <input data-value class="notification__input form__input" type="email" id="email"
+                    <form data-form action="#" class="form">
+                        <div data-field class="form__fieldset">
+                            <label class="form__fieldset__label" for="email">Email</label>
+                            <input data-email-input class="form__fieldset__email-input" type="email" id="email"
                                 name="email" placeholder="Enter email address" required>
-                            <button data-value class="notification__button form__button"><a
-                                    class="notification__link form__link`" href="#">Get
+                            <button data-email-button class="form__fieldset__button"><a href="#"
+                                    class="form__fieldset__button-link">Get
                                     Notified</a></button>
-                        </fieldset>
+                        </div>
                     </form>
                 </div>
 

@@ -1,51 +1,52 @@
-.nav__button-group {
+.form__fieldset {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  padding: 0;
-  margin: 0;
-}
-
-.nav__button-group .nav__button {
+  justify-content: center;
   gap: 1rem;
-  padding: 0.7rem 1rem;
+  padding: 0.5rem;
   margin: 0;
-  border: 1px solid black;
+  border: 1px solid var(--Form-border-color);
   outline: 0;
-  border-radius: 5px;
-  background-color: var(--Header-nav-button-bg-color);
-  font-weight: 600;
+  border-radius: 15px;
+  background-color: var(--Form-bg-color);
 }
 
-.nav__button-group .nav__button-link {
-  color: var(--Header-nav-button-text-color);
-}
-
-.nav__button-group .nav__button:nth-of-type(2) {
-  background-color: var(--Header-nav-button-text-color);
-}
-
-.nav__button-group .nav__button:nth-of-type(2) .nav__button-link {
-  color: var(--Header-nav-button-bg-color);
-}
-
-.hero__button {
-  gap: 1rem;
-  padding: 0.8rem 1rem;
+.form__fieldset__label {
+  display: none;
   margin: 0;
+}
+
+.form__fieldset__email-input {
+  background: none;
   border: 0;
   outline: 0;
-  border-radius: 10px;
-  width: 100%;
-  background-color: var(--Hero-button-bg-color);
+  border-radius: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  gap: 1rem;
+  padding: 0.5rem;
+  margin: 0;
 }
 
-.hero__button-link {
-  color: var(--Hero-button-text-color);
-  font-size: 1.2rem;
-  font-weight: 500;
+.form__fieldset__email-input::placeholder {
+  color: var(--General-color-black);
+}
+
+.form__fieldset__button {
+  gap: 1rem;
+  padding: 1rem 1.6rem;
+  margin: 0;
+  font-size: inherit;
+  font-weight: 600;
+  border: 1px solid black;
+  outline: 0;
+  border-radius: 10px;
+  background-color: var(--General-color-black);
+}
+
+.form__fieldset__button-link {
+  color: var(--General-color-white);
 }
 
 html {
@@ -74,13 +75,14 @@ html {
   --Benefits-bg-color: hsl(240, 6%, 90%);
   --Benefits-upper-text-color: hsla(0, 0%, 0%, 0.78);
   --Benefits-text-color: hsl(240, 40%, 6%);
-  --Benefits-rule-color: var(--bg-color);
+  --Benefits-rule-color: hsl(240, 6%, 90%);
   --Benefits-yellow-text-color: hsl(43, 94%, 48%);
   --Features-header-text-color: hsl(240, 40%, 6%);
   --Features-text-color: hsl(240, 5%, 34%);
   --Features-thick-color: hsl(0, 0%, 0%);
   --Features-highlight-color: hsl(43, 85%, 48%);
   --Features-card-background: hsl(210, 40%, 96%);
+  --Notify-bg-color: hsl(240, 6%, 90%);
   --Notify-header-text-color: hsl(0, 0%, 0%);
   --Notify-text-color: hsl(240, 5%, 34%);
   --Notify-list-text-color: hsl(0, 0%, 0%);
@@ -155,8 +157,14 @@ button {
   cursor: pointer;
 }
 
+input,
 fieldset {
   border: 0;
+  background: none;
+}
+
+fieldset {
+  background: none !important;
 }
 
 input {
@@ -164,65 +172,93 @@ input {
   outline: 0;
 }
 
-.header,
-.benefits,
-.features,
-.notification,
-.Faq,
-.footer {
-  gap: 1rem;
-  padding: 1.2rem 4rem;
-  margin: 0;
-}
-
-.nav__button-group {
+.nav {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
+  gap: 1rem;
+  padding: 0;
+  margin: 0 0 3rem 0;
+}
+
+.nav .nav__list {
+  gap: 2rem;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.nav__button-group .nav__button {
+.nav .nav__item {
   gap: 1rem;
-  padding: 0.7rem 1rem;
-  margin: 0;
-  border: 1px solid black;
-  outline: 0;
-  border-radius: 5px;
-  background-color: var(--Header-nav-button-bg-color);
+  padding: 0;
+  margin: 0.2rem;
+}
+
+.nav .nav__item .nav__link {
+  font-size: 1rem;
   font-weight: 600;
+  color: var(--Header-color-black);
+  transition: 0.2s ease-in-out;
 }
 
-.nav__button-group .nav__button-link {
-  color: var(--Header-nav-button-text-color);
+.nav .nav__item .nav__link:hover {
+  color: var();
+  transform: scale(2);
 }
 
-.nav__button-group .nav__button:nth-of-type(2) {
-  background-color: var(--Header-nav-button-text-color);
-}
-
-.nav__button-group .nav__button:nth-of-type(2) .nav__button-link {
-  color: var(--Header-nav-button-bg-color);
-}
-
-.hero__button {
+.form__fieldset {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
-  padding: 0.8rem 1rem;
+  padding: 0.5rem;
   margin: 0;
+  border: 1px solid var(--Form-border-color);
+  outline: 0;
+  border-radius: 15px;
+  background-color: var(--Form-bg-color);
+}
+
+.form__fieldset__label {
+  display: none;
+  margin: 0;
+}
+
+.form__fieldset__email-input {
+  background: none;
   border: 0;
   outline: 0;
-  border-radius: 10px;
-  width: 100%;
-  background-color: var(--Hero-button-bg-color);
+  border-radius: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  gap: 1rem;
+  padding: 0.5rem;
+  margin: 0;
 }
 
-.hero__button-link {
-  color: var(--Hero-button-text-color);
-  font-size: 1.2rem;
-  font-weight: 500;
+.form__fieldset__email-input::placeholder {
+  color: var(--General-color-black);
+}
+
+.form__fieldset__button {
+  gap: 1rem;
+  padding: 1rem 1.6rem;
+  margin: 0;
+  font-size: inherit;
+  font-weight: 600;
+  border: 1px solid black;
+  outline: 0;
+  border-radius: 10px;
+  background-color: var(--General-color-black);
+}
+
+.form__fieldset__button-link {
+  color: var(--General-color-white);
 }
 
 .hero {
@@ -242,20 +278,27 @@ input {
 }
 
 .hero .hero__left-alignment .hero__header-text {
-  font-size: var(--extra-large-400);
+  font-size: var(--extra-large-500);
   font-weight: 600;
   color: var(--Hero-header-text-color);
+}
+
+.hero .hero__left-alignment .hero__text-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero .hero__left-alignment .hero__content-text {
   color: var(--Hero-text-color);
   line-height: var(--medium-200);
-  max-width: getCh(25ch);
-  font-size: var(--small-200);
+  max-width: 50ch;
+  font-size: var(--small-300);
 }
 
 .hero .hero__left-alignment .hero__big-text {
-  font-size: getRem(2.5);
+  font-size: var(--large-400);
   font-weight: 500;
 }
 
@@ -273,15 +316,15 @@ input {
 
 .hero .hero__right-alignment .hero__phone {
   position: absolute;
-  top: 10rem;
+  top: 11rem;
   bottom: 0;
-  left: 6rem;
+  left: 10rem;
   right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 4rem;
+  gap: 6rem;
   padding: 2rem;
   margin: 0;
   max-height: 300px;
@@ -296,6 +339,7 @@ input {
 
 .hero .hero__right-alignment .hero__phone .hero__phone-fieldset {
   margin-bottom: 2rem;
+  border: 0;
 }
 
 .hero .hero__right-alignment .hero__phone .hero__phone-label {
@@ -309,7 +353,7 @@ input {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .hero .hero__right-alignment .hero__phone .hero__phone-input {
@@ -323,30 +367,40 @@ input {
   background-color: var(--Hero-input-bg-color);
 }
 
+.header {
+  padding-bottom: 0 !important;
+}
+
 .benefits {
+  padding: calc(var(--large-400) * 3);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  background: var(--Benefits-bg-color);
 }
 
 .benefits__uptext {
-  color: var();
+  color: var(--Benefits-upper-text-color);
   font-weight: 600;
   display: block;
   margin: 0;
   margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 
 .benefits__text {
-  color: var();
-  font-size: var();
+  color: var(--Benefits-text-color);
+  font-size: var(--large-100);
   text-align: center;
+  max-width: 50ch;
+  border-bottom: 1px solid var(--Benefits-rule-color);
+  padding-bottom: var(--large-500);
 }
 
 .benefits__highlight {
-  color: orange;
+  color: var(--Benefits-yellow-text-color);
 }
 
 .benefits__each,
@@ -367,13 +421,21 @@ input {
   object-fit: cover;
 }
 
-.features {
-  margin-top: 2rem;
+.features__detail-block {
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-.features__detail-block {
-  text-align: center;
+.features__header {
+  font-size: var(--extra-large-200);
+  font-weight: 600;
   margin-bottom: 2rem;
+}
+
+.features__header + .features__text {
+  font-size: var(--small-400);
+  font-weight: 400;
+  max-width: inherit;
 }
 
 .features__card-container {
@@ -381,20 +443,21 @@ input {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .features__card-container .features__card {
-  background-color: grey;
+  background-color: var(--Features-card-background);
   overflow: hidden;
   gap: 1rem;
-  padding: 1rem;
+  padding: 2.5rem 1.2rem;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: none;
   justify-content: center;
   border-radius: 30px;
+  overflow: hidden;
 }
 
 .features__card-container .features__card__text {
@@ -403,7 +466,6 @@ input {
 
 .features__card-container .features__card__image {
   border-radius: 30px;
-  align-self: center;
   object-fit: cover;
 }
 
@@ -412,17 +474,22 @@ input {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  background-color: var(--Notify-bg-color);
+  padding: 0 4rem;
 }
 
-.notification__right {
+.notification__left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  gap: 4rem;
+  padding: 0;
+  margin: 0;
 }
 
-.notification__right .notification__header {
-  font-size: 2rem;
+.notification__left .notification__header {
+  font-size: var(--large-100);
 }
 
 .nav__button-group {
@@ -437,12 +504,13 @@ input {
 
 .nav__button-group .nav__button {
   gap: 1rem;
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 2rem;
   margin: 0;
   border: 1px solid black;
   outline: 0;
   border-radius: 5px;
   background-color: var(--Header-nav-button-bg-color);
+  font-size: inherit;
   font-weight: 600;
 }
 
@@ -475,14 +543,13 @@ input {
   font-weight: 500;
 }
 
-.hero__fieldset,
-.notification__fieldset {
+.form__fieldset {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 0.4rem;
+  padding: 0.5rem;
   margin: 0;
   border: 1px solid var(--Form-border-color);
   outline: 0;
@@ -490,8 +557,48 @@ input {
   background-color: var(--Form-bg-color);
 }
 
+.form__fieldset__label {
+  display: none;
+  margin: 0;
+}
+
+.form__fieldset__email-input {
+  background: none;
+  border: 0;
+  outline: 0;
+  border-radius: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  gap: 1rem;
+  padding: 0.5rem;
+  margin: 0;
+}
+
+.form__fieldset__email-input::placeholder {
+  color: var(--General-color-black);
+}
+
+.form__fieldset__button {
+  gap: 1rem;
+  padding: 1rem 1.6rem;
+  margin: 0;
+  font-size: inherit;
+  font-weight: 600;
+  border: 1px solid black;
+  outline: 0;
+  border-radius: 10px;
+  background-color: var(--General-color-black);
+}
+
+.form__fieldset__button-link {
+  color: var(--General-color-white);
+}
+
 .nav__logo {
   width: 200px;
+  height: 100%;
+  max-width: 200px;
+  min-height: 100%;
   object-fit: scale-down;
 }
 
@@ -499,10 +606,14 @@ input {
   position: relative;
   top: 0;
   bottom: 0;
-  left: 0;
+  left: 4rem;
   right: 0;
   width: 100%;
+  height: 100%;
+  max-width: 100%;
+  min-height: 100%;
   object-fit: cover;
+  aspect-ratio: 3/4;
 }
 
 .notification__left-image {
@@ -546,6 +657,20 @@ input {
 .nav .nav__item .nav__link:hover {
   color: var();
   transform: scale(2);
+}
+
+.header,
+.Faq {
+  gap: 1rem;
+  padding: 1.2rem 4rem;
+  margin: 0;
+}
+
+.features,
+.footer {
+  gap: 1rem;
+  padding: 8rem 4rem;
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

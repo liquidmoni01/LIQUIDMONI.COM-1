@@ -11,20 +11,24 @@
         // align-items: flex-start;
 
         .hero__header-text {
-            font-size: var(--extra-large-400);
+            font-size: var(--extra-large-500);
             font-weight: 600;
             color: var(--Hero-header-text-color);
+        }
+
+        .hero__text-group {
+            @include mixins.flexDisplay();
         }
 
         .hero__content-text {
             color: var(--Hero-text-color);
             line-height: var(--medium-200);
-            max-width: getCh(25ch);
-            font-size: var(--small-200);
+            max-width: 50ch;
+            font-size: var(--small-300);
         }
 
         .hero__big-text {
-            font-size: getRem(2.5);
+            font-size: var(--large-400);
             font-weight: 500;
         }
     }
@@ -35,9 +39,9 @@
 
         // THE FORM (specific to this section)
         .hero__phone {
-            @include mixins.positioning($position: absolute, $top: 10rem, $left: 6rem);
+            @include mixins.positioning($position: absolute, $top: 11rem, $left: 10rem);
             @include mixins.flexDisplay($flex-direction: column, $justify-content: space-between);
-            @include mixins.generalSpacing($padding: 2rem, $gap: 4rem);
+            @include mixins.generalSpacing($padding: 2rem, $gap: 6rem);
             max-height: 300px;
             color: white;
             width: 60%;
@@ -49,6 +53,7 @@
 
             .hero__phone-fieldset {
                 margin-bottom: 2rem;
+                border: 0;
             }
 
             .hero__phone-label {
@@ -59,7 +64,7 @@
 
             .hero__phone-input-block {
                 @include mixins.flexDisplay();
-                gap: 1rem;
+                gap: 2rem;
             }
 
             .hero__phone-input {

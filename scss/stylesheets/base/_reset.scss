@@ -48,8 +48,14 @@ button {
     cursor: pointer;
 }
 
+input,
 fieldset {
     border: 0;
+    background: none;
+}
+
+fieldset {
+    background: none !important;
 }
 
 input {
