@@ -24,10 +24,10 @@ $colors:(General: (bg-color-light-gray: hsla(0, 0%, 97%, 1),
                 border-color: hsla(240, 5%, 65%, 1),
         ),
 
-        Benefits: (bg-color: hsla(240, 6%, 90%, 1),
+        Benefits: (bg-color: hsl(240, 6%, 90%),
                 upper-text-color: hsla(0, 0%, 0%, 0.78),
                 text-color: hsla(240, 40%, 6%, 1),
-                rule-color: var(--bg-color),
+                rule-color: hsla(240, 6%, 90%, 1),
                 yellow-text-color: hsla(43, 94%, 48%, 1),
         ),
 
@@ -37,16 +37,17 @@ $colors:(General: (bg-color-light-gray: hsla(0, 0%, 97%, 1),
                 highlight-color: hsla(43, 85%, 48%, 1),
                 card-background: hsla(210, 40%, 96%, 1)),
 
-        Notify: (header-text-color: hsla(0, 0%, 0%, 1),
+        Notify: (bg-color: hsl(240, 6%, 90%),
+                header-text-color: hsla(0, 0%, 0%, 1),
                 text-color: hsla(240, 5%, 34%, 1),
                 list-text-color: hsla(0, 0%, 0%, 1)),
 
-        Faq: (text-color: hsla(220, 13%, 46%, 1),
+        Faq: (header-color:hsl(220, 43%, 11%),
+                text-color: hsla(220, 13%, 46%, 1),
                 question-text-color: hsla(221, 43%, 11%, 1),
+                border-color: hsla(220, 17%, 93%, 1)),
 
-        ),
         Footer: (main-color: hsla(16, 85%, 66%, 1),
                 background-color: hsla(0, 0%, 0%, 1),
-                color: hsla(0, 0%, 100%, 1)),
-
-        Bonus: (color: hsla(222, 47%, 11%, 1)))
+                white-color: hsla(0, 0%, 100%, 1),
+                black-color: hsla(222, 47%, 11%, 1)));

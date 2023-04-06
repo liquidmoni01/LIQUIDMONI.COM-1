@@ -6,27 +6,13 @@
     @include mixins.flexDisplay($flex-direction: row, $justify-content: space-between);
     @include mixins.generalSpacing($gap: 0.5rem);
 
+    // .nav__button:nth-of-type(2) {
     .nav__button {
-        @include mixins.generalSpacing($padding: .7rem 1rem);
-        @include mixins.borderProps($borderRadVal: 5px);
         background-color: var(--Header-nav-button-bg-color);
-        font-weight: 600;
-        // IF Button == Send Button 
-        // @if .nav__button::nth-of-type(2) {
-        //    background-color: ; 
+
+        // .nav__button-link {
+        color: var(--Header-nav-button-text-color);
         // }
-
-        &-link {
-            color: var(--Header-nav-button-text-color);
-        }
-    }
-
-    .nav__button:nth-of-type(2) {
-        background-color: var(--Header-nav-button-text-color);
-
-        .nav__button-link {
-            color: var(--Header-nav-button-bg-color);
-        }
     }
 }
 
@@ -40,6 +26,38 @@
         color: var(--Hero-button-text-color);
         @include mixins.fonts($size: 1.2rem);
     }
+
+    // dropdown button.
+    .hero__dropdown-btn {
+        background: none;
+        width: 10px;
+    }
+}
+
+.nav__button,
+.footer__button {
+    @include mixins.generalSpacing($padding: .9rem 1.2rem);
+    @include mixins.borderProps($borderRadVal: 5px);
+    @include mixins.fonts($size: inherit, $weight: 600);
+    background-color: var(--Header-nav-button-bg-color);
+    // IF Button == Send Button 
+    // @if .nav__button::nth-of-type(2) {
+    //    background-color: ; 
+    // }
+
+    &-link {
+        color: var(--Header-nav-button-text-color);
+    }
+}
+
+.Faq__button {
+    background: none;
+}
+
+.footer__button {
+    @include mixins.borderProps($borderRadVal: 25px);
+    background-color: var(--Footer-white-color);
+    color: var(--Footer-black-color);
 }
 
 //Button-padding: 12px, 18px, 12px, 18px

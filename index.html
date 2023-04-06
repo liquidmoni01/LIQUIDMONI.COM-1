@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="../build/style.css">
     <script src="https://apps.elfsight.com/p/platform.js" defer></script>
 
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+
 
     <!-- For the Mobile and Tablet view (and any other view) - For Responsiveness -->
 
@@ -25,7 +31,7 @@
     <!-- Support Modal. -->
     <div class="support">
         <section class="support__modal">
-            
+
         </section>
     </div>
     <!-- End of Support Modal -->
@@ -33,24 +39,26 @@
     <div class="main-wrapper">
         <header class="header">
             <nav class="nav">
-                <img class="nav__logo" src="./images/header/Liquid-moni.png" alt="the logo">
+                <a href="./index.html" class="nav__image-link">
+                    <img class="nav__logo" src="./images/header/Liquid-moni.png" alt="the logo">
+                </a>
 
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="./index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="./pages/sign-up.html" class="nav__link">Send Money</a></li>
                     <li class="nav__item"><a href="./pages/about.html" class="nav__link">About</a></li>
                     <li class="nav__item"><a href="./pages/contact.html" class="nav__link">Contact</a>
                     </li>
                     <li class="nav__item"><a href="./pages/faq.html" class="nav__link">FAQ</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Support</a></li>
+                    <li class="nav__item"><button class="nav__link">Support</button></li>
                 </ul>
 
                 <div class="nav__button-group">
-                    <button class="nav__button">
-                        <a href="" class="nav__button-link">Send</a>
-                    </button>
-                    <button class="nav__button">
+                    <!-- <button class="nav__button"> -->
+                    <a href="" class="nav__button">Download Soon</a>
+                    <!-- </button> -->
+                    <!-- <button class="nav__button">
                         <a href="./pages/sign-up.html" class="nav__button-link">Login/Sign Up</a>
-                    </button>
+                    </button> -->
                     <!-- <button class="nav__button">
                         <a href="" class="nav__button-link">Download Soon</a>
                     </button> -->
@@ -68,12 +76,13 @@
                         anywhere in the world.</p>
 
                     <!-- IN THIS FORM, WE HAVE A MODIFIER CLASS FOR BOTH OF THE FORMS (similar to each other.) - Use nested BEM for the sake of this form -->
-                    <form data-form action="#" class="hero__form">
-                        <div data-field class="hero__fieldset">
-                            <label class="hero__label" for="email">Email</label>
-                            <input data-email-input class="hero__email-input" type="email" id="email" name="email"
-                                placeholder="Enter email address" required>
-                            <button data-email-button><a href="#" class="hero__link">Get Notified</a></button>
+                    <form data-form action="#" class="form">
+                        <div data-field class="form__fieldset">
+                            <label class="form__fieldset__label" for="email">Email</label>
+                            <input data-email-input class="form__fieldset__email-input" type="email" id="email"
+                                name="email" placeholder="Enter email address" required>
+                            <button data-email-button class="form__fieldset__button">Get
+                                Notified</button>
                         </div>
                     </form>
 
@@ -99,53 +108,77 @@
                 <section class="hero__right-alignment">
 
                     <!-- The IPhone XR -->
-                    <div class="hero__image-block">
-                        <img class="hero__image" src="./images/header/iPhone XR.png" alt="The IPhone XR and it's form"
-                            width="500px">
-                        <!-- <img src="./scss/styles/IPhone-Stripe-bg.svg" alt=""> -->
+                    <img class="hero__image" src="./images/header/iPhone XR.png" alt="The IPhone XR and it's form"
+                        width="500px">
+                    <!-- <img src="./scss/styles/IPhone-Stripe-bg.svg" alt=""> -->
 
-                        <!-- THE FORM INSIDE THE IMAGE -->
-                        <form class="hero__phone form">
-                            <div class="hero__phone-up">
+                    <!-- THE FORM INSIDE THE IMAGE -->
+                    <form class="hero__phone form">
+                        <div class="hero__phone-up">
 
-                                <fieldset class="hero__phone-fieldset form__fieldset">
-                                    <legend class="hero__phone-label-container">
-                                        <label class="hero__phone-label form__label" for="send">You Send</label>
-                                    </legend>
+                            <fieldset class="hero__phone-fieldset form__fieldset">
+                                <legend class="hero__phone-label-container">
+                                    <label class="hero__phone-label form__label" for="send">You Send</label>
+                                </legend>
 
-                                    <div class="hero__phone-input-block">
+                                <div class="hero__phone-input-block">
+                                    <input class="hero__phone-input form__input" type="number" name="send" id="send"
+                                        value="100.00">
+                                    <div class="hero__phone-dropdown form__dropdown" name="dropdown" id="dropdown">
+                                        <div class="hero__phone-options form__option" value="USA">
+                                            <div class="hero__phone-image-container">
+                                                <img class="hero__phone-image" src="./images/hero/usa.svg"
+                                                    alt="country-logo">
+                                            </div>
+                                            <span class="hero__phone-text">
+                                                USD
+                                            </span>
+                                        </div>
+                                        <div class="hero__phone-options form__option" style="display: none;"
+                                            value="NGA">
+                                            <div class="hero__phone-image-container">
+                                                <img class="hero__phone-image" src="./images/hero/nigeria.svg"
+                                                    alt="country-logo">
+                                            </div>
+                                            <span class="hero__phone-text" id="hidden">
+                                                NGA
+                                            </span>
+                                        </div>
+                                        <div class="hero__phone-options form__option" style="display: none;" value="UK">
 
-                                        <input class="hero__phone-input form__input" type="number" name="send" id="send"
-                                            value="100.00">
-                                        <select class="hero__phone-dropdown form__dropdown" name="dropdown"
-                                            id="dropdown">
-                                            <option class="hero__phone-options form__option" value="USA"><img src=""
-                                                    alt="country-logo"> USD
-                                            </option>
-                                            <option class="hero__phone-options form__option" value="NGA"><img src=""
-                                                    alt="country-logo"> NGA
-                                            </option>
-                                            <option class="hero__phone-options form__option" value="UK"><img src=""
-                                                    alt="country-logo"> UK
-                                            </option>
-                                        </select>
+                                            <div class="hero__phone-image-container">
+                                                <img class="hero__phone-image" src="./images/hero/great-britain.svg"
+                                                    alt="country-logo">
+                                            </div>
+                                            <span class="hero__phone-text">
+                                                UK
+                                            </span>
+                                        </div>
+
+                                        <button type="menu" class="hero__phone__dropdown-btn">
+                                            <img
+                                                src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/null/external-arrow-arrows-those-icons-lineal-color-those-icons-1.png" />
+                                        </button>
                                     </div>
-                                </fieldset>
+                                </div>
+                            </fieldset>
 
-                                <fieldset class="hero__phone-fieldset">
-                                    <legend class="hero__phone-label-container">
-                                        <label class="hero__phone-label" for="get">They Get</label>
-                                    </legend>
+                            <fieldset class="hero__phone-fieldset">
+                                <legend class="hero__phone-label-container">
+                                    <label class="hero__phone-label" for="get">They Get</label>
+                                </legend>
+                                <div class="hero__phone-input-block">
+                                    <!-- <img src="./images/hero/nigeria.svg" alt="country-logo"> -->
                                     <input class="hero__phone-input" type="number" id="get" name="get" required>
-                                </fieldset>
-                            </div>
+                                </div>
+                            </fieldset>
+                        </div>
 
-                            <div class="hero__phone-down">
-                                <button class="hero__button"><a class="hero__button-link" href="#">Get
-                                        Started</a></button>
-                            </div>
-                        </form>
-                    </div>
+                        <div class="hero__phone-down">
+                            <button class="hero__button"><a class="hero__button-link" href="#">Get
+                                    Started</a></button>
+                        </div>
+                    </form>
                     <!-- THERE IS A BACKGROUND IMAGE HERE. -->
                 </section>
 
@@ -181,7 +214,7 @@
             </section>
 
             <!-- THE CONNECTING SECTION -->
-            <section class="features">
+            <section class="features" id="features">
                 <div class="features__detail-block">
                     <h2 class="features__header">Easily connect with clients or customers</h2>
                     <p class="features__text">Our virtual transaction mechanism offers a range of benefits for
@@ -193,127 +226,152 @@
                         <h4 class="features__card__text">Support for multiple <span class="highlight">currencies and
                                 transfer</span> methods around
                             the Globe</h4>
-                        <img src="./images/features/features-image1.png" alt="Image for card1"
-                            class="features__card__image">
+                        <div class="feature__card__image-block">
+                            <img src="./images/features/features-image1.png" alt="Image for card1"
+                                class="features__card__image">
+                        </div>
                     </div>
 
                     <div class="features__card">
                         <h4 class="features__card__text">Latest <span class="highlight">encryption and security</span>
                             protocols for secure and
                             reliable fund transfer process</h4>
-                        <img src="./images/features/features-image2.png" alt="Image for card2"
-                            class="features__card__image">
+                        <div class="feature__card__image-block">
+                            <img src="./images/features/features-image2.png" alt="Image for card2"
+                                class="features__card__image">
+                        </div>
                     </div>
 
                     <div class="features__card">
                         <h4 class="features__card__text"><span class="highlight">Low fees and competitive</span>
                             exchange rates: affordable and
                             accessible to everyone.</h4>
-                        <img src="./images/features/features-image3.png" alt="Image for card3"
-                            class="features__card__image">
+                        <div class="feature__card__image-block">
+                            <img src="./images/features/features-image3.png" alt="Image for card3"
+                                class="features__card__image">
+                        </div>
                     </div>
                 </section>
             </section>
 
             <!-- THE NOTIFICATION SECTION -->
             <section class="notification">
-                <div class="notification__right">
-                    <h2 class="notification__header">What are you waiting for, get notified when we go live</h2>
-
-                    <p class="notification__text">With our virtual transaction mechanism, you can receive payments in
-                        your local currency, eliminating the need for costly currency conversions and enabling you to
-                        manage your finances more efficiently.</p>
-
-                    <ul class="notification__features">
-                        <li class="notification__feature"><img src="./images/notify/Icon.png" alt="Tick Image">No
-                            hidden fees or conversion
-                            costs</li>
-                        <li class="notification__feature"><img src="./images/notify/Icon.png" alt="Tick Image">24/7
-                            customer support</li>
-                        <li class="notification__feature"><img src="./images/notify/Icon.png" alt="Tick Image">Seamless
-                            Intergration with
-                            other apps</li>
-                    </ul>
-
-                    <form data-value class="notification__form form" action="#">
-                        <fieldset data-value class="notification__fieldset form__fieldset">
-                            <legend class="notification__label-container"><label class="notification__label form__label"
-                                    for="email">Email</label></legend>
-                            <input data-value class="notification__input form__input" type="email" id="email"
-                                name="email" placeholder="Enter email address" required>
-                            <button data-value class="notification__button form__button"><a
-                                    class="notification__link form__link`" href="#">Get
-                                    Notified</a></button>
-                        </fieldset>
-                    </form>
-                </div>
-
                 <div class="notification__left">
-                    <!-- Where the dark Iphone XR would be -->
-                    <img class="notification__left-image" src="./images/notify/Iphone-Pic.png"
-                        alt="The Black IPhone XR">
+
+                    <section class="notification__header">
+
+                        <h2 class="notification__header-text">What are you waiting for, get notified when we go live
+                        </h2>
+                    </section>
+
+                    <section class="notification__body">
+
+                        <p class="notification__text">With our virtual transaction mechanism, you can receive payments
+                            in
+                            your local currency, eliminating the need for costly currency conversions and enabling you
+                            to
+                            manage your finances more efficiently.</p>
+
+                        <ul class="notification__features">
+                            <li class="notification__feature"><img src="./images/notify/Icon.png" alt="Tick Image">No
+                                hidden fees or conversion
+                                costs</li>
+                            <li class="notification__feature"><img src="./images/notify/Icon.png"
+                                    alt="Tick Image"><b>24/7
+                                    customer support</b></li>
+                            <li class="notification__feature"><img src="./images/notify/Icon.png"
+                                    alt="Tick Image">Seamless
+                                Intergration with
+                                other apps</li>
+                        </ul>
+                    </section>
+
+                    <section class="notification__footer">
+
+                        <form data-form action="#" class="form">
+                            <div data-field class="form__fieldset">
+                                <label class="form__fieldset__label" for="email">Email</label>
+                                <input data-email-input class="form__fieldset__email-input" type="email" id="email"
+                                    name="email" placeholder="Enter email address" required>
+                                <button data-email-button class="form__fieldset__button">Get Notified</button>
+                            </div>
+                        </form>
+                    </section>
                 </div>
+
+                <!-- <div class="notification__right"> -->
+                <!-- Where the dark Iphone XR would be -->
+                <img class="notification__left-image" src="./images/notify/Iphone-Pic.png" alt="The Black IPhone XR">
+                <!-- </div> -->
             </section>
 
             <!-- The FAQ Section -->
             <section class="Faq">
                 <h3 class="Faq__header">Frequently asked questions</h3>
-                <p class="Faq__text">Everythng you need to know about the product and billing.</p>
+                <p class="Faq__text">Everything you need to know about the product and billing.</p>
 
                 <!-- THE ACCORDION -->
                 <section class="Faq__accordion-container">
                     <ul class="Faq__accordion">
                         <li class="Faq__accordion-item">
-                            <div class="Faq__item-header">
-                                <p class="Faq__item-text"></p>
+                            <div class="Faq__question">
+                                <p class="Faq__question-text">Is there a free trial?</p>
+                                <p class="Faq__answer hidden">Yes, you can try us for free for 30
+                                    days. If you want, we’ll provide you with a free, personalized 30-minute onboarding
+                                    call to get you up and running as soon as possible.</p>
+                            </div>
+                            <section class="Faq__button-group" data-faq-open>
+
                                 <button class="Faq__button">
                                     <img src="./images/Faq/plus-icon.png" alt="The Plus Button"
                                         class="Faq__image Faq__image--plus">
                                 </button>
 
-                                <button class="Faq__button">
+                                <button class="Faq__button hidden" data-faq-close>
                                     <img src="./images/Faq/minus-icon.png" alt="The Plus Button"
                                         class="Faq__image Faq__image--minus">
                                 </button>
-                                <p class="Faq__item-content Faq__content--open">Yes, you can try us for free for 30
-                                    days. If you want, we’ll provide you with a free, personalized 30-minute onboarding
-                                    call to get you up and running as soon as possible.</p>
-                            </div>
+                            </section>
                         </li>
                         <li class="Faq__accordion-item">
-                            <div class="Faq__item-header">
-                                <p class="Faq__item-text"></p>
+                            <div class="Faq__question">
+                                <p class="Faq__question-text">Can I change my plan?</p>
+                                <p class="Faq__answe hidden">Yes, you can try us for free for 30
+                                    days. If you want, we’ll provide you with a free, personalized 30-minute onboarding
+                                    call to get you up and running as soon as possible.</p>
+                            </div>
+                            <section class="Faq__button-group" data-faq-open>
+
                                 <button class="Faq__button">
                                     <img src="./images/Faq/plus-icon.png" alt="The Plus Button"
                                         class="Faq__image Faq__image--plus">
                                 </button>
 
-                                <button class="Faq__button">
+                                <button class="Faq__button hidden" data-faq-close>
                                     <img src="./images/Faq/minus-icon.png" alt="The Plus Button"
                                         class="Faq__image Faq__image--minus">
                                 </button>
-                                <p class="Faq__item-content Faq__content--open">Yes, you can try us for free for 30
-                                    days. If you want, we’ll provide you with a free, personalized 30-minute onboarding
-                                    call to get you up and running as soon as possible.</p>
-                            </div>
+                            </section>
                         </li>
                         <li class="Faq__accordion-item">
-                            <div class="Faq__item-header">
-                                <p class="Faq__item-text"></p>
+                            <div class="Faq__question">
+                                <p class="Faq__question-text">What is your cancellation policy?</p>
+                                <p class="Faq__answer hidden">Yes, you can try us for free for 30
+                                    days. If you want, we’ll provide you with a free, personalized 30-minute onboarding
+                                    call to get you up and running as soon as possible.</p>
+                            </div>
+                            <section class="Faq__button-group" data-faq-open>
+
                                 <button class="Faq__button">
                                     <img src="./images/Faq/plus-icon.png" alt="The Plus Button"
                                         class="Faq__image Faq__image--plus">
                                 </button>
 
-                                <button class="Faq__button">
+                                <button class="Faq__button hidden" data-faq-close>
                                     <img src="./images/Faq/minus-icon.png" alt="The Plus Button"
                                         class="Faq__image Faq__image--minus">
                                 </button>
-                                <p class="Faq__item-content Faq__content--open">Yes, you can try us for free for 30
-                                    days. If you want, we’ll provide you with a free, personalized 30-minute onboarding
-                                    call to get you up and running as soon as possible.</p>
-                            </div>
-
+                            </section>
                         </li>
                     </ul>
                 </section>
@@ -324,22 +382,28 @@
             <section class="footer__container">
 
                 <section class="footer__top">
-                    <h3 class="footer__top-text">Learn how to grow 💪your business with Liquidmoni</h3>
+                    <h3 class="footer__top-text">Learn how to grow 💪your business with <span
+                            class="footer__highlight">Liquidmoni</span></h3>
 
-                    <button class="footer__button"><a href="#" class="footer__link">Download For Free</a></button>
+                    <a href="./pages/sign-up.html" class="footer__button">Download For
+                        Free</a>
                 </section>
+
+                <hr class="footer__hr">
 
                 <section class="footer__bottom">
 
                     <section class="footer__bottom-left">
-                        <h4 class="footer__bottom-header">About Liquidmoni</h4>
-                        <p class="footer__bottom-text">At Liquidmoni, we believe that online transactions should be
+                        <h4 class="footer__bottom-left__header">About Liquidmoni</h4>
+                        <small class="footer__bottom-left__text">At Liquidmoni, we believe that online transactions
+                            should be
                             seamless
                             and secure. That's why we offer innovative solutions for those looking to enter the digital
                             world of e-commerce. Our cutting-edge technology provides virtual transaction capabilities
                             that
-                            are safe and efficient, giving your customers the best online shopping experience possible.
-                        </p>
+                            are safe and efficient, giving your customers the bibest online shopping experience
+                            possible.
+                        </small>
 
                         <div class="footer__social-icons">
                             <a href="#" class="footer__link"><img src="./images/footer/twitter.png" alt="Twiiter"
@@ -354,38 +418,41 @@
                     </section>
 
                     <section class="footer__bottom-right">
-                        <div class="footer__category">
-                            <p class="footer__category-title"><b>Company</b></p>
+                        <div class="footer__other-links">
+                            <div class="footer__category">
+                                <p class="footer__category-title"><b>Company</b></p>
 
-                            <ul class="footer__list">
-                                <li class="footer__list-item">About</li>
-                                <li class="footer__list-item">Features</li>
-                                <li class="footer__list-item">Works</li>
-                                <li class="footer__list-item">Career</li>
-                            </ul>
-                        </div>
+                                <ul class="footer__list">
+                                    <li class="footer__list-item"><a href="./pages/about.html"> About</a></li>
+                                    <li class="footer__list-item"><a href="#features"> Features</a></li>
+                                    <li class="footer__list-item"><a href="#"> Works</a></li>
+                                    <li class="footer__list-item"><a href="#"> Career</a></li>
+                                </ul>
+                            </div>
 
-                        <div class="footer__category">
-                            <p class="footer__category-title"><b>Help</b></p>
 
-                            <ul class="footer__list">
-                                <li class="footer__list-item">Customer Support</li>
-                                <li class="footer__list-item">Delivery Details</li>
-                                <li class="footer__list-item">Terms and Conditions</li>
-                                <li class="footer__list-item">Privacy Policy</li>
-                            </ul>
-                        </div>
+                            <div class="footer__category">
+                                <p class="footer__category-title"><b>Help</b></p>
 
-                        <div class="footer__category">
-                            <p class="footer__category-title"><b>Resources</b></p>
+                                <ul class="footer__list">
+                                    <li class="footer__list-item"><a href="#"> Customer Support</a></li>
+                                    <li class="footer__list-item"><a href="#"> Delivery Details</a></li>
+                                    <li class="footer__list-item"><a href="#"> Terms and Conditions</a></li>
+                                    <li class="footer__list-item"><a href="#"> Privacy Policy</a></li>
+                                </ul>
+                            </div>
 
-                            <ul class="footer__list">
-                                <li class="footer__list-item">Free eBooks</li>
-                                <li class="footer__list-item">Development Tutorial</li>
-                                <li class="footer__list-item">How to- Blog</li>
-                                <li class="footer__list-item">Youtube Playlist</li>
-                            </ul>
+                            <div class="footer__category">
+                                <p class="footer__category-title"><b>Resources</b></p>
 
+                                <ul class="footer__list">
+                                    <li class="footer__list-item"><a href="#"> Free eBooks</a></li>
+                                    <li class="footer__list-item"><a href="#"> Development Tutorial</a></li>
+                                    <li class="footer__list-item"><a href="#"> How to- Blog</a></li>
+                                    <li class="footer__list-item"><a href="#"> Youtube Playlist</a></li>
+                                </ul>
+
+                            </div>
                         </div>
                     </section>
 
@@ -398,6 +465,6 @@
 
 <!-- The JavaScript for the Logic of the WebSite -->
 <script src="./Js/App.js"></script>
-<script src="./Js/Faq.js"></script>
+<script src="./Js/faq.js"></script>
 
 </html>

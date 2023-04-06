@@ -1,1 +1,57 @@
 // THE FAQ SECTION STYLES
+@use '../abstracts/mixins';
+
+.hidden {
+    display: none;
+}
+
+.Faq {
+    padding: calc(var(--extra-large-400) * 2.5);
+    @include mixins.flexDisplay($align-items: center, $flex-direction: column);
+
+    &__header {
+        color: var(--Faq-header-color);
+        font-size: var(--large-200);
+        margin-bottom: 1rem;
+    }
+
+    &__text {
+        color: var(--Faq-text-color);
+        @include mixins.fonts($size: --small-400, $weight: 600);
+    }
+
+    &__accordion {
+        min-width: 100%;
+
+        &-item {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        &-item:not(&-item:nth-of-type(3)) {
+            border-bottom: 1px solid var(--Faq-border-color);
+        }
+    }
+
+    &__question {
+        @include mixins.flexDisplay($flex-direction: column, $align-items:flex-start, $justify-content: space-between);
+
+        &-text {
+            color: var(--Faq-header-color);
+            font-weight: 600;
+        }
+    }
+
+    &__answer {
+        color: var(--Faq-text-color);
+        line-height: 1.5;
+        max-width: 77ch;
+        // display: none;
+    }
+
+    // The Utility class for opening the Faq section.
+    // .Faq__content--open
+}

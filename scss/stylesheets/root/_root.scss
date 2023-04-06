@@ -1,11 +1,5 @@
 @use '../abstracts/colors';
 @use '../abstracts/type'as *;
-@use '../base/variables';
-
-html {
-    font-size: variables.$global-font-size;
-    font-family: variables.$font-stack-1;
-}
 
 :root {
 

@@ -12,27 +12,29 @@
 </head>
 
 <body>
-    <div class="about-us-wrapper">
+    <div class="about__wrapper">
         <header class="header">
             <nav class="nav">
-                <img class="nav__logo" src="../images/header/Liquid-moni.png" alt="the logo">
+                <a href="../index.html" class="nav__image-link">
+                    <img class="nav__logo" src="../images/header/Liquid-moni.png" alt="the logo">
+                </a>
 
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="../index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="./sign-up.html" class="nav__link">Send Money</a></li>
                     <li class="nav__item"><a href="./about.html" class="nav__link">About</a></li>
                     <li class="nav__item"><a href="./contact.html" class="nav__link">Contact</a>
                     </li>
                     <li class="nav__item"><a href="./faq.html" class="nav__link">FAQ</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Support</a></li>
+                    <li class="nav__item"><button class="nav__link">Support</button></li>
                 </ul>
 
                 <div class="nav__button-group">
-                    <button class="nav__button">
-                        <a href="./sign-up.html" class="nav__button-link">Send</a>
-                    </button>
-                    <button class="nav__button">
-                        <a href="" class="nav__button-link">Login/Sign Up</a>
-                    </button>
+                    <!-- <button class="nav__button"> -->
+                    <a href="" class="nav__button">Download Soon</a>
+                    <!-- </button> -->
+                    <!-- <button class="nav__button">
+                        <a href="./pages/sign-up.html" class="nav__button-link">Login/Sign Up</a>
+                    </button> -->
                     <!-- <button class="nav__button">
                         <a href="" class="nav__button-link">Download Soon</a>
                     </button> -->
@@ -40,30 +42,53 @@
                 <!-- <a class="log-in" href="#">Login</a>
                 <a class="sign-up" href="#">Sign Up</a> -->
             </nav>
+
+            <section class="about__hero">
+                <h1 class="about__hero__header">
+                    About Us
+                </h1>
+            </section>
         </header>
 
         <!-- Let the Layout persist from the home page to here. -->
         <main class="about">
-            <section class="about__mission">
-                <h2 class="about__mission-header">"Our Mission"</h2>
-                <p class="about__mission-statement">
-                    To remain the effectice option to currency exchange available, helping customers to cushion the art
-                    of money transportation across the globe, reliable and dependable payment system serving the
-                    customer at their convenience around the world achiecing the utmost customer satisfaction.
-                </p>
+            <section class="about__container">
+                <section class="about__container-header">
+                    <h2 class="about__container-header-text">"Our Mission"</h2>
+                    <p class="about__container-statement">
+                        To remain the effectice option to currency exchange available, helping customers to cushion the
+                        art
+                        of money transportation across the globe, reliable and dependable payment system serving the
+                        customer at their convenience around the world achiecing the utmost customer satisfaction.
+                    </p>
+                </section>
+
+                <section class="about__container-footer">
+                    <img src="../images/about-us/image1.png" alt="we are the best">
+                </section>
             </section>
 
             <!-- Make the mission and overview class unified -->
-            <section class="about__overview">
-                <h2 class="about__overview-header">Overview</h2>
-                <p class="about__overview-statement">
-                    Liquidmoni, We are an international payment gateway bridging gaps of international transaction
-                    between senders and receiveres withing remitting approval location. Our aim is to ensure fast,
-                    reliable and dependable currency conversion and transfer from liquid wallet to local bank account in
-                    local currency. Our financial, compliance and support team are a guarantee of dedication to ensure
-                    smooth service delivery and customer satisfaction. We have pride in a team of best in compliance,
-                    developers, finance, operation, suppport and marketing.
-                </p>
+            <section class="about__container">
+                <section class="about__container-footer">
+                    <img src="../images/about-us/image2.png" alt="know more about us">
+                </section>
+                <section class="about__container-header">
+                    <h2 class="about__container-header__text">
+                        Overview
+                    </h2>
+                    <p class="about__container-statement">
+                        Liquidmoni, We are an international payment gateway bridging gaps of international transaction
+                        between senders and receiveres withing remitting approval location. Our aim is to ensure fast,
+                        reliable and dependable currency conversion and transfer from liquid wallet to local bank
+                        account in
+                        local currency. Our financial, compliance and support team are a guarantee of dedication to
+                        ensure
+                        smooth service delivery and customer satisfaction. We have pride in a team of best in
+                        compliance,
+                        developers, finance, operation, suppport and marketing.
+                    </p>
+                </section>
             </section>
         </main>
     </div>
