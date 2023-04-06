@@ -1,4 +1,5 @@
 @use '../abstracts/mixins';
+@use '../abstracts/breakpoints'as *;
 
 // THE FOOTER SECTION STYLES
 .footer {
@@ -18,6 +19,11 @@
 
     &__top {
         @include mixins.flexDisplay($justify-content: space-between);
+        @include media("<=phone"and "<=tablet") {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.2rem;
+        }
 
         &-text {
             font-size: var(--large-100);
@@ -30,6 +36,10 @@
 .footer__bottom {
     @include mixins.flexDisplay($justify-content: space-between);
     @include mixins.generalSpacing($gap: 5rem);
+
+    @include media("<=phone"and "<=tablet") {
+        flex-direction: column;
+    }
 
     &-left {
         &__header {

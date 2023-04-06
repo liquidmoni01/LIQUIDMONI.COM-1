@@ -1,5 +1,6 @@
 // THE BENEFITS SECTION STYLES
 @use '../abstracts/mixins';
+@use '../abstracts/breakpoints'as *;
 @use 'sass:math';
 
 .benefits {
@@ -35,6 +36,10 @@
     @include mixins.flexDisplay($align-items: center);
     @include mixins.generalSpacing($gap: 1rem);
     font-weight: 600;
+
+    @include media ("<=phone"and "<=900px") {
+        flex-direction: column;
+    }
 }
 
 // specific image for this section.

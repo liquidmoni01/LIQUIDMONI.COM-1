@@ -13,22 +13,29 @@
     @include mixins.widthAndHeight($width: 100%, $height: 100%);
     object-fit: cover;
     aspect-ratio: 3/4;
+
+    @include media ("<=phone"and "<=900px") {
+        left: 0;
+    }
 }
 
 // Notification Iphone
 .notification__left-image {
     position: relative;
-    left: 8rem;
 
-    @include media("<=phone" and "<=tablet") {
-        left: 0;
-    };
+    @include media("<=phone"and "<=tablet") {
+        // left: 0;
+        object-fit: scale-down;
+        // overflow: hidden;
+    }
+
+    ;
 }
 
 // THE ABOUT PAGE BACKGROUND
 .about-us {
     &__hero__header {
-        @include mixins.backgroundImage('about-us','about-bg.png');
+        @include mixins.backgroundImage('about-us', 'about-bg.png');
         // background-image: url('./about-bg.png');
     }
 }

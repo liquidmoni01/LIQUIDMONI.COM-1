@@ -14,10 +14,18 @@
         gap: 2rem;
         // align-items: flex-start;
 
+        @include media ("<=phone"and "<=tablet") {
+            align-items: center;
+        }
+
         .hero__header-text {
             font-size: var(--extra-large-500);
             font-weight: 600;
             color: var(--Hero-header-text-color);
+
+            @include media ("<=phone"and "<=tablet") {
+                font-size: var(--extra-large-100);
+            }
         }
 
         .hero__content-text {
@@ -33,6 +41,10 @@
             .hero__text {
                 display: flex;
                 align-items: center;
+            }
+
+            @include media ("<=phone"and "<=tablet") {
+                flex-direction: column;
             }
         }
 
@@ -72,6 +84,11 @@
             max-height: 300px;
             color: white;
             width: 60%;
+
+            // responsiveness
+            @include media ("<=phone"and "<=1140px") {
+                left: 6rem;
+            }
 
             .hero__phone-up,
             .hero__phone-down {
