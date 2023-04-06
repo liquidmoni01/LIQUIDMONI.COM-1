@@ -24,8 +24,12 @@
             color: var(--Hero-header-text-color);
 
             @include media ("<=phone"and "<=tablet") {
+<<<<<<< HEAD
                 font-size: var(--medium-200);
                 max-width: 30ch;
+=======
+                font-size: var(--extra-large-100);
+>>>>>>> d23d6f183c3fa03b46dada2b21f195be8729f2c4
             }
         }
 
@@ -89,7 +93,10 @@
             // responsiveness
             @include media ("<=phone"and "<=1140px") {
                 left: 6rem;
+<<<<<<< HEAD
                 display: none;
+=======
+>>>>>>> d23d6f183c3fa03b46dada2b21f195be8729f2c4
             }
 
             .hero__phone-up,

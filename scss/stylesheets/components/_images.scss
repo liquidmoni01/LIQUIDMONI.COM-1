@@ -16,7 +16,10 @@
 
     @include media ("<=phone"and "<=900px") {
         left: 0;
+<<<<<<< HEAD
         display: none;
+=======
+>>>>>>> d23d6f183c3fa03b46dada2b21f195be8729f2c4
     }
 }
 
@@ -26,8 +29,11 @@
 
     @include media("<=phone"and "<=tablet") {
         // left: 0;
+<<<<<<< HEAD
         width: 100%;
         max-width: 100%;
+=======
+>>>>>>> d23d6f183c3fa03b46dada2b21f195be8729f2c4
         object-fit: scale-down;
         // overflow: hidden;
     }
@@ -39,6 +45,7 @@
 .about-us {
     &__hero__header {
         @include mixins.backgroundImage('about-us', 'about-bg.png');
+<<<<<<< HEAD
         background-image: url('../images/about-us/about-bg.png');
     }
 }
@@ -54,5 +61,8 @@
     @include media("<=phone"and "<=tablet") {
         object-fit: scale-down;
         width: 100%;
+=======
+        // background-image: url('./about-bg.png');
+>>>>>>> d23d6f183c3fa03b46dada2b21f195be8729f2c4
     }
 }

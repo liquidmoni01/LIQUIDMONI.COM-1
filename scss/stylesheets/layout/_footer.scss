@@ -19,6 +19,11 @@
 
     &__top {
         @include mixins.flexDisplay($justify-content: space-between);
+        @include media("<=phone"and "<=tablet") {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.2rem;
+        }
 
         @include media("<=tablet") {
             flex-direction: column;

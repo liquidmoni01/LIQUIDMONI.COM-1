@@ -1,8 +1,11 @@
 // THE FEATURE SECTION
 @use '../abstracts/'as mixins;
 @use '../abstracts/breakpoints'as *;
+<<<<<<< HEAD
 
 $border-radius: 30px;
+=======
+>>>>>>> d23d6f183c3fa03b46dada2b21f195be8729f2c4
 
 @mixin getDimension($width: none, $height: none) {
     aspect-ratio: calc($width / $height);
@@ -63,11 +66,17 @@ $border-radius: 30px;
 .features__card:nth-child(1) {
     flex-shrink: 1;
 }
+<<<<<<< HEAD
 
 .features__card:nth-child(2) {
     flex-shrink: 1;
 }
 
+=======
+.features__card:nth-child(2) {
+    flex-shrink: 1;
+}
+>>>>>>> d23d6f183c3fa03b46dada2b21f195be8729f2c4
 .features__card:nth-child(3) {
     flex-shrink: 1;
 }

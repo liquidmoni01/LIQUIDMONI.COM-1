@@ -31,6 +31,20 @@
     color: var(--Benefits-yellow-text-color);
 }
 
+<<<<<<< HEAD
+=======
+.benefits__each,
+.benefits__each-text {
+    @include mixins.flexDisplay($align-items: center);
+    @include mixins.generalSpacing($gap: 1rem);
+    font-weight: 600;
+
+    @include media ("<=phone"and "<=900px") {
+        flex-direction: column;
+    }
+}
+
+>>>>>>> d23d6f183c3fa03b46dada2b21f195be8729f2c4
 // specific image for this section.
 .map-image {
     @include mixins.imageSize(100%, 100%, cover);
