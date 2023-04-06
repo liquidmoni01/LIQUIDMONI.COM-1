@@ -1,5 +1,6 @@
 // THE BENEFITS SECTION STYLES
 @use '../abstracts/mixins';
+@use '../abstracts/breakpoints'as *;
 @use 'sass:math';
 
 .benefits {
@@ -28,13 +29,6 @@
 
 .benefits__highlight {
     color: var(--Benefits-yellow-text-color);
-}
-
-.benefits__each,
-.benefits__each-text {
-    @include mixins.flexDisplay($align-items: center);
-    @include mixins.generalSpacing($gap: 1rem);
-    font-weight: 600;
 }
 
 // specific image for this section.

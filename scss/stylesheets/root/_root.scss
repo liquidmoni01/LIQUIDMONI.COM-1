@@ -3,6 +3,7 @@
 
 :root {
 
+    // The Homepage colors
     @each $colorGroup,
     $colorMap in colors.$colors {
 
@@ -23,4 +24,13 @@
     }
 
     // MEDIA QUERIES
+    // page colors.
+    @each $pageClrGroup,
+    $clrGroup in colors.$pageColors {
+
+        @each $maps,
+        $mapValue in $clrGroup {
+            --#{$pageClrGroup}-#{$maps}: #{$mapValue};
+        }
+    }
 }

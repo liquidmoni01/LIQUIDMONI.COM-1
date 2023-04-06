@@ -1,2 +1,44 @@
 // FOR THE ABOUT.
+@use '../abstracts/mixins';
+@use '../abstracts/breakpoints'as *;
 
+// THE GRID
+.about__container {
+    @include mixins.grid($cols: 2);
+    align-items: center;
+
+    @include media("<=phone"and "<=tablet") {
+        @include mixins.grid($cols: 1);
+    }
+
+    &-statement:nth-of-type(2) {
+        order: 2;
+    }
+}
+
+// the second about container
+.about__container:nth-of-type(2) {}
+
+// A FLEX LAYOUT - FOR THE BENEFITS PAGE
+.benefits__each,
+.benefits__each-text {
+    @include mixins.flexDisplay($align-items: center);
+    @include mixins.generalSpacing($gap: 1rem);
+    font-weight: 600;
+
+    @include media ("<=phone"and "<=900px") {
+        flex-direction: column;
+    }
+}
+
+// A FLEX LAYOUT - FOR THE CONTACTS PAGE.
+.contact {
+    &__header {
+        background-color: var(--Contact-icon-group-bg-color);
+
+        &-links {
+            @include mixins.generalSpacing($padding: 4rem 0);
+            @include mixins.flexDisplay($align-items:center, $justify-content: space-evenly);
+        }
+    }
+}

@@ -1,1 +1,9 @@
 // STYLES CONCERNED WITH THE HOME PAGE.
+@use '../abstracts/mixins';
+
+.contact {
+    &__head-text {
+        color: var(--Contact-header-text-color);
+        font-size: var(--extra-large-200);
+    }
+}

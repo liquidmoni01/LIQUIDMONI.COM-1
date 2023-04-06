@@ -60,6 +60,16 @@
     color: var(--Footer-black-color);
 }
 
+// contact form button
+.contact {
+    &__button {
+        @include mixins.colorSchemeMix($background-clr: var(--Contact-input-button-color), $color: var(--General-color-white));
+        @include mixins.generalSpacing($padding: 1.2rem, $margin: 1.2rem 0);
+        width: 100%;
+        border-radius: 5px;
+    }
+}
+
 //Button-padding: 12px, 18px, 12px, 18px
 
 // .header__button-group {

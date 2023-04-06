@@ -5,16 +5,37 @@
     @include mixins.flexDisplay($align-items: center, $justify-content: space-between);
     @include mixins.generalSpacing($margin: 0 0 2rem 0);
 
-
-    // The Nav-List
-
     .nav__list {
         @include mixins.generalSpacing($gap: 2rem);
         @include mixins.flexDisplay($align-items: center, $justify-content:space-between);
 
-        @include media("<=phone"and "<=740px") {
+        @include media("<=768px") {
             display: none;
             flex-direction: column;
+        }
+    }
+
+    // The Nav-Menu
+    .nav__toggle-box {
+        display: none;
+
+        .toggle {
+            position: relative;
+            visibility: hidden;
+        }
+
+        .toggle__icon {
+            display: block;
+        }
+
+        @include media("<=phone"and "<=tablet") {
+            display: block;
+        }
+    }
+
+    .toggle:checked .nav__list {
+        @include media("<=phone"and "<=tablet") {
+            display: flex;
         }
     }
 
@@ -37,3 +58,53 @@
         }
     }
 }
+
+// /* Add a black background color to the top navigation */
+// .topnav {
+//     background-color: #333;
+//     overflow: hidden;
+//   }
+
+//   /* Style the links inside the navigation bar */
+//   .topnav a {
+//     float: left;
+//     display: block;
+//     color: #f2f2f2;
+//     text-align: center;
+//     padding: 14px 16px;
+//     text-decoration: none;
+//     font-size: 17px;
+//   }
+
+//   /* Change the color of links on hover */
+//   .topnav a:hover {
+//     background-color: #ddd;
+//     color: black;
+//   }
+
+//   /* Add an active class to highlight the current page */
+//   .topnav a.active {
+//     background-color: #04AA6D;
+//     color: white;
+//   }
+
+//   /* Hide the link that should open and close the topnav on small screens */
+//   .topnav .icon {
+//     display: none;
+//   }
+// .nav__toggle::before,
+// .nav__toggle::after {
+//     position: absolute;
+//     content: "";
+//     height: 200px;
+//     width: 200px;
+//     background-color: var(--Header-color-black);
+// }
+
+// .nav__toggle::before {
+//     left: 0;
+// }
+
+// .nav__toggle::after {
+//     right: 0;
+// }

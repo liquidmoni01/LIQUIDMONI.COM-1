@@ -1,0 +1,19 @@
+// THE CARD ON THE CONTACTS PAGE.
+@use '../abstracts/mixins';
+
+.contact {
+    &__card {
+        @include mixins.flexDisplay($flex-direction: column);
+        gap: 2rem;
+    }
+
+    // the image block
+    &__img-block {
+        @include mixins.borderProps($border: 3px solid var(--Contact-icon-group-border-color), $borderRadVal: 50%);
+        @include mixins.generalSpacing($padding: 1.5rem);
+    }
+
+    &__detail {
+        font-weight: 600;
+    }
+}

@@ -1,17 +1,24 @@
 // STYLES CONCERNED WITH THE ABOUT PAGE.
 @use '../abstracts/mixins';
+@use '../abstracts/breakpoints'as *;
 
-.about {
-    padding: 4rem;
-
-    &__container {
-        @include mixins.grid($cols: 2);
-        align-items: center;
-    }
+// .about {
+//     padding: 4rem;
+// }
+.about__contents {
+    @include mixins.flexDisplay($flex-direction: column);
 }
 
-.about__container-header {
+.about__container {
+    @include mixins.generalSpacing($gap: 2rem, $padding: 4rem);
+
+    &-header {
+        @include mixins.flexDisplay($flex-direction: column, $align-items: flex-start, $justify-content: stretch);
+        @include mixins.generalSpacing($gap: 2rem);
+    }
+
     &-text {
+        color: var(--About-header-text-color);
         font-size: var(--extra-large-200);
         padding-inline-end: 12px;
         // text-decoration-line: underline;
@@ -20,13 +27,36 @@
         // text-decoration-skip: 2;
     }
 
-    &__header-text::after {
-        // background: linear-gradient(rgba(0, 0, 0, 0) 0% #000000 46.35% rgba(0, 0, 0, 0) 100%);
+    &-statement {
+        @include mixins.fonts($size: var(--small-300), $weight: 600);
+        color: var(--About-text-color);
+        line-height: 1;
+        // font-size: var(--small-500);
+        // margin-top: var(--medium-300);
+    }
+
+    // === For the grid position ===
+    &-footer img {
+        grid-column: 1/2;
     }
 }
 
-// === For the grid position ===
-.about__container-footer img {
-    grid-column: 1/2;
-    grid-column: setGridPosition(1, 2);
+// the second about container 
+.about__container:nth-of-type(2) {
+    @include mixins.generalSpacing($margin: 2rem 0 0 0, $padding: currentValue);
+    background-color: var(--About-bg-color);
+
+    .about__container-header {
+        align-items: flex-end;
+    }
+
+    .about__container-statement {
+        text-align: right;
+    }
 }
+
+
+
+// &-text::after {
+//     // background: linear-gradient(rgba(0, 0, 0, 0) 0% #000000 46.35% rgba(0, 0, 0, 0) 100%);
+// }
