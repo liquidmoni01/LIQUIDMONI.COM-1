@@ -1,11 +1,20 @@
 // THIS STYLESHEET IS CONCERNED WITH RESETTING ALL THE ELEMENTS TO THEIR DEFAULT STATE OF HOW WE WANT IT TO APPEAR ON THE WEBPAGE.
 // @use currentStyle;
+@use '../base/variables';
+@use '../abstracts/breakpoints'as *;
 
 // @forward loads Every Loaded @use File In Current File If We LoadIt
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+
+html {
+    font-size: variables.$global-font-size;
+    font-family: variables.$font-stack-1;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -48,8 +57,14 @@ button {
     cursor: pointer;
 }
 
+input,
 fieldset {
     border: 0;
+    background: none;
+}
+
+fieldset {
+    background: none !important;
 }
 
 input {

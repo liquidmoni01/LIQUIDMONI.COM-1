@@ -1,1 +1,13 @@
 // STYLES CONCERNED WITH THE HOME PAGE.
+@use '../abstracts/mixins';
+@forward '../abstracts/breakpoints';
+
+.header {
+    @include mixins.generalSpacing($padding: 1.2rem 4rem);
+}
+
+.features {
+    @include mixins.generalSpacing($padding: 8rem 4rem);
+}
+
+// For the Navigation and header margin, convert from rems to pixels.

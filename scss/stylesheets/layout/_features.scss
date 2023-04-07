@@ -1,34 +1,71 @@
 // THE FEATURE SECTION
 @use '../abstracts/'as mixins;
+@use '../abstracts/breakpoints'as *;
 
-.features {
-    margin-top: 2rem;
+$border-radius: 30px;
+
+@mixin getDimension($width: none, $height: none) {
+    aspect-ratio: calc($width / $height);
 }
 
-.features__detail-block {
-    text-align: center;
+.features {
+    &__detail-block {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+}
+
+.features__header {
+    @include mixins.fonts($size: var(--extra-large-200), $weight: 600);
     margin-bottom: 2rem;
+
+    +.features__text {
+        @include mixins.fonts($size: var(--small-400), $weight: 400);
+        max-width: inherit;
+    }
 }
 
 .features__card-container {
-    @include mixins.flexDisplay($justify-content: space-between);
-    gap: 2rem;
+    @include mixins.flexDisplay($justify-content: space-between, $align-items: center);
+    gap: 4rem;
+
+    @include media ("<=phone"and "<=900px") {
+        flex-direction: column;
+        // flex-wrap: wrap;
+        justify-content: center;
+    }
 
     .features__card {
-        background-color: grey;
+        background-color: var(--Features-card-background);
         overflow: hidden;
-        @include mixins.generalSpacing($padding: 1rem);
+        @include mixins.generalSpacing($padding: 2.5rem 1.2rem);
         @include mixins.flexDisplay($flex-direction: column, $align-items: none);
-        border-radius: 30px;
+        border-radius: $border-radius;
+        overflow: hidden;
+
+        @include media ("<=phone"and "<=900px") {
+            max-width: 45ch;
+        }
 
         &__text {
             font-size: 1.5rem;
         }
 
-        &__image {
-            border-radius: 30px;
-            align-self: center;
-            object-fit: cover;
+        &__image-block {
+            border-radius: $border-radius;
+            height: 100%;
+            // flex: ;
         }
     }
+}
+
+// FOR THE SAKE OF RESPONSIVENESS
+.features__card:nth-child(1) {
+    flex-shrink: 1;
+}
+.features__card:nth-child(2) {
+    flex-shrink: 1;
+}
+.features__card:nth-child(3) {
+    flex-shrink: 1;
 }

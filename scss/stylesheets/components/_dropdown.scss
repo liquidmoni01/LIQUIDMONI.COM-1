@@ -1,0 +1,26 @@
+// THE DROPDOWN ON THE HERO SECTION'S PHONE FORM
+@use '../abstracts/mixins';
+
+.hero__phone-dropdown {
+    @include mixins.colorSchemeMix($background-clr: var(--Hero-input-bg-color));
+    @include mixins.generalSpacing($gap: 2rem, $padding: 0.9rem 1.2rem);
+    display: flex;
+    padding: 0.4rem;
+    min-width: auto;
+    border-radius: 10px;
+
+    .hero__phone-options {
+        @include mixins.flexDisplay();
+        gap: .4rem;
+
+        .hero__phone-text {
+            color: var(--General-color-black);
+        }
+
+        .hero__phone-image-container {
+            width: 30px;
+            border-radius: 100px;
+            object-fit: cover;
+        }
+    }
+}

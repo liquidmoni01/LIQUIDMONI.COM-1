@@ -1,7 +1,23 @@
+@forward './functions';
+
 // Mixins
 @mixin fonts($size: 1rem, $weight: 500) {
     font-size: $size;
     font-weight: $weight;
+}
+
+@mixin grid($cols: 1, $rows: initial) {
+    display: grid;
+    grid-template-columns: repeat($cols, 1fr);
+}
+
+@mixin gridSpan() {
+    grid-column: setGridPosition();
+}
+
+// Convert to pixels
+@mixin textMaxWidth($max-width) {
+    max-width: getCh($max-width);
 }
 
 @mixin changeDisplay($display: block, $space: 0) {
@@ -66,10 +82,10 @@
     border-radius: $border-radius;
 }
 
-@mixin backgroundImage($url) {
-    background-image: url("../images/svg-images/#{$url}.svg");
-    background-size: cover;
-    background-position: top;
+@mixin backgroundImage($dir, $url) {
+    background-image: url("../images/#{dir}/#{$url}.svg");
+    background-size: contain;
+    // background-position: $position;
     background-repeat: no-repeat;
 }
 
@@ -78,3 +94,12 @@
     height: $height;
     object-fit: $objectFit;
 }
+
+@mixin paddingMarginInline($value1, $value2) {
+    padding-inline: $value1;
+    margin-inline: $value2;
+}
+
+// @mixin selector($font) {
+    //     @include media ("<=phone"and "<=tablet") {}
+    // }

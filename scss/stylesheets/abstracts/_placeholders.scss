@@ -1,37 +1,40 @@
 @use './mixins';
 
 // EXTEND THIS PLACEHOLDER TO THE HERO AND NOTIFY SECTIONS.
-%notify__form-styles {
-    @include mixins.flexDisplay();
-    @include mixins.generalSpacing($padding: .4rem);
-    @include mixins.borderProps($borderRadVal: 15px, $border: 1px solid var(--Form-border-color));
-    background-color: var(--Form-bg-color);
+.form {
+    &__fieldset {
+        @include mixins.flexDisplay();
+        @include mixins.generalSpacing($padding: .5rem);
+        @include mixins.borderProps($borderRadVal: 15px, $border: 1px solid var(--Form-border-color));
+        background-color: var(--Form-bg-color);
+        margin-bottom: var(--large-300);
 
-    label {
-        @include mixins.changeDisplay($display: none);
-    }
+        &__label {
+            @include mixins.changeDisplay($display: none);
+        }
 
-    input {
-        @include mixins.borderProps($border: 0);
-        @include mixins.fonts($size: 1rem);
-        @include mixins.generalSpacing($padding: .3rem);
-    }
+        &__email-input {
+            background: none;
+            @include mixins.borderProps($border: 0);
+            @include mixins.fonts($size: 1.5rem);
+            @include mixins.generalSpacing($padding: .5rem);
+        }
 
-    input::placeholder {
-        color: var(--General-color-black);
-    }
+        &__email-input::placeholder {
+            color: var(--General-color-black);
+        }
 
-    button {
-        @include mixins.generalSpacing($padding: 1rem 1.6rem);
-        @include mixins.fonts($size: .9rem, $weight: 600);
-        @include mixins.borderProps($borderRadVal: 10px);
-        background-color: var(--General-color-black);
-
-        a {
+        &__button {
+            @include mixins.generalSpacing($padding: 1rem 1.4rem);
+            @include mixins.fonts($size: inherit, $weight: 600);
+            @include mixins.borderProps($borderRadVal: 10px);
+            background-color: var(--General-color-black);
             color: var(--General-color-white);
         }
     }
 }
+
+// }
 
 // :root {
 //     --main: #{clr(normal)};

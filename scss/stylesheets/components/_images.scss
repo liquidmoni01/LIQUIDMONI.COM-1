@@ -1,20 +1,54 @@
 @use '../abstracts'as mixins;
+@use '../abstracts/breakpoints'as *;
 
 // Logo
 .nav__logo {
-    width: 200px;
+    @include mixins.widthAndHeight($width: 200px);
     object-fit: scale-down;
 }
 
 // Hero Iphone
 .hero__image {
-    @include mixins.positioning($position: relative);
-    width: 100%;
+    @include mixins.positioning($position: relative, $left: 4rem);
+    @include mixins.widthAndHeight($width: 100%, $height: 100%);
     object-fit: cover;
+    aspect-ratio: 3/4;
+
+    @include media ("<=phone"and "<=900px") {
+        left: 0;
+        display: none;
+    }
 }
 
 // Notification Iphone
 .notification__left-image {
     position: relative;
-    left: 6rem;
+
+    @include media("<=phone"and "<=tablet") {
+        // left: 0;
+        width: 100%;
+        object-fit: scale-down;
+        overflow: hidden;
+    }
+}
+
+// THE ABOUT PAGE BACKGROUND
+.about-us {
+    &__hero__header {
+        @include mixins.backgroundImage('about-us', 'about-bg.png');
+    }
+}
+
+.about__container-footer {
+    width: 100%;
+
+    .about__container-image {
+        max-width: 100%;
+        // height: auto;
+    }
+
+    @include media("<=phone"and "<=tablet") {
+        object-fit: scale-down;
+        width: 100%;
+    }
 }

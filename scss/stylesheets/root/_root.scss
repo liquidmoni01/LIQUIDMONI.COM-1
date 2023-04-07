@@ -1,14 +1,9 @@
 @use '../abstracts/colors';
 @use '../abstracts/type'as *;
-@use '../base/variables';
-
-html {
-    font-size: variables.$global-font-size;
-    font-family: variables.$font-stack-1;
-}
 
 :root {
 
+    // The Homepage colors
     @each $colorGroup,
     $colorMap in colors.$colors {
 
@@ -29,4 +24,13 @@ html {
     }
 
     // MEDIA QUERIES
+    // page colors.
+    @each $pageClrGroup,
+    $clrGroup in colors.$pageColors {
+
+        @each $maps,
+        $mapValue in $clrGroup {
+            --#{$pageClrGroup}-#{$maps}: #{$mapValue};
+        }
+    }
 }

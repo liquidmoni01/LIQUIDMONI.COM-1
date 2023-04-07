@@ -1,13 +1,73 @@
 @use '../abstracts/mixins';
+@use '../abstracts/breakpoints'as *;
 
 .nav {
     @include mixins.flexDisplay($align-items: center, $justify-content: space-between);
-    @include mixins.generalSpacing($margin: 0 0 3rem 0);
-    // The Nav-List
+    @include mixins.generalSpacing($margin: 0 0 2rem 0);
+    width: 100%;
 
-    .nav__list {
+    .mini-nav {
         @include mixins.generalSpacing($gap: 2rem);
-        @include mixins.flexDisplay($align-items: center, $justify-content: space-between);
+        @include mixins.flexDisplay($align-items: center, $justify-content:space-between);
+
+        @include media("<=phone"and "<=768px") {
+            display: none;
+        }
+
+        .nav__list {
+            @include mixins.flexDisplay();
+            @include mixins.generalSpacing($gap: 2rem);
+        }
+    }
+
+
+    // The Nav Toggle
+    .nav__toggle-box {
+        // display: none;
+
+        .toggle {
+            position: relative;
+            // visibility: hidden;
+        }
+
+        .toggle__icon {
+            display: block;
+        }
+    }
+
+    .toggle:checked .nav__list {
+        @include media("<=phone"and "<=tablet") {
+            display: flex;
+        }
+    }
+
+    // The Nav-Menu
+    .nav__toggle-box {
+        display: none;
+
+        .toggle {
+            position: relative;
+            visibility: hidden;
+        }
+
+        .toggle__icon {
+            display: block;
+            cursor: pointer;
+        }
+
+        @include media("<=phone"and "<=tablet") {
+            display: block;
+        }
+    }
+
+    // when clicked
+    .toggle:checked+.mini-nav {
+        >.nav__list {
+            @include media("<=phone"and "<=tablet") {
+                display: flex;
+                flex-direction: column;
+            }
+        }
     }
 
     // AVOID OVER-NESTING (The Li and anchor tags - Navigation links)
@@ -20,6 +80,7 @@
             @include mixins.fonts($size: 1rem, $weight: 600);
             color: var(--Header-color-black);
             transition: .2s ease-in-out;
+            background-color: none;
 
             &:hover {
                 color: var();
@@ -27,4 +88,105 @@
             }
         }
     }
+}
+
+
+
+// .nav__toggle::before,
+// .nav__toggle::after {
+//     position: absolute;
+//     content: "";
+//     height: 200px;
+//     width: 200px;
+//     background-color: var(--Header-color-black);
+// }
+
+// .nav__toggle::before {
+//     left: 0;
+// }
+
+// .nav__toggle::after {
+//     right: 0;
+// }
+// /* Add a black background color to the top navigation */
+// .topnav {
+//     background-color: #333;
+//     overflow: hidden;
+//   }
+
+//   /* Style the links inside the navigation bar */
+//   .topnav a {
+//     float: left;
+//     display: block;
+//     color: #f2f2f2;
+//     text-align: center;
+//     padding: 14px 16px;
+//     text-decoration: none;
+//     font-size: 17px;
+//   }
+
+//   /* Change the color of links on hover */
+//   .topnav a:hover {
+//     background-color: #ddd;
+//     color: black;
+//   }
+
+//   /* Add an active class to highlight the current page */
+//   .topnav a.active {
+//     background-color: #04AA6D;
+//     color: white;
+//   }
+
+//   /* Hide the link that should open and close the topnav on small screens */
+//   .topnav .icon {
+//     display: none;
+//   }
+// .nav__toggle::before,
+// .nav__toggle::after {
+//     position: absolute;
+//     content: "";
+//     height: 200px;
+//     width: 200px;
+//     background-color: var(--Header-color-black);
+// }
+
+// .nav__toggle::before {
+//     left: 0;
+// }
+
+// .nav__toggle::after {
+//     right: 0;
+// }
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
 }

@@ -1,1 +1,92 @@
+@use '../abstracts/mixins';
+@use '../abstracts/breakpoints'as *;
+
 // THE FOOTER SECTION STYLES
+.footer {
+    @include mixins.generalSpacing($padding: 3rem);
+    background: var(--Footer-background-color);
+    // all colors.
+    color: var(--Footer-white-color);
+
+    &__highlight {
+        color: var(--Footer-main-color);
+    }
+
+    &__hr {
+        color: var(--Footer-white-color);
+        margin: 4rem 0;
+    }
+
+    &__top {
+        @include mixins.flexDisplay($justify-content: space-between);
+        @include media("<=phone"and "<=tablet") {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.2rem;
+        }
+
+        @include media("<=tablet") {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.2rem;
+        }
+
+        &-text {
+            font-size: var(--large-100);
+            max-width: 30ch;
+        }
+    }
+}
+
+// THE BOTTOM LEFT AND RIGHT
+.footer__bottom {
+    @include mixins.flexDisplay($justify-content: space-between);
+    @include mixins.generalSpacing($gap: 5rem);
+
+    @include media("<=phone"and "<=tablet") {
+        flex-direction: column;
+    }
+
+    &-left {
+        &__header {
+            margin-bottom: 0.7rem;
+        }
+
+        &__text {
+            @include mixins.changeDisplay($display: block);
+            margin-bottom: 0.7rem;
+            max-width: 60ch;
+            line-height: 1.5;
+            font-size: var(--small-100);
+        }
+
+        .footer__social-icons {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+        }
+    }
+
+    &-right {
+        display: flex;
+    }
+}
+
+// The category section.
+.footer__other-links {
+    @include mixins.flexDisplay($align-items:flex-start, $justify-content: space-between);
+    @include mixins.generalSpacing($gap: 4rem);
+
+
+    @include media ("<=phone") {
+        flex-direction: column;
+    }
+
+    .footer__list-item {
+        margin-bottom: 1rem;
+
+        a {
+            color: var(--Footer-white-color);
+        }
+    }
+}
