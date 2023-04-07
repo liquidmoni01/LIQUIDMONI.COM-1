@@ -695,14 +695,16 @@ input {
   font-weight: 600;
 }
 
+.Faq__accordion {
+  min-width: 100%;
+}
+
 .Faq__accordion-item {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
   padding-bottom: 1rem;
   margin-bottom: 2rem;
-  border-bottom: 1px solid #e5e5e5;
 }
 
 .Faq__accordion-item:not(.Faq__accordion-item:nth-of-type(3)) {
@@ -725,6 +727,107 @@ input {
   color: var(--Faq-text-color);
   line-height: 1.5;
   max-width: 77ch;
+}
+
+.accordion .accordion-item {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.accordion .accordion-item button[aria-expanded=true] {
+  border-bottom: 1px solid #03b5d2;
+}
+
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: var(--General-color-black);
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.accordion button:hover,
+.accordion button:focus {
+  cursor: pointer;
+  color: #03b5d2;
+}
+
+.accordion button:hover::after,
+.accordion button:focus::after {
+  cursor: pointer;
+  color: #03b5d2;
+  border: 1px solid #03b5d2;
+}
+
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+
+.accordion button[aria-expanded=true] {
+  color: #03b5d2;
+}
+
+.accordion button[aria-expanded=true] .icon::after {
+  width: 0;
+}
+
+.accordion button[aria-expanded=true] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+
+.accordion .accordion-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 2em 0;
 }
 
 .footer {
@@ -839,12 +942,26 @@ input {
   gap: 0.5rem;
   padding: 0;
   margin: 0;
-  margin-left: 12rem;
 }
 
 .nav__button-group .nav__button {
+  gap: 1rem;
+  padding: 0.7rem 1rem;
+  margin: 0;
+  border: 1px solid black;
+  outline: 0;
+  border-radius: 5px;
   background-color: var(--Header-nav-button-bg-color);
   color: var(--Header-nav-button-text-color);
+  font-weight: 600;
+}
+
+.nav__button-group .nav__button:nth-of-type(2) {
+  background-color: var(--Header-nav-button-text-color);
+}
+
+.nav__button-group .nav__button:nth-of-type(2) .nav__button-link {
+  color: var(--Header-nav-button-bg-color);
 }
 
 .hero__button {
@@ -864,136 +981,100 @@ input {
   font-weight: 500;
 }
 
-.hero__button .hero__dropdown-btn {
-  background: none;
-  width: 10px;
-}
+/* faq section
+.Faq {
+    &__accordion-button {
+        padding: 1em;
+        position: relative;
+        display: block;
+        text-align: left;
+        width: 100%;
+        padding: 1em 0;
+        color: var(--General-color-black);
+        font-size: 1.15rem;
+        font-weight: 400;
+        background-color: var(--General-color-white);
 
-.nav__button,
-.footer__button {
-  gap: 1rem;
-  padding: 0.9rem 1.2rem;
-  margin: 0;
-  border: 1px solid black;
-  outline: 0;
-  border-radius: 5px;
-  font-size: inherit;
-  font-weight: 600;
-  background-color: var(--Header-nav-button-bg-color);
-}
+        &:hover,
+        &:focus {
+            cursor: pointer;
+            color: var(--General-color-black);
+        }
 
-.nav__button-link,
-.footer__button-link {
-  color: var(--Header-nav-button-text-color);
-}
+        &:hover::after,
+        &:focus::after {
+            cursor: pointer;
+            color: var(--General-color-black);
+            @include mixins.borderProps();
+        }
+    }
 
-.Faq__accordion-button {
-  padding: 1em;
-  position: relative;
-  display: block;
-  text-align: left;
-  width: 100%;
-  padding: 1em 0;
-  color: var(--General-color-black);
-  font-size: 1.15rem;
-  font-weight: 400;
-  background-color: var(--General-color-white);
-}
+    // the icon - when clicked and unclicked.
+    &__icon {
+        @include mixins.changeDisplay($display: inline-block);
+        position: absolute;
+        top: 18px;
+        right: 0;
+        height: 22px;
+        width: 22px;
+        border-radius: 22px;
+    }
 
-.Faq__accordion-button:hover, .Faq__accordion-button:focus {
-  cursor: pointer;
-  color: var(--General-color-black);
-}
+    &__icon::before {
+        top: 9px;
+        left: 5px;
+        width: 10px;
+        height: 2px;
+    }
 
-.Faq__accordion-button:hover::after, .Faq__accordion-button:focus::after {
-  cursor: pointer;
-  color: var(--General-color-black);
-  border: 1px solid black;
-  outline: 0;
-  border-radius: 0;
-}
+    &__icon::after {
+        top: 5px;
+        left: 9px;
+        width: 2px;
+        height: 10px;
+    }
 
-.Faq__icon {
-  display: inline-block;
-  margin: 0;
-  position: absolute;
-  top: 18px;
-  right: 0;
-  height: 22px;
-  width: 22px;
-  border-radius: 22px;
-}
+    &__icon::before,
+    &__icon::after {
+        display: block;
+        position: absolute;
+        content: '';
+        background: currentColor;
+    }
 
-.Faq__icon::before {
-  top: 9px;
-  left: 5px;
-  width: 10px;
-  height: 2px;
-}
+    // user clicks, something happens.
+    &__accordion-button[aria-expanded='true'] {
+        border-bottom: 1px solid #03b5d2;
+        color: var();
+    }
 
-.Faq__icon::after {
-  top: 5px;
-  left: 9px;
-  width: 2px;
-  height: 10px;
-}
+    &__accordion-button[aria-expanded='true'] {
+        .Faq__icon::after {
+            width: 0;
+        }
+    }
 
-.Faq__icon::before, .Faq__icon::after {
-  display: block;
-  position: absolute;
-  content: "";
-  background: currentColor;
-}
+    &__accordion__button[aria-expanded='true']+.Faq__accordion-answer {
+        opacity: 1;
+        max-height: 9em;
+        transition: all 200ms linear;
+        will-change: opacity, max-height;
+    }
 
-.Faq__accordion-button[aria-expanded=true] {
-  border-bottom: 1px solid #03b5d2;
-  color: var();
-}
+    &__accordion-answer {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 200ms linear, max-height 200ms linear;
+        will-change: opacity, max-height;
 
-.Faq__accordion-button[aria-expanded=true] .Faq__icon::after {
-  width: 0;
-}
-
-.Faq__accordion__button[aria-expanded=true] + .Faq__accordion-answer {
-  opacity: 1;
-  max-height: 9em;
-  transition: all 200ms linear;
-  will-change: opacity, max-height;
-}
-
-.Faq__accordion-answer {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 200ms linear, max-height 200ms linear;
-  will-change: opacity, max-height;
-}
-
-.Faq__accordion-answer p {
-  font-size: 1rem;
-  font-weight: 300;
-  margin: 2rem;
-  color: var(--Faq-text-color);
-}
-
-.footer__button {
-  border: 1px solid black;
-  outline: 0;
-  border-radius: 25px;
-  background-color: var(--Footer-white-color);
-  color: var(--Footer-black-color);
-}
-
-.contact__button {
-  color: var(--General-color-white);
-  background-color: var(--Contact-input-button-color);
-  gap: 1rem;
-  padding: 1.2rem;
-  margin: 1.2rem 0;
-  width: 100%;
-  border-radius: 5px;
-}
-
+        p {
+            @include mixins.fonts($size: 1rem, $weight: 300);
+            margin: 2rem;
+            color: var(--Faq-text-color);
+        }
+    }
+} */
 .hero__phone-dropdown {
   color: none;
   background-color: var(--Hero-input-bg-color);

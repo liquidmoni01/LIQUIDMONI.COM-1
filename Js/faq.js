@@ -1,4 +1,4 @@
-// Logic for the accordion
+// // Logic for the accordion
 // const openButton = document.querySelectorAll("[data-faq-open]");
 // const closeButton = document.querySelectorAll("[data-faq-close]");
 
@@ -29,14 +29,11 @@
 // let closeAccordion = (button, index) => {};
 
 // Accordion
-const items = document.querySelectorAll(".Faq__accordion-button");
+const items = document.querySelectorAll(".accordion button");
 
-let toggleAccordion = () => {
+function toggleAccordion() {
   const itemToggle = this.getAttribute("aria-expanded");
 
-  // items.forEach((item) => {
-  //   item.setAttribute("aria-expanded", "false");
-  // });
   for (i = 0; i < items.length; i++) {
     items[i].setAttribute("aria-expanded", "false");
   }
@@ -44,6 +41,6 @@ let toggleAccordion = () => {
   if (itemToggle == "false") {
     this.setAttribute("aria-expanded", "true");
   }
-};
+}
 
 items.forEach((item) => item.addEventListener("click", toggleAccordion));
