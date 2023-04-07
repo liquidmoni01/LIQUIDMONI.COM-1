@@ -5,8 +5,9 @@
 .hero {
     @include mixins.flexDisplay($flex-direction: row);
 
-    @include media("<=phone"and "<=740px") {
+    @include media("<=phone"and "<=tablet") {
         flex-direction: column;
+        align-items: center;
     }
 
     .hero__left-alignment {
@@ -24,12 +25,8 @@
             color: var(--Hero-header-text-color);
 
             @include media ("<=phone"and "<=tablet") {
-<<<<<<< HEAD
                 font-size: var(--medium-200);
                 max-width: 30ch;
-=======
-                font-size: var(--extra-large-100);
->>>>>>> d23d6f183c3fa03b46dada2b21f195be8729f2c4
             }
         }
 
@@ -38,10 +35,18 @@
             line-height: var(--medium-200);
             max-width: 50ch;
             font-size: var(--small-300);
+
+            @include media ("<=phone"and "<=tablet") {
+                font-size: var(--small-100);
+                text-align: center;
+            }
         }
 
         .hero__text-group {
             @include mixins.flexDisplay();
+            @include media ("<=phone"and "<=tablet") {
+                flex-direction: column;
+            }
 
             .hero__text {
                 display: flex;
@@ -93,10 +98,7 @@
             // responsiveness
             @include media ("<=phone"and "<=1140px") {
                 left: 6rem;
-<<<<<<< HEAD
                 display: none;
-=======
->>>>>>> d23d6f183c3fa03b46dada2b21f195be8729f2c4
             }
 
             .hero__phone-up,

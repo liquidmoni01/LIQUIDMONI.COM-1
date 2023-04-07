@@ -43,24 +43,27 @@
                     <img class="nav__logo" src="./images/header/Liquid-moni.png" alt="the logo">
                 </a>
 
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="./pages/sign-up.html" class="nav__link">Send Money</a></li>
-                    <li class="nav__item"><a href="./pages/about.html" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="./pages/contact.html" class="nav__link">Contact</a>
-                    </li>
-                    <li class="nav__item"><a href="./pages/faq.html" class="nav__link">FAQ</a></li>
-                    <li class="nav__item"><button class="nav__link">Support</button></li>
-                </ul>
-
                 <fieldset class="nav__toggle-box">
                     <label for="toggle" class="toggle__icon"><img src="./images/icon-hamburger.svg"
                             alt="toggle"></label>
                     <input type="checkbox" id="toggle" class="toggle">
                 </fieldset>
 
-                <div class="nav__button-group">
-                    <a href="" class="nav__button">Download Soon</a>
-                </div>
+                <section class="mini-nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="./pages/sign-up.html" class="nav__link">Send Money</a></li>
+                        <li class="nav__item"><a href="./pages/about.html" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="./pages/contact.html" class="nav__link">Contact</a>
+                        </li>
+                        <li class="nav__item"><a href="./pages/faq.html" class="nav__link">FAQ</a></li>
+                        <li class="nav__item"><button class="nav__link">Support</button></li>
+
+
+                        <div class="nav__button-group">
+                            <a href="" class="nav__button">Download Soon</a>
+                        </div>
+                    </ul>
+                </section>
             </nav>
 
             <section class="hero">
@@ -90,7 +93,7 @@
 
                         <!-- The Svg Stripe Image -->
                         <div class="hero__image-block">
-                            <img class="hero__image-stripe" src="./images/svg-images/Hero-gdroup-text-stripes.svg"
+                            <img class="hero__image-stripe" src="./images/svg-images/Hero-group-text-stripes.svg"
                                 alt="Middle Stripe Image">
                         </div>
 
@@ -370,13 +373,56 @@
                             </section>
                         </li>
                     </ul> -->
-                    <div class="accordion">
-                        <div class="accordion-item">
-                            <button id="accordion-button-1" aria-expanded="false">
-                                <span class="accordion-title">Is there a free trial?</span>
+                    <ul class="Faq__accordion">
+                        <li class="Faq__accordion-item">
+                            <button class="Faq__accordion-button" id="Faq__accordion-button--1" aria-expanded="false">
+                                <span class="Faq__accordion-question">Is there a free trial?</span>
+                                <!-- for space -->
+                                <span class="Faq__icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="Faq__accordion-answer">
+                                <p>
+                                    Yes, you can try us for free for 30
+                                    days. If you want, we’ll provide you with a free, personalized 30-minute onboarding
+                                    call to get you up and running as soon as possible.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="Faq__accordion-item">
+                            <button class="Faq__accordion-button" id="Faq__accordion-button--2" aria-expanded="false">
+                                <span class="Faq__accordion-question">Can I change my plan?</span>
+                                <!-- for space -->
+                                <span class="Faq__icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="Faq__accordion-answer">
+                                <p>
+                                    Yes, you can try us for free for 30
+                                    days. If you want, we’ll provide you with a free, personalized 30-minute onboarding
+                                    call to get you up and running as soon as possible.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="Faq__accordion-item">
+                            <button class="Faq__accordion-button" id="Faq__accordion-button--3" aria-expanded="false">
+                                <span class="Faq__accordion-question">What is your cancellation policy?</span>
+                                <!-- for space -->
+                                <span class="Faq__icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="Faq__accordion-answer">
+                                <p>
+                                    Yes, you can try us for free for 30
+                                    days. If you want, we’ll provide you with a free, personalized 30-minute onboarding
+                                    call to get you up and running as soon as possible.
+                                </p>
+                            </div>
+                        </li>
+                        <!-- <li class="Faq__accordion-item">
+                            <button id="Faq__accordion-button--3" aria-expanded="false">
+                                <span class="Faq__accordion-question">Is there a free trial?</span>
+                                for space
                                 <span class="icon" aria-hidden="true"></span>
                             </button>
-                            <div class="accordion-content">
+                            <div class="Faq__accordion-answer">
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                     incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis
@@ -384,35 +430,7 @@
                                     Ut tortor pretium viverra suspendisse potenti.
                                 </p>
                             </div>
-                        </div>
-                        <div class="accordion-item">
-                            <button id="accordion-button-2" aria-expanded="false">
-                                <span class="accordion-title">Can I change my plan?</span>
-                                <span class="icon" aria-hidden="true"></span>
-                            </button>
-                            <div class="accordion-content">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis
-                                    ut.
-                                    Ut tortor pretium viverra suspendisse potenti.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <button id="accordion-button-3" aria-expanded="false">
-                                <span class="accordion-title">What is your cancellation policy?</span>
-                                <span class="icon" aria-hidden="true"></span>
-                            </button>
-                            <div class="accordion-content">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis
-                                    ut.
-                                    Ut tortor pretium viverra suspendisse potenti.
-                                </p>
-                            </div>
-                        </div>
+                        </li> -->
                         <!-- <div class="accordion-item">
                             <button id="accordion-button-4" aria-expanded="false">
                                 <span class="accordion-title">How much does the Earth weigh?</span>
@@ -441,93 +459,93 @@
                                 </p>
                             </div>
                         </div> -->
+    </div>
+    </section>
+    </section>
+    </main>
+
+    <footer class="footer">
+        <section class="footer__container">
+
+            <section class="footer__top">
+                <h3 class="footer__top-text">Learn how to grow 💪your business with <span
+                        class="footer__highlight">Liquidmoni</span></h3>
+
+                <a href="./pages/sign-up.html" class="footer__button">Download For
+                    Free</a>
+            </section>
+
+            <hr class="footer__hr">
+
+            <section class="footer__bottom">
+
+                <section class="footer__bottom-left">
+                    <h4 class="footer__bottom-left__header">About Liquidmoni</h4>
+                    <small class="footer__bottom-left__text">At Liquidmoni, we believe that online transactions
+                        should be
+                        seamless
+                        and secure. That's why we offer innovative solutions for those looking to enter the digital
+                        world of e-commerce. Our cutting-edge technology provides virtual transaction capabilities
+                        that
+                        are safe and efficient, giving your customers the bibest online shopping experience
+                        possible.
+                    </small>
+
+                    <div class="footer__social-icons">
+                        <a href="#" class="footer__link"><img src="./images/footer/twitter.png" alt="Twiiter"
+                                class="footer__image"></a>
+                        <a href="#" class="footer__link"><img src="./images/footer/facebook.png" alt="Twitter"
+                                class="footer__image"></a>
+                        <a href="#" class="footer__link"><img src="./images/footer/instagram.png" alt="Instagram"
+                                class="footer__image"></a>
+                        <a href="#" class="footer__link"><img src="./images/footer/github.png" alt="GitHub"
+                                class="footer__image"></a>
                     </div>
                 </section>
-            </section>
-        </main>
 
-        <footer class="footer">
-            <section class="footer__container">
+                <section class="footer__bottom-right">
+                    <div class="footer__other-links">
+                        <div class="footer__category">
+                            <p class="footer__category-title"><b>Company</b></p>
 
-                <section class="footer__top">
-                    <h3 class="footer__top-text">Learn how to grow 💪your business with <span
-                            class="footer__highlight">Liquidmoni</span></h3>
-
-                    <a href="./pages/sign-up.html" class="footer__button">Download For
-                        Free</a>
-                </section>
-
-                <hr class="footer__hr">
-
-                <section class="footer__bottom">
-
-                    <section class="footer__bottom-left">
-                        <h4 class="footer__bottom-left__header">About Liquidmoni</h4>
-                        <small class="footer__bottom-left__text">At Liquidmoni, we believe that online transactions
-                            should be
-                            seamless
-                            and secure. That's why we offer innovative solutions for those looking to enter the digital
-                            world of e-commerce. Our cutting-edge technology provides virtual transaction capabilities
-                            that
-                            are safe and efficient, giving your customers the bibest online shopping experience
-                            possible.
-                        </small>
-
-                        <div class="footer__social-icons">
-                            <a href="#" class="footer__link"><img src="./images/footer/twitter.png" alt="Twiiter"
-                                    class="footer__image"></a>
-                            <a href="#" class="footer__link"><img src="./images/footer/facebook.png" alt="Twitter"
-                                    class="footer__image"></a>
-                            <a href="#" class="footer__link"><img src="./images/footer/instagram.png" alt="Instagram"
-                                    class="footer__image"></a>
-                            <a href="#" class="footer__link"><img src="./images/footer/github.png" alt="GitHub"
-                                    class="footer__image"></a>
+                            <ul class="footer__list">
+                                <li class="footer__list-item"><a href="./pages/about.html"> About</a></li>
+                                <li class="footer__list-item"><a href="#features"> Features</a></li>
+                                <li class="footer__list-item"><a href="#"> Works</a></li>
+                                <li class="footer__list-item"><a href="#"> Career</a></li>
+                            </ul>
                         </div>
-                    </section>
-
-                    <section class="footer__bottom-right">
-                        <div class="footer__other-links">
-                            <div class="footer__category">
-                                <p class="footer__category-title"><b>Company</b></p>
-
-                                <ul class="footer__list">
-                                    <li class="footer__list-item"><a href="./pages/about.html"> About</a></li>
-                                    <li class="footer__list-item"><a href="#features"> Features</a></li>
-                                    <li class="footer__list-item"><a href="#"> Works</a></li>
-                                    <li class="footer__list-item"><a href="#"> Career</a></li>
-                                </ul>
-                            </div>
 
 
-                            <div class="footer__category">
-                                <p class="footer__category-title"><b>Help</b></p>
+                        <div class="footer__category">
+                            <p class="footer__category-title"><b>Help</b></p>
 
-                                <ul class="footer__list">
-                                    <li class="footer__list-item"><a href="#"> Customer Support</a></li>
-                                    <li class="footer__list-item"><a href="#"> Delivery Details</a></li>
-                                    <li class="footer__list-item"><a href="#"> Terms and Conditions</a></li>
-                                    <li class="footer__list-item"><a href="#"> Privacy Policy</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="footer__category">
-                                <p class="footer__category-title"><b>Resources</b></p>
-
-                                <ul class="footer__list">
-                                    <li class="footer__list-item"><a href="#"> Free eBooks</a></li>
-                                    <li class="footer__list-item"><a href="#"> Development Tutorial</a></li>
-                                    <li class="footer__list-item"><a href="#"> How to- Blog</a></li>
-                                    <li class="footer__list-item"><a href="#"> Youtube Playlist</a></li>
-                                </ul>
-
-                            </div>
+                            <ul class="footer__list">
+                                <li class="footer__list-item"><a href="#"> Customer Support</a></li>
+                                <li class="footer__list-item"><a href="#"> Delivery Details</a></li>
+                                <li class="footer__list-item"><a href="#"> Terms and Conditions</a></li>
+                                <li class="footer__list-item"><a href="#"> Privacy Policy</a></li>
+                            </ul>
                         </div>
-                    </section>
 
+                        <div class="footer__category">
+                            <p class="footer__category-title"><b>Resources</b></p>
+
+                            <ul class="footer__list">
+                                <li class="footer__list-item"><a href="#"> Free eBooks</a></li>
+                                <li class="footer__list-item"><a href="#"> Development Tutorial</a></li>
+                                <li class="footer__list-item"><a href="#"> How to- Blog</a></li>
+                                <li class="footer__list-item"><a href="#"> Youtube Playlist</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
                 </section>
 
             </section>
-        </footer>
+
+        </section>
+    </footer>
     </div>
 </body>
 
