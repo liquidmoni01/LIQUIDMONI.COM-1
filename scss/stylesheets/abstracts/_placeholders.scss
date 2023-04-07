@@ -1,6 +1,11 @@
 @use './mixins';
+@use './breakpoints'as *;
 
 // EXTEND THIS PLACEHOLDER TO THE HERO AND NOTIFY SECTIONS.
+@mixin fontSize($size) {
+    font-size: $size;
+}
+
 .form {
     &__fieldset {
         @include mixins.flexDisplay();
@@ -8,6 +13,10 @@
         @include mixins.borderProps($borderRadVal: 15px, $border: 1px solid var(--Form-border-color));
         background-color: var(--Form-bg-color);
         margin-bottom: var(--large-300);
+
+        @include media ("<=phone"and "<=tablet") {
+            @include fontSize(10px);
+        }
 
         &__label {
             @include mixins.changeDisplay($display: none);

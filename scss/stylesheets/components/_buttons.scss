@@ -5,6 +5,7 @@
 .nav__button-group {
     @include mixins.flexDisplay($flex-direction: row, $justify-content: space-between);
     @include mixins.generalSpacing($gap: 0.5rem);
+    // margin-left: 4rem;
 
     .nav__button {
         @include mixins.generalSpacing($padding: .7rem 1rem);

@@ -97,8 +97,8 @@
 
             // responsiveness
             @include media ("<=phone"and "<=1140px") {
-                left: 6rem;
-                display: none;
+                left: 8rem;
+                // display: none;
             }
 
             .hero__phone-up,
