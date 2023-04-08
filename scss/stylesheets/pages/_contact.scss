@@ -1,10 +1,15 @@
 // STYLES CONCERNED WITH THE HOME PAGE.
 @use '../abstracts/mixins';
-@use '../components/navigation';
+@use '../abstracts/breakpoints'as *;
 
 .contact {
     &__head-text {
         color: var(--Contact-header-text-color);
         font-size: var(--extra-large-200);
+
+        @include media("<=phone"and "<=tablet") {
+            font-size: var(--medium-200);
+            text-align: center;
+        }
     }
 }

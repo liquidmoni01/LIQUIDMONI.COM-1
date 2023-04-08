@@ -8,6 +8,11 @@
     padding: calc(var(--large-400) * 3);
     gap: 1rem;
     background: var(--Benefits-bg-color);
+
+    @include media ("<=phone"and "<=tablet") {
+        text-align: center;
+        padding: 2rem;
+    }
 }
 
 .benefits__uptext {
@@ -25,6 +30,10 @@
     max-width: 50ch;
     border-bottom: 1px solid var(--Benefits-rule-color);
     padding-bottom: var(--large-500);
+
+    @include media ("<=phone"and "<=tablet") {
+        font-size: var(--medium-100);
+    }
 }
 
 .benefits__highlight {
@@ -48,6 +57,7 @@
 
     @include media("<phone"and "<=tablet") {
         object-fit: cover;
-        width: 600px;
+        aspect-ratio: 1;
+        max-width: 100%;
     }
 }

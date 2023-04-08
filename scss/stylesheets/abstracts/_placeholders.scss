@@ -40,6 +40,10 @@
             @include mixins.borderProps($borderRadVal: 10px);
             background-color: var(--General-color-black);
             color: var(--General-color-white);
+
+            @include media ("<=phone"and "<=tablet") {
+                align-self: stretch;
+            }
         }
     }
 }

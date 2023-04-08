@@ -13,12 +13,16 @@
 .contact__footer {
     @include mixins.generalSpacing($padding: 4rem 8rem);
 
+    @include media("<=phone"and "<=900px") {
+        padding: 1rem;
+    }
+
     .contact__form {
         @include mixins.flexDisplay($flex-direction: column);
-        @include mixins.generalSpacing($gap: 1rem);
 
         .contact__form-action {
             @include mixins.flexDisplay($flex-direction: column, $align-items: center);
+            @include mixins.generalSpacing($gap: 1rem);
         }
     }
 }
@@ -32,6 +36,11 @@
 
     .contact__form-input {
         min-width: 500px;
+
+        @include media("<=phone"and "<=900px") {
+            min-width: 0;
+            max-width: 100%;
+        }
     }
 }
 
@@ -47,6 +56,10 @@
 .contact__form-textarea {
     resize: none;
     margin-top: 0.5rem;
+
+    @include media("<=phone"and "<=900px") {
+        max-width: 26ch;
+    }
 }
 
 .sign__up-form {
@@ -55,7 +68,7 @@
         @include mixins.flexDisplay($flex-direction: column, $align-items: center);
     }
 
-    &-form-option {
+    &-option {
         @include mixins.flexDisplay($flex-direction: column);
         @include mixins.generalSpacing($gap: 1rem);
     }

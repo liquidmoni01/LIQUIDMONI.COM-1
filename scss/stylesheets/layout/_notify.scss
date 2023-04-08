@@ -10,41 +10,54 @@
 .notification {
     @include mixins.flexDisplay($align-items: center);
     background-color: var(--Notify-bg-color);
-    padding: 0 4rem;
+    padding: 4rem;
 
     @include media("<=phone"and "<=tablet") {
         flex-direction: column;
         @include mixins.generalSpacing($padding: 2rem 4rem 0 4rem);
+        text-align: center;
     }
 }
 
 .notification__left {
     @include mixins.flexDisplay($flex-direction: column, $align-items: flex-start);
-    @include mixins.generalSpacing($gap: 2rem);
+    @include mixins.generalSpacing($gap: 1rem);
     flex-grow: 1;
 
     .notification__header {
-        font-size: var(--large-100);
         @include marginPadding(2rem, 'margin-bottom');
 
-        &__header-text {
+        &-text {
+            font-size: var(--large-100);
             font-size: 1.2em;
             max-width: 60ch;
 
             @include media("<=phone"and "<=tablet") {
-                font-size: var(--small-500);
+                font-size: var(--medium-200);
             }
         }
     }
 
     .notification__text {
         font-size: var(--small-400);
+
+        @include media ("<=phone"and "<=tablet") {
+            font-size: var(--small-200);
+        }
     }
 
     .notification__feature {
         @include mixins.generalSpacing($padding: 1rem 1rem 1rem 0);
         @include mixins.fonts($size: var(--small-400));
-        display: flex;
-        align-items: center;
+        @include mixins.flexDisplay($justify-content: space-between, $align-items: center);
+        text-align: left;
+
+        b {
+            flex-grow: 1;
+        }
+
+        @include media ("<=phone"and "<=tablet") {
+            font-size: var(--small-200);
+        }
     }
 }

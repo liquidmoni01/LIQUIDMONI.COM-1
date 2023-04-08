@@ -13,7 +13,7 @@
         background-color: var(--Header-nav-button-bg-color);
         color: var(--Header-nav-button-text-color);
         font-weight: 600;
-        margin-left: 8rem;
+        margin-left: 2rem;
         // IF Button == Send Button 
         // @if .nav__button::nth-of-type(2) {
         //    background-color: ; 
@@ -57,6 +57,7 @@
     @include mixins.generalSpacing($padding: 1.2rem);
     @include mixins.fonts($size: var(--small-200), $weight: 600);
     @include mixins.borderProps($borderRadVal: 10px, $border: 0);
+    align-self: stretch;
 }
 
 // Button-padding: 12px, 18px, 12px, 18px
