@@ -16,9 +16,6 @@ sass-boilerplate
 # HIDE RESERVED
 reserved
 
-# AND MAPPED FILES.
-.css.map
-
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
