@@ -1,5 +1,6 @@
 // THE FAQ SECTION STYLES
 @use '../abstracts/mixins';
+@use '../abstracts/breakpoints'as*;
 
 .hidden {
     display: none;
@@ -8,6 +9,10 @@
 .Faq {
     padding: calc(var(--extra-large-400) * 2.5);
     @include mixins.flexDisplay($align-items: center, $flex-direction: column);
+
+    @include media("<=phone"and "<=tablet") {
+        padding: 2rem;
+    }
 
     &__header {
         color: var(--Faq-header-color);
@@ -56,8 +61,19 @@
     // .Faq__content--open
 }
 
+// for the faq-page
+.Faq__section {
+    @include mixins.generalSpacing($padding: 4rem 5rem);
 
+    .Faq__header-section {
+        text-align: center;
+        padding-bottom: var(--extra-large-400);
+    }
+}
+
+// accordion generated
 .accordion .accordion-item {
+    @include mixins.flexDisplay($flex-direction: column);
     border-bottom: 1px solid #e5e5e5;
 }
 
@@ -157,3 +173,5 @@
     font-weight: 300;
     margin: 2em 0;
 }
+
+// accordion generated

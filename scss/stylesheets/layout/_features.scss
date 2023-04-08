@@ -36,12 +36,13 @@ $border-radius: 30px;
     }
 
     .features__card {
+        @include mixins.flexDisplay($flex-direction: column, $align-items: none);
+        @include mixins.generalSpacing($padding: 2.5rem 1.2rem);
         background-color: var(--Features-card-background);
         overflow: hidden;
-        @include mixins.generalSpacing($padding: 2.5rem 1.2rem);
-        @include mixins.flexDisplay($flex-direction: column, $align-items: none);
         border-radius: $border-radius;
         overflow: hidden;
+        flex-shrink: 1;
 
         @include media ("<=phone"and "<=900px") {
             max-width: 45ch;
@@ -60,12 +61,12 @@ $border-radius: 30px;
 }
 
 // FOR THE SAKE OF RESPONSIVENESS
-.features__card:nth-child(1) {
-    flex-shrink: 1;
-}
-.features__card:nth-child(2) {
-    flex-shrink: 1;
-}
-.features__card:nth-child(3) {
-    flex-shrink: 1;
-}
+// .features__card:nth-child(1) {
+//     flex-shrink: 1;
+// }
+// .features__card:nth-child(2) {
+//     flex-shrink: 1;
+// }
+// .features__card:nth-child(3) {
+//     flex-shrink: 1;
+// }

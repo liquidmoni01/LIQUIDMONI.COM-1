@@ -25,6 +25,15 @@ body {
     overflow-x: hidden;
 }
 
+// each-container
+.faq-wrapper,
+.about__wrapper,
+.contact__wrapper,
+.thank-you__wrapper,
+.sign-up__wrapper {
+    min-height: 100%;
+}
+
 h1,
 h2,
 h3,

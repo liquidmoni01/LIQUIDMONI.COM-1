@@ -19,7 +19,8 @@
 
     &__top {
         @include mixins.flexDisplay($justify-content: space-between);
-        @include media("<=phone"and "<=tablet") {
+
+        @include media("<=phone"and "<=900px") {
             flex-direction: column;
             align-items: flex-start;
             gap: 1.2rem;
@@ -64,6 +65,14 @@
             display: flex;
             gap: 1.2rem;
             align-items: center;
+
+            @include media ("<=phone"and "<=tablet") {
+                justify-content: center;
+            }
+        }
+
+        @include media ("<=phone"and "<=tablet") {
+            text-align: center;
         }
     }
 
@@ -78,7 +87,7 @@
     @include mixins.generalSpacing($gap: 4rem);
 
 
-    @include media ("<=phone") {
+    @include media ("<=phone"and "<=600px") {
         flex-direction: column;
     }
 

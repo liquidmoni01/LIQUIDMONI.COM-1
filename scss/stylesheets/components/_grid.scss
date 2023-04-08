@@ -39,6 +39,10 @@
         &-links {
             @include mixins.generalSpacing($padding: 4rem 0);
             @include mixins.flexDisplay($align-items:center, $justify-content: space-evenly);
+
+            @include media("<phone"and "<=tablet") {
+                flex-direction: column;
+            }
         }
     }
 }

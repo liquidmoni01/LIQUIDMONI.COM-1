@@ -15,7 +15,8 @@
         margin-bottom: var(--large-300);
 
         @include media ("<=phone"and "<=tablet") {
-            @include fontSize(10px);
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         &__label {

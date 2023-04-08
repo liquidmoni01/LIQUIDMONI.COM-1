@@ -1,0 +1,7 @@
+@use '../abstracts/mixins'as *;
+@use '../abstracts/breakpoints'as *;
+
+.sign__up {
+    @include flexDisplay();
+    margin: 2rem;
+}

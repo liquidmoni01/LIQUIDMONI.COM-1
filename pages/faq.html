@@ -20,17 +20,17 @@
         <!-- Let the Layout persist from the home page to here. -->
         <header class="header">
             <nav class="nav">
-                <a href="./index.html" class="nav__image-link">
+                <a href="../index.html" class="nav__image-link">
                     <img class="nav__logo" src="../images/header/Liquid-moni.png" alt="the logo">
                 </a>
 
-                <fieldset class="nav__toggle-box">
+
+                <section class="mini-nav">
+                    <!-- <fieldset class="nav__toggle-box"> -->
                     <label for="toggle" class="toggle__icon"><img src="../images/icon-hamburger.svg"
                             alt="toggle"></label>
                     <input type="checkbox" id="toggle" class="toggle">
-                </fieldset>
-
-                <section class="mini-nav">
+                    <!-- </fieldset> -->
                     <ul class="nav__list">
                         <li class="nav__item"><a href="./sign-up.html" class="nav__link">Send Money</a></li>
                         <li class="nav__item"><a href="./about.html" class="nav__link">About</a></li>
@@ -48,8 +48,55 @@
             </nav>
         </header>
 
-        <main>
+        <main class="main">
+            <section class="Faq__section">
 
+                <div class="Faq__header-section">
+                    <h3 class="Faq__header">Frequently asked questions</h3>
+                    <p class="Faq__text">Everything you need to know about the product and billing.</p>
+                </div>
+
+                <div class="accordion Faq__accordion">
+                    <div class="accordion-item Faq__accordion-item">
+                        <button class="Faq__accordion-button" id="accordion-button-1" aria-expanded="false">
+                            <span class="Faq__accordion-title accordion-title">Is there a free trial?</span>
+                            <span class="Faq__accordion-icon icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="Faq__accordion-content accordion-content">
+                            <p>
+                                Yes, you can try us for free for 30
+                                days. If you want, we’ll provide you with a free, personalized 30-minute onboarding
+                                call to get you up and running as soon as possible.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="Faq__accordion-item accordion-item">
+                        <button class="Faq__accordion-button" id="accordion-button-2" aria-expanded="false">
+                            <span class="Faq__accordion-title accordion-title">Can I change my plan?</span>
+                            <span class="Faq__accordion-icon icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="Faq__accordion-content accordion-content">
+                            <p>
+                                Yes, you can try us for free for 30
+                                days. If you want, we’ll provide you with a free, personalized 30-minute onboarding
+                                call to get you up and running as soon as possible.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="Faq__accordion-item accordion-item">
+                        <button class="Faq__accordion-button" id="accordion-button-3" aria-expanded="false">
+                            <span class="accordion-title">What is your cancellation policy?</span>
+                            <span class="Faq__accordion-icon icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="Faq__accordion-content accordion-content">
+                            <p>
+                                Yes, you can try us for free for 30
+                                days. If you want, we’ll provide you with a free, personalized 30-minute onboarding
+                                call to get you up and running as soon as possible.
+                            </p>
+                        </div>
+                    </div>
+            </section>
         </main>
 
         <footer class="footer">
@@ -59,7 +106,7 @@
                     <h3 class="footer__top-text">Learn how to grow 💪your business with <span
                             class="footer__highlight">Liquidmoni</span></h3>
 
-                    <a href="./pages/sign-up.html" class="footer__button">Download For
+                    <a href="./sign-up.html" class="footer__button">Download For
                         Free</a>
                 </section>
 
@@ -136,5 +183,8 @@
         </footer>
     </div>
 </body>
+
+<script src="../Js/faq.js"></script>
+<script src="../Js/script.js"></script>
 
 </html>

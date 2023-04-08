@@ -30,6 +30,10 @@
         &__header-text {
             font-size: 1.2em;
             max-width: 60ch;
+
+            @include media("<=phone"and "<=tablet") {
+                font-size: var(--small-500);
+            }
         }
     }
 

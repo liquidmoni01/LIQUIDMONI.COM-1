@@ -44,6 +44,7 @@
 
         .hero__text-group {
             @include mixins.flexDisplay();
+
             @include media ("<=phone"and "<=tablet") {
                 flex-direction: column;
             }
@@ -85,6 +86,10 @@
     .hero__right-alignment {
         @include mixins.positioning($position: relative);
         @include mixins.flexDisplay($flex-direction: column);
+
+        @include media("<=phone"and "<=tablet") {
+            display: none;
+        }
 
         // THE FORM (specific to this section)
         .hero__phone {

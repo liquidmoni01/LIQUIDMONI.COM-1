@@ -1,5 +1,6 @@
 // STYLES CONCERNED WITH THE HOME PAGE.
 @use '../abstracts/mixins';
+@use '../components/navigation';
 
 .contact {
     &__head-text {

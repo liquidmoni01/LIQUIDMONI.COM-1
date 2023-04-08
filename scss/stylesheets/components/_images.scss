@@ -1,6 +1,11 @@
 @use '../abstracts'as mixins;
 @use '../abstracts/breakpoints'as *;
 
+@mixin backgroundImgs() {
+    object-fit: cover;
+    max-width: 100%;
+}
+
 // Logo
 .nav__logo {
     @include mixins.widthAndHeight($width: 200px);
@@ -24,34 +29,55 @@
 .notification__left-image {
     position: relative;
     object-fit: cover;
+    left: 0;
+    width: 500px;
+    max-width: 100%;
+    object-fit: cover;
+    overflow: hidden;
 
     @include media("<=phone"and "<=900") {
-        // left: 0;
-        width: 500px;
-        max-width: 100%;
-        aspect-ratio: 1;
-        object-fit: cover;
-        overflow: hidden;
+        @include backgroundImgs();
     }
 }
 
 // THE ABOUT PAGE BACKGROUND
+.about__hero-img {
+    @include backgroundImgs();
+}
+
+// The Contact Page Background.
+.contact__hero-image {
+    position: relative;
+
+    @include media("<=phone"and "<=900px") {
+        display: flex;
+    }
+
+    img {
+        position: relative;
+        @include backgroundImgs();
+
+        @include media("<phone"and "<=tablet") {
+            object-fit: scale-down;
+        }
+    }
+}
+
 .about-us {
     &__hero__header {
         @include mixins.backgroundImage('about-us', 'about-bg.png');
     }
 }
 
-.about__container-footer {
-    width: 100%;
+.about__container-image {
+    @include backgroundImgs();
+    align-self: center;
+    // height: auto;
 
-    .about__container-image {
+    @include media("<phone"and "<=tablet") {
         max-width: 100%;
-        // height: auto;
-    }
-
-    @include media("<=phone"and "<=tablet") {
-        object-fit: scale-down;
-        width: 100%;
+        width: 350px;
+        margin: 0 auto;
+        object-fit: cover;
     }
 }

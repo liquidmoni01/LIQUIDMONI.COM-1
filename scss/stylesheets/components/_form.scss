@@ -1,5 +1,6 @@
 // THE FORM STYLES
 @use '../abstracts/placeholders'as *;
+@use '../abstracts/breakpoints'as *;
 @use '../abstracts/mixins';
 
 // Hero and Notify Section Form
@@ -34,16 +35,39 @@
     }
 }
 
-.contact__form-input {
+.contact__form-input,
+.sign__up-input {
     @include mixins.colorSchemeMix($background-clr: var(--Contact-input-field-color), $color: black);
     @include mixins.borderProps($borderRadVal: 5px, $border: 0);
     font-size: 1.2rem;
     padding: 1rem;
-    width: 100%;
 }
 
 // THE TEXT-AREA 
 .contact__form-textarea {
     resize: none;
     margin-top: 0.5rem;
+}
+
+.sign__up-form {
+
+    &-action {
+        @include mixins.flexDisplay($flex-direction: column, $align-items: center);
+    }
+
+    &-form-option {
+        @include mixins.flexDisplay($flex-direction: column);
+        @include mixins.generalSpacing($gap: 1rem);
+    }
+
+    &-field {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        justify-content: end;
+    }
+
+    &-input {
+        background-color: var(--General-color-white);
+    }
 }

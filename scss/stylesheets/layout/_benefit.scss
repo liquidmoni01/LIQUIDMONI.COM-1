@@ -45,4 +45,9 @@
 // specific image for this section.
 .map-image {
     @include mixins.imageSize(100%, 100%, cover);
+
+    @include media("<phone"and "<=tablet") {
+        object-fit: cover;
+        width: 600px;
+    }
 }
