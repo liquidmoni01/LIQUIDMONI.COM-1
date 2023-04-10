@@ -62,11 +62,11 @@
             color: var(--Header-color-black);
             transition: .2s ease-in-out;
             background-color: none;
-
-            &:hover {
-                color: var();
-                transform: scale(2);
-            }
+            // for the support modal link
+            // &:hover {
+            //     color: var();
+            //     transform: scale(2);
+            // }
         }
     }
 

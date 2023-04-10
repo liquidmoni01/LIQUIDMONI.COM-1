@@ -16,6 +16,9 @@ sass-boilerplate
 # HIDE RESERVED
 reserved
 
+#remove node modules.
+node_modules
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
