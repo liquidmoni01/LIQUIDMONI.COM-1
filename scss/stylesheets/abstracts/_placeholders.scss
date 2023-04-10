@@ -34,9 +34,10 @@
             color: var(--General-color-black);
         }
 
+        // specific to this page.
         &__button {
             @include mixins.generalSpacing($padding: 1rem 1.4rem);
-            @include mixins.fonts($size: inherit, $weight: 600);
+            @include mixins.fonts($size: var(--small-100), $weight: 600);
             @include mixins.borderProps($borderRadVal: 10px);
             background-color: var(--General-color-black);
             color: var(--General-color-white);

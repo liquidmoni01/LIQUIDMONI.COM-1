@@ -1,6 +1,7 @@
 // THE FEATURE SECTION
 @use '../abstracts/'as mixins;
 @use '../abstracts/breakpoints'as *;
+@use '../components/images'as backgroundImg;
 
 $border-radius: 30px;
 
@@ -35,7 +36,7 @@ $border-radius: 30px;
 
 .features__card-container {
     @include mixins.flexDisplay($justify-content: space-between, $align-items: center);
-    gap: 4rem;
+    gap: 2rem;
 
     @include media ("<=phone"and "<=900px") {
         flex-direction: column;
@@ -44,7 +45,7 @@ $border-radius: 30px;
 
     .features__card {
         @include mixins.flexDisplay($flex-direction: column, $align-items: none);
-        @include mixins.generalSpacing($padding: 1.5rem 1.2rem);
+        @include mixins.generalSpacing($padding: 1.5rem 0.4rem);
         background-color: var(--Features-card-background);
         overflow: hidden;
         border-radius: $border-radius;
@@ -58,12 +59,28 @@ $border-radius: 30px;
         &__text {
             font-size: var(--small-400);
             text-align: center;
+
+            @include media ("<=phone"and "<=900px") {
+                font-size: var(--small-200);
+            }
         }
 
         &__image-block {
             border-radius: $border-radius;
-            height: 100%;
+            display: flex;
+            align-items: center;
             // flex: ;
+
+            .features__card__image {
+                width: 200px;
+                display: none;
+                @include backgroundImg.backgroundImgs();
+                align-self: center;
+
+                @include media ("<=phone"and "<=900px") {
+                    object-fit: scale-down;
+                }
+            }
         }
     }
 }
