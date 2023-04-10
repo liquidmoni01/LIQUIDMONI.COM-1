@@ -26,16 +26,16 @@
             gap: 1.2rem;
         }
 
-        @include media("<=tablet") {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 1.2rem;
-        }
-
         &-text {
             font-size: var(--large-100);
             max-width: 30ch;
         }
+    }
+
+    &__small-text {
+        @include mixins.generalSpacing($margin: 2rem 0 0 0);
+        display: block;
+        text-align: center;
     }
 }
 
@@ -85,6 +85,11 @@
 .footer__other-links {
     @include mixins.flexDisplay($align-items:flex-start, $justify-content: space-between);
     @include mixins.generalSpacing($gap: 4rem);
+
+    .footer__category {
+        text-align: center;
+        align-self: center;
+    }
 
 
     @include media ("<=phone"and "<=600px") {

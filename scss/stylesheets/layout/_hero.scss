@@ -27,6 +27,7 @@
             @include media ("<=phone"and "<=tablet") {
                 font-size: var(--medium-200);
                 max-width: 30ch;
+                text-align: center;
             }
         }
 
@@ -74,6 +75,11 @@
             font-size: var(--small-200);
             max-width: 20ch;
             line-height: 1.5;
+
+            @include media ("<=phone"and "<=tablet") {
+                max-width: 10ch;
+            }
+
             // @include mixins.paddingMarginInline(0 40px, 10px 32px);
         }
 
@@ -87,7 +93,7 @@
         @include mixins.positioning($position: relative);
         @include mixins.flexDisplay($flex-direction: column);
 
-        @include media("<=phone"and "<=tablet") {
+        @include media("<=phone"and "<=900px") {
             display: none;
         }
 

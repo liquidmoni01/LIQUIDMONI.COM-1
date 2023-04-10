@@ -72,7 +72,7 @@
 
     .toggle:checked~.nav__list {
         @include media("<=phone"and "<=tablet") {
-            @include mixins.positioning($position: absolute, $top: 0, $bottom: 50%);
+            @include mixins.positioning($position: absolute, $top: 0, $bottom: 0);
             @include mixins.colorSchemeMix($background-clr: var(--General-theme-color), $color: --General-color-white);
             transition: all .2s;
             display: flex;
@@ -80,19 +80,19 @@
             margin: 5rem;
             height: 100%;
             flex-direction: column;
-            align-items: center;
             z-index: 0;
-        }
 
-        .nav__link {
-            background: none;
-            font-size: var(--medium-400);
-            color: var(--General-color-white);
-        }
+            .nav__link {
+                background: none;
+                font-size: var(--medium-300);
+                color: var(--General-color-white);
+            }
 
-        .nav__button {
-            @include mixins.colorSchemeMix($background-clr: var(--General-color-white), $color: var(--General-color-black));
-            font-size: var(--small-500);
+            .nav__button {
+                @include mixins.colorSchemeMix($background-clr: var(--General-color-white), $color: var(--General-color-black));
+                font-size: var(--small-300);
+                margin-left: 0;
+            }
         }
     }
 }

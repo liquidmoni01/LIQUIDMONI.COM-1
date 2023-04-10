@@ -19,9 +19,17 @@ $border-radius: 30px;
     @include mixins.fonts($size: var(--extra-large-200), $weight: 600);
     margin-bottom: 2rem;
 
+    @include media ("<=phone"and "<=tablet") {
+        font-size: var(--medium-100);
+    }
+
     +.features__text {
         @include mixins.fonts($size: var(--small-400), $weight: 400);
         max-width: inherit;
+
+        @include media ("<=phone"and "<=tablet") {
+            font-size: var(--small-200);
+        }
     }
 }
 
@@ -31,13 +39,12 @@ $border-radius: 30px;
 
     @include media ("<=phone"and "<=900px") {
         flex-direction: column;
-        // flex-wrap: wrap;
         justify-content: center;
     }
 
     .features__card {
         @include mixins.flexDisplay($flex-direction: column, $align-items: none);
-        @include mixins.generalSpacing($padding: 2.5rem 1.2rem);
+        @include mixins.generalSpacing($padding: 1.5rem 1.2rem);
         background-color: var(--Features-card-background);
         overflow: hidden;
         border-radius: $border-radius;
@@ -49,7 +56,8 @@ $border-radius: 30px;
         }
 
         &__text {
-            font-size: 1.5rem;
+            font-size: var(--small-400);
+            text-align: center;
         }
 
         &__image-block {
