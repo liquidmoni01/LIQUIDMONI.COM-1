@@ -1,26 +1,45 @@
 // THE DROPDOWN ON THE HERO SECTION'S PHONE FORM
 @use '../abstracts/mixins';
 
-.hero__phone-dropdown {
-    @include mixins.colorSchemeMix($background-clr: var(--Hero-input-bg-color));
-    @include mixins.generalSpacing($gap: 0.2rem, $padding: 0.9rem 1.2rem);
-    display: flex;
-    padding: 0.4rem;
-    min-width: auto;
+// logic styles 
+.hero__phone-country {
+    @include mixins.flexDisplay();
+    @include mixins.colorSchemeMix($background-clr: var(--Hero-input-bg-color), $color: var(--General-color-black));
+    @include mixins.generalSpacing($gap: 0.2rem, $padding: 0.4rem);
     border-radius: 10px;
 
-    .hero__phone-options {
-        @include mixins.flexDisplay();
-        gap: .4rem;
+    // &-image-block {
+    // }
 
-        .hero__phone-text {
-            color: var(--General-color-black);
-        }
+    &-image {
+        @include mixins.borderProps($borderRadVal: 50%, $border: 0);
+        width: 30px;
+        object-fit: cover;
+    }
 
-        .hero__phone-image-container {
-            width: 30px;
-            border-radius: 100px;
-            object-fit: cover;
+    .hero__phone-dropdown {
+
+        .hero__phone-options {
+            @include mixins.flexDisplay();
+            gap: .4rem;
+
+            .hero__phone-text {
+                color: var(--General-color-black);
+            }
+
+            .hero__phone-image-container {
+                width: 30px;
+                border-radius: 100px;
+                object-fit: cover;
+            }
         }
     }
+
+    // .hero__phone-dropdown[aria-expanded=false] {
+    //     display: none;
+    // }
+
+    // .hero__phone-dropdown[aria-expanded=true] {
+    //     display: flex;
+    // }
 }

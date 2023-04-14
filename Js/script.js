@@ -1,53 +1,101 @@
-// BEFORE USING FIREBASE SERVICES, THE FIREBASE APP MUST BE INITIALIZED FIRST, BECAUSE WITHOUT IT, YOU CAN'T GET ACCESS TO THE FIREBASE LIBRARY FROM THE NET. THIS IS WHY IT'S IMPORTANT TO ALWAYS IMPORT THE FIREBASE APP, IMMEDIATELY AFTER INSTALLING FIREBASE, AND BEFORE YOU USE IT ON ANY OF YOUR PROJECTS.
+// // Email Validation.
+// const heroFormInput = document.querySelector(".hero__");
+// const notifyFormInput = document.querySelector(".noti__");
 
-// IMPORT THE SERVICE BEFORE CALLING IT.
-import { initializeApp } from "firebase/app";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-// import {get} from
+// let checkInput = (inputField) => {
+//   let errorMessage = ["Please, fill in this field"];
 
-const firebaseApp = initializeApp({});
+//   if (inputField.matches(/(ae)/g)) {
+//     console.log("ITMATCHES");
+//   }
+// };
 
-const auth = getAuth(firebaseApp);
+// // FOR THE NAV-BAR
+// const navBar = document.querySelector(".nav");
+// const toggle = document.querySelector(".toggle");
 
-// monitor authentication state.
-onAuthStateChanged(auth, (user) => {
-  if (user != null) {
-    alert("LOGGED IN");
-  } else {
-    alert("Not Logged In");
-  }
-});
+// if (toggle.checked === true) {
+//   navBar.style.backgroundColor = "red";
+// } else {
+//   navBar.classList.remove("fixed-position");
+// }
 
-// What treeshaking does.
-auth.onAuthStateChanged((user) => {
-  if (user != null) {
-    console.log("Logged In");
-  } else {
-    console.log("Not logged in, and no user");
-  }
-});
+// Hero Section Currency Converter.
+let countryData = [
+  {
+    name: "NGA",
+    image: "../images/hero/nigeria.svg",
+  },
+  {
+    name: "USA",
+    image: "../images/hero/usa.svg",
+  },
+  {
+    name: "CAN",
+    image: "../images/hero/canada.svg",
+  },
+  {
+    name: "BEL",
+    image: "../images/hero/belgium.svg",
+  },
+  {
+    name: "FRA",
+    image: "../images/hero/france.svg",
+  },
+  {
+    name: "GBR",
+    image: "../images/hero/great-britain.svg",
+  },
+  {
+    name: "ESP",
+    image: "../images/hero/spain.svg",
+  },
+];
 
-const heroFormInput = document.querySelector(".hero__");
-const notifyFormInput = document.querySelector(".noti__");
+const sendInput = document.getElementsByClassName("hero__phone-input")[0];
+const getInput = document.getElementsByClassName("hero__phone-input")[1];
+const dropdown = document.querySelector(".hero__phone-dropdown");
+const dropdownItems = Array.from(dropdown.children);
+const dropdownBtn = document.querySelector(".hero__phone__dropdown-btn");
+const countryName = (document.querySelector(
+  ".hero__phone-country-name"
+).innerText = countryData[1].name);
+const countryImage = (document.querySelector(".hero__phone-country-image").src =
+  countryData[1].image);
 
-let checkInput = (inputField) => {
-  let errorMessage = ["Please, fill in this field"];
+// eventListeners.
+dropdownBtn.addEventListener("click", () => handleDropdown);
 
-  if (inputField.matches(/(ae)/g)) {
-    console.log("ITMATCHES");
-  }
+// selection process
+let handleDropdown = () => handleSelection;
+
+// select country
+let handleSelection = () => {
+  dropdown.classList.remove("hidden");
+  // dropdown.setAttribute("aria-expanded", true);
+  dropdownItems.map((country) => {
+    country.addEventListener("click", () => {
+      console.log();
+      console.log(country[0].children[1]);
+
+      countryData.map((data) => {
+        if (country[0].children[0].children[0].src === data.image) {
+          country[0].children[0].children[0].src === data.image;
+        }
+        if (country[0].children[1].innerText === data.name) {
+          country[0].children[0].children[0].src === data.image;
+        }
+      });
+    });
+  });
 };
 
-// FOR THE NAV-BAR
-const navBar = document.querySelector(".nav");
-const toggle = document.querySelector(".toggle");
+// conversion process
+sendInput.addEventListener("keyup", (e) => {
+  let sendVal = e.target.value;
+  console.log(sendVal);
+});
 
-if (toggle.checked === true) {
-    navBar.style.backgroundColor = "red";
-}
-else {
-  navBar.classList.remove('fixed-position')
-}
-
-// toggle.addEventListener("toggle", () => {
-// });
+let convertVal = (e) => {
+  // convert the inputted value to the selected country, and display converted value to the user.
+};

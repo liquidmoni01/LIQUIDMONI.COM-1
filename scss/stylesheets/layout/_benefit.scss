@@ -43,8 +43,9 @@
 .benefits__each,
 .benefits__each-text {
     @include mixins.flexDisplay($align-items: center);
-    @include mixins.generalSpacing($gap: 1rem);
+    @include mixins.generalSpacing($gap: 0.4rem);
     font-weight: 600;
+    text-align: centerw;
 
     @include media ("<=phone"and "<=900px") {
         flex-direction: column;

@@ -34,7 +34,7 @@ $border-radius: 30px;
     }
 }
 
-.features__card-container {
+.features__card {
     @include mixins.flexDisplay($justify-content: space-between, $align-items: center);
     gap: 2rem;
 
@@ -43,11 +43,10 @@ $border-radius: 30px;
         justify-content: center;
     }
 
-    .features__card {
+    &-container {
         @include mixins.flexDisplay($flex-direction: column, $align-items: none);
-        @include mixins.generalSpacing($padding: 1.5rem 0.4rem);
+        @include mixins.generalSpacing($padding: 1.5rem);
         background-color: var(--Features-card-background);
-        overflow: hidden;
         border-radius: $border-radius;
         overflow: hidden;
         flex-shrink: 1;
@@ -56,30 +55,27 @@ $border-radius: 30px;
             max-width: 45ch;
         }
 
-        &__text {
+        &-text {
             font-size: var(--small-400);
             text-align: center;
+            max-width: 40ch;
 
             @include media ("<=phone"and "<=900px") {
                 font-size: var(--small-200);
             }
         }
+    }
 
-        &__image-block {
-            border-radius: $border-radius;
-            display: flex;
-            align-items: center;
-            // flex: ;
+    .features__card__image-block {
+        border-radius: $border-radius;
+        width: 50px;
+        // flex: ;
 
-            .features__card__image {
-                width: 200px;
-                display: none;
-                @include backgroundImg.backgroundImgs();
-                align-self: center;
+        .features__card__image {
+            @include backgroundImg.backgroundImgs($aspratio: 3/4);
 
-                @include media ("<=phone"and "<=900px") {
-                    object-fit: scale-down;
-                }
+            @include media ("<=phone"and "<=900px") {
+                object-fit: scale-down;
             }
         }
     }

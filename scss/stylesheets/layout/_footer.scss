@@ -37,70 +37,66 @@
         display: block;
         text-align: center;
     }
+
+    .footer__social-icons {
+        display: flex;
+        gap: 1.3rem;
+        align-items: center;
+        justify-content: center;
+
+        // @include media ("<=phone"and "<=tablet") {
+        //     justify-content: center;
+        // }
+    }
 }
 
 // THE BOTTOM LEFT AND RIGHT
 .footer__bottom {
-    @include mixins.flexDisplay($justify-content: space-between);
+    @include mixins.flexDisplay($justify-content: space-around);
     @include mixins.generalSpacing($gap: 5rem);
 
     @include media("<=phone"and "<=tablet") {
         flex-direction: column;
     }
 
-    &-left {
-        &__header {
-            margin-bottom: 0.7rem;
-        }
+    // &-left {
+    //     &__header {
+    //         margin-bottom: 0.7rem;
+    //     }
 
-        &__text {
-            @include mixins.changeDisplay($display: block);
-            margin-bottom: 0.7rem;
-            max-width: 60ch;
-            line-height: 1.5;
-            font-size: var(--small-100);
-        }
+    //     &__text {
+    //         @include mixins.changeDisplay($display: block);
+    //         margin-bottom: 0.7rem;
+    //         max-width: 60ch;
+    //         line-height: 1.5;
+    //         font-size: var(--small-100);
+    //     }
 
-        .footer__social-icons {
-            display: flex;
-            gap: 1.2rem;
-            align-items: center;
+    //     @include media ("<=phone"and "<=tablet") {
+    //         text-align: center;
+    //     }
+    // }
 
-            @include media ("<=phone"and "<=tablet") {
-                justify-content: center;
+    // The category section.
+    // .footer__other-links {
+    .footer__category {
+        @include mixins.generalSpacing($gap: 1rem);
+        @include mixins.flexDisplay($flex-direction: column, $justify-content: start);
+        text-align: center;
+
+        .footer__list-item {
+            margin-bottom: 1rem;
+
+            a {
+                color: var(--Footer-white-color);
             }
         }
-
-        @include media ("<=phone"and "<=tablet") {
-            text-align: center;
-        }
-    }
-
-    &-right {
-        display: flex;
-    }
-}
-
-// The category section.
-.footer__other-links {
-    @include mixins.flexDisplay($align-items:flex-start, $justify-content: space-between);
-    @include mixins.generalSpacing($gap: 4rem);
-
-    .footer__category {
-        text-align: center;
-        align-self: center;
     }
 
 
     @include media ("<=phone"and "<=600px") {
         flex-direction: column;
     }
-
-    .footer__list-item {
-        margin-bottom: 1rem;
-
-        a {
-            color: var(--Footer-white-color);
-        }
-    }
 }
+
+// }

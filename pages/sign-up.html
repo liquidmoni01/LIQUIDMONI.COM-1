@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Liquidmoni - Sign Up</title>
     <link rel="stylesheet" href="../build/style.css">
 
     <script src="https://apps.elfsight.com/p/platform.js" defer></script>
@@ -50,9 +50,9 @@
             <div class="sign__up">
                 <form class="sign__up-form" action="https://formsubmit.co/legendn351@gmail.com" method="post">
                     <input type="hidden" name="_subject" value="new sign in">
-                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_captcha" value="true">
                     <!-- Change deployment url. -->
-                    <input type="hidden" name="_next" value="authentication.html">
+                    <input type="hidden" name="_next" value="https://liquidmoni.netlify.app/pages/authentication.html">
                     <section class="sign__up-form-action">
 
                         <!-- Detail inputs -->
@@ -104,8 +104,8 @@
             <!-- LOG IN -->
             <div class="log-in" style="display: none">
                 <!-- Authorise the user, but take the user to the download page. -->
-                <form action="./authentication.html" class="log-in__form hidden">
-                    <!-- <form action="https://formsubmit.co/legendn351@gmail.com" class="log-in__form hidden"> -->
+                <!-- <form action="./authentication.html" class="log-in__form hidden"> -->
+                <form action="https://formsubmit.co/liquidmoniainfo@gmail.com" class="log-in__form hidden">
                     <section class="sign__up-form-action">
 
                         <!-- Detail inputs -->
@@ -119,7 +119,6 @@
                                 <input type="email" class="sign__up-input" id="email" name="new-user-email">
                             </div>
                         </fieldset>
-
 
                         <fieldset class="sign__up-field">
                             <label class="sign__up-label" for="password">Password: </label>
@@ -225,8 +224,9 @@
 </body>
 
 <!-- The JavaScript for the Logic of the WebSite -->
+<script type="./module" src="./Js/forms.js"></script>
+<script src="./src/firebase.js"></script>
 <script src="./src/faq.js"></script>
 <script src="./src/main.js"></script>
-<script src="./src/firebase.js"></script>
 
 </html>

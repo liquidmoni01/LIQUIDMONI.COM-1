@@ -5,23 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIQUIDMONI PROJECT</title>
+    <title>Liquidmoni</title>
     <!-- Stylesheets (From The Header to the contents to the footer) -->
     <link rel="stylesheet" href="./build/style.css">
-    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-
     <style>
         .hidden {
             display: none;
         }
 
-        .fixed-position {
-            background-color: red;
+        .invalid-validate:invalid {
+            border: 1px solid red;
         }
     </style>
-
-
-    <!-- For the Mobile and Tablet view (and any other view) - For Responsiveness -->
 
     <!-- Google Fonts -->
 
@@ -29,17 +24,12 @@
 
 <body>
     <div class="main-wrapper">
-        <!-- Telegram Chat -->
-        <!-- <div class="elfsight-app-54308259-3324-4164-874a-ec56d40d16d4"></div> -->
-        <!-- End of Telegram Chat -->
-
         <!-- Support Modal. -->
         <div class="support">
             <section class="support__modal">
 
             </section>
         </div>
-        <!-- End of Support Modal -->
 
         <header class="header">
             <nav class="nav">
@@ -79,17 +69,16 @@
                         anywhere in the world.</p>
 
                     <!-- IN THIS FORM, WE HAVE A MODIFIER CLASS FOR BOTH OF THE FORMS (similar to each other.) - Use nested BEM for the sake of this form -->
-                    <form data-form action="#" class="form">
+                    <form action="#" class="form">
                         <input type="hidden" name="_subject" value="new sign in">
-                        <input type="hidden" name="_captcha" value="false">
+                        <!-- <input type="hidden" name="_captcha" value="true"> -->
                         <!-- Change deployment url. -->
-                        <input type="hidden" name="_next"
-                            value="https://jailbreak-101.github.io/LIQUIDMONI.COM/pages/authentication.html">
+                        <!-- <input type="hidden" name="_next" value="https://liquidmoni.netlify.app/pages/thank-you.html"> -->
                         <div data-field class="form__fieldset">
                             <label class="form__fieldset__label" for="email">Email</label>
-                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_captcha" value="true">
                             <input data-email-input class="form__fieldset__email-input" type="email" id="email"
-                                name="email" placeholder="Enter email address" required>
+                                name="email" placeholder="Enter email address">
                             <button data-email-button class="form__fieldset__button">Get
                                 Notified</button>
                         </div>
@@ -105,7 +94,7 @@
                         <div class="hero__image-block">
                             <img class="hero__image-stripe" src="./images/svg-images/Hero-group-text-stripes.svg"
                                 alt="Middle Stripe Image">
-                        </div>  
+                        </div>
 
                         <div class="hero__text">
                             <h2 class="hero__big-text">120+</h2>
@@ -137,7 +126,20 @@
                                     <div class="hero__phone-input-block">
                                         <input class="hero__phone-input form__input" type="number" name="send" id="send"
                                             value="100.00">
-                                        <div class="hero__phone-dropdown form__dropdown" name="dropdown" id="dropdown">
+
+                                        <div class="hero__phone-country">
+                                            <!-- in here comes the image of the selected country for conversion -->
+                                            <div class="phone__hero-country-image-block">
+                                                <img class="hero__phone-country-image" src="" alt="Selected country">
+                                            </div>
+                                            <span class="hero__phone-country-name"></span>
+                                            <span class="hero__phone__dropdown-btn">
+                                                <img
+                                                    src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/null/external-arrow-arrows-those-icons-lineal-color-those-icons-1.png" />
+                                            </span>
+                                        </div>
+                                        <div class="hidden hero__phone-dropdown form__dropdown" aria-expanded=false
+                                            name="dropdown" id="dropdown">
                                             <div class="hero__phone-options form__option" value="USA">
                                                 <div class="hero__phone-image-container">
                                                     <img class="hero__phone-image" src="./images/hero/usa.svg"
@@ -147,18 +149,16 @@
                                                     USD
                                                 </span>
                                             </div>
-                                            <div class="hero__phone-options form__option" style="display: none;"
-                                                value="NGA">
+                                            <div class="hero__phone-options form__option" value="NGA">
                                                 <div class="hero__phone-image-container">
                                                     <img class="hero__phone-image" src="./images/hero/nigeria.svg"
                                                         alt="country-logo">
                                                 </div>
-                                                <span class="hero__phone-text" id="hidden">
+                                                <span class="hero__phone-text">
                                                     NGA
                                                 </span>
                                             </div>
-                                            <div class="hero__phone-options form__option" style="display: none;"
-                                                value="UK">
+                                            <div class="hero__phone-options form__option" value="UK">
 
                                                 <div class="hero__phone-image-container">
                                                     <img class="hero__phone-image" src="./images/hero/great-britain.svg"
@@ -168,11 +168,6 @@
                                                     UK
                                                 </span>
                                             </div>
-
-                                            <button type="menu" class="hero__phone__dropdown-btn">
-                                                <img
-                                                    src="https://img.icons8.com/external-those-icons-lineal-color-those-icons/24/null/external-arrow-arrows-those-icons-lineal-color-those-icons-1.png" />
-                                            </button>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -236,9 +231,10 @@
                         businesses and individuals</p>
                 </div>
 
-                <section class="features__card-container">
-                    <div class="features__card">
-                        <h4 class="features__card__text">Support for multiple <span class="highlight">currencies and
+                <section class="features__card">
+                    <div class="features__card-container">
+                        <h4 class="features__card__container-text">Support for multiple <span
+                                class="highlight">currencies and
                                 transfer</span> methods around
                             the Globe</h4>
                         <div class="feature__card__image-block">
@@ -247,7 +243,7 @@
                         </div>
                     </div>
 
-                    <div class="features__card">
+                    <!-- <div class="features__card">
                         <h4 class="features__card__text">Latest <span class="highlight">encryption and security</span>
                             protocols for secure and
                             reliable fund transfer process</h4>
@@ -265,7 +261,7 @@
                             <img src="./images/features/features-image3.png" alt="Image for card3"
                                 class="features__card__image">
                         </div>
-                    </div>
+                    </div> -->
                 </section>
             </section>
 
@@ -288,16 +284,17 @@
                             manage your finances more efficiently.</p>
 
                         <ul class="notification__features">
-                            <li class="notification__feature"><img src="./images/notify/Icon.png" alt="Tick Image">No
-                                hidden fees or conversion
-                                costs</li>
+                            <li class="notification__feature"><img src="./images/notify/Icon.png"
+                                    alt="Tick Image"><span>No
+                                    hidden fees or conversion
+                                    costs</span></li>
                             <li class="notification__feature"><img src="./images/notify/Icon.png"
                                     alt="Tick Image"><b>24/7
                                     customer support</b></li>
                             <li class="notification__feature"><img src="./images/notify/Icon.png"
-                                    alt="Tick Image">Seamless
-                                Intergration with
-                                other apps</li>
+                                    alt="Tick Image"><span>Seamless
+                                    Intergration with
+                                    other apps</span></li>
                         </ul>
                     </section>
 
@@ -305,10 +302,10 @@
 
                         <form data-form action="https://formsubmit.co/legendn351@gmail.com" class="form">
                             <input type="hidden" name="_subject" value="new sign in">
-                            <input type="hidden" name="_captcha" value="false">
                             <!-- Change deployment url. -->
                             <input type="hidden" name="_next"
-                                value="https://jailbreak-101.github.io/LIQUIDMONI.COM/pages/authentication.html">
+                                value="https://liquidmoni.netlify.app/pages/thank-you.html">
+                            <input type="hidden" name="_captcha" value="true">
                             <div data-field class="form__fieldset">
                                 <label class="form__fieldset__label" for="email">Email</label>
                                 <input data-email-input class="form__fieldset__email-input" type="email" id="email"
@@ -481,72 +478,52 @@
                 <hr class="footer__hr">
 
                 <section class="footer__bottom">
+                    <!-- <div class="footer__other-links"> -->
+                    <div class="footer__category">
+                        <p class="footer__category-title"><b>Company</b></p>
 
-                    <section class="footer__bottom-left">
-                        <h4 class="footer__bottom-left__header">About Liquidmoni</h4>
-                        <small class="footer__bottom-left__text">At Liquidmoni, we believe that online transactions
-                            should be
-                            seamless
-                            and secure. That's why we offer innovative solutions for those looking to enter the digital
-                            world of e-commerce. Our cutting-edge technology provides virtual transaction capabilities
-                            that
-                            are safe and efficient, giving your customers the bibest online shopping experience
-                            possible.
-                        </small>
-
-                        <div class="footer__social-icons">
-                            <a href="#" class="footer__link"><img src="./images/footer/twitter.png" alt="Twiiter"
-                                    class="footer__image"></a>
-                            <a href="#" class="footer__link"><img src="./images/footer/facebook.png" alt="Twitter"
-                                    class="footer__image"></a>
-                            <a href="#" class="footer__link"><img src="./images/footer/instagram.png" alt="Instagram"
-                                    class="footer__image"></a>
-                            <a href="#" class="footer__link"><img src="./images/footer/github.png" alt="GitHub"
-                                    class="footer__image"></a>
-                        </div>
-                    </section>
-
-                    <section class="footer__bottom-right">
-                        <div class="footer__other-links">
-                            <div class="footer__category">
-                                <p class="footer__category-title"><b>Company</b></p>
-
-                                <ul class="footer__list">
-                                    <li class="footer__list-item"><a href="./pages/about.html"> About</a></li>
-                                    <li class="footer__list-item"><a href="#features"> Features</a></li>
-                                    <li class="footer__list-item"><a href="#"> Works</a></li>
-                                    <li class="footer__list-item"><a href="#"> Career</a></li>
-                                </ul>
-                            </div>
+                        <ul class="footer__list">
+                            <li class="footer__list-item"><a href="./pages/about.html"> About</a></li>
+                            <li class="footer__list-item"><a href="#features"> Features</a></li>
+                            <li class="footer__list-item"><a href="#"> Works</a></li>
+                            <li class="footer__list-item"><a href="#"> Career</a></li>
+                        </ul>
+                    </div>
 
 
-                            <div class="footer__category">
-                                <p class="footer__category-title"><b>Help</b></p>
+                    <div class="footer__category">
+                        <p class="footer__category-title"><b>Help</b></p>
 
-                                <ul class="footer__list">
-                                    <li class="footer__list-item"><a href="#"> Customer Support</a></li>
-                                    <li class="footer__list-item"><a href="#"> Delivery Details</a></li>
-                                    <li class="footer__list-item"><a href="#"> Terms and Conditions</a></li>
-                                    <li class="footer__list-item"><a href="#"> Privacy Policy</a></li>
-                                </ul>
-                            </div>
+                        <ul class="footer__list">
+                            <li class="footer__list-item"><a href="#"> Customer Support</a></li>
+                            <!-- <li class="footer__list-item"><a href="#"> Delivery Details</a></li> -->
+                            <li class="footer__list-item"><a href="#"> Terms and Conditions</a></li>
+                            <li class="footer__list-item"><a href="#"> Privacy Policy</a></li>
+                        </ul>
+                    </div>
 
-                            <div class="footer__category">
-                                <p class="footer__category-title"><b>Resources</b></p>
+                    <div class="footer__category">
+                        <p class="footer__category-title"><b>Resources</b></p>
 
-                                <ul class="footer__list">
-                                    <li class="footer__list-item"><a href="#"> Free eBooks</a></li>
-                                    <li class="footer__list-item"><a href="#"> Development Tutorial</a></li>
-                                    <li class="footer__list-item"><a href="#"> How to- Blog</a></li>
-                                    <li class="footer__list-item"><a href="#"> Youtube Playlist</a></li>
-                                </ul>
-
-                            </div>
-                        </div>
-                    </section>
-
+                        <ul class="footer__list">
+                            <!-- <li class="footer__list-item"><a href="#"> Free eBooks</a></li> -->
+                            <li class="footer__list-item"><a href="#"> Development Tutorial</a></li>
+                            <li class="footer__list-item"><a href="#"> How to- Blog</a></li>
+                            <!-- <li class="footer__list-item"><a href="#"> Youtube Playlist</a></li> -->
+                        </ul>
+                        <!-- </div> -->
+                    </div>
                 </section>
-
+                <div class="footer__social-icons">
+                    <a href="#" class="footer__link"><img src="./images/footer/twitter.png" alt="Twiiter"
+                            class="footer__image"></a>
+                    <a href="#" class="footer__link"><img src="./images/footer/facebook.png" alt="Twitter"
+                            class="footer__image"></a>
+                    <a href="#" class="footer__link"><img src="./images/footer/instagram.png" alt="Instagram"
+                            class="footer__image"></a>
+                    <a href="#" class="footer__link"><img src="./images/footer/github.png" alt="GitHub"
+                            class="footer__image"></a>
+                </div>
             </section>
 
             <small class="footer__small-text">
@@ -556,9 +533,10 @@
     </div>
 </body>
 
-<!-- The JavaScript for the Logic of the WebSite -->
-<script src="./src/faq.js"></script>
-<script src="./src/main.js"></script>
-<script src="./src/firebase.js"></script>
+<!-- The JavaScript for the Logic of the Website -->
+<script src="./Js/script.js"></script>
+<script src="./Js/faq.js"></script>
+<script src="./Js/forms.js"></script>
+<script type="./module" src="./Js/firebase.js"></script>
 
 </html>

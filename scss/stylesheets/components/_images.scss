@@ -1,9 +1,10 @@
 @use '../abstracts'as mixins;
 @use '../abstracts/breakpoints'as *;
 
-@mixin backgroundImgs() {
+@mixin backgroundImgs($aspratio: 1) {
     object-fit: cover;
     max-width: 100%;
+    aspect-ratio: $aspratio;
 }
 
 // Logo
@@ -14,13 +15,12 @@
 
 // Hero Iphone
 .hero__image {
-    @include mixins.positioning($position: relative, $left: 4rem);
+    // @include mixins.positioning($position: relative, $left: 4rem);
     object-fit: cover;
     aspect-ratio: 3/4;
 
     @include media ("<=phone"and "<=900px") {
         left: 0;
-        display: none;
     }
 }
 

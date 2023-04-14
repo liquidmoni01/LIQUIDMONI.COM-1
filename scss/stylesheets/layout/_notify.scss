@@ -10,7 +10,7 @@
 .notification {
     @include mixins.flexDisplay($align-items: center);
     background-color: var(--Notify-bg-color);
-    padding: 4rem;
+    padding: 4rem 2rem 0 2rem;
 
     @include media("<=phone"and "<=tablet") {
         flex-direction: column;
@@ -28,7 +28,7 @@
         @include marginPadding(2rem, 'margin-bottom');
 
         &-text {
-            font-size: var(--large-100);
+            font-size: var(--large-200);
             font-size: 1.2em;
             max-width: 60ch;
 
@@ -50,9 +50,9 @@
         @include mixins.generalSpacing($padding: 1rem 1rem 1rem 0);
         @include mixins.fonts($size: var(--small-400));
         @include mixins.flexDisplay($justify-content: space-between, $align-items: center);
-        text-align: left;
 
-        b {
+        b,
+        span {
             flex-grow: 1;
         }
 

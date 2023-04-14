@@ -13,7 +13,7 @@
 }
 
 .hero {
-    @include mixins.flexDisplay($flex-direction: row);
+    @include mixins.flexDisplay($flex-direction: row, $justify-content: space-between);
 
     @include media("<=phone"and "<=tablet") {
         flex-direction: column;
@@ -99,14 +99,14 @@
         // THE FORM (specific to this section)
         .hero__phone,
         .form {
-            @include mixins.positioning($position: absolute, $top: 8rem, $left: 9rem);
+            @include mixins.positioning($position: absolute, $top: 8rem, $left: -1rem);
             @include mixins.flexDisplay($flex-direction: column, $justify-content: space-between);
             @include mixins.generalSpacing($padding: 4rem, $gap: 4rem);
             color: white;
 
             // responsiveness
             @include media ("<=phone"and "<=1140px") {
-                left: 8rem;
+                // left: 8rem;
             }
 
             .hero__phone-up,
@@ -126,27 +126,35 @@
             }
 
             .hero__phone-input-block {
-                @include mixins.flexDisplay();
-                gap: 1.5rem;
+                @include mixins.flexDisplay($justify-content: center);
+                gap: 0.5rem;
             }
 
             .hero__phone-input {
                 @include mixins.generalSpacing($padding: 0.7rem);
                 @include mixins.borderProps($borderRadVal: 10px, $border: 0);
                 background-color: var(--Hero-input-bg-color);
-                font-size: 1.2rem;
+                font-size: 1rem;
+            }
+
+            #send {
+                width: 150px;
+            }
+
+            #get {
+                width: 250px;
             }
         }
     }
 
-    .desktop__form-container {
-        @include determineDisplay(none);
-    }
+    // .desktop__form-container {
+    //     @include determineDisplay(none);
+    // }
 
-    .mobile__form-container {
-        @include determineDisplay(flex);
-        // display: none;
-    }
+    // .mobile__form-container {
+    //     @include determineDisplay(flex);
+    //     // display: none;
+    // }
 
     justify-content: space-between;
 }
