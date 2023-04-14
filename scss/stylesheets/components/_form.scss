@@ -17,10 +17,12 @@
         padding: 1rem;
     }
 
-    .contact__form {
+    .contact__form,
+    .support__form {
         @include mixins.flexDisplay($flex-direction: column);
 
-        .contact__form-action {
+        .contact__form-action,
+        .support__form-action {
             @include mixins.flexDisplay($flex-direction: column, $align-items: center);
             @include mixins.generalSpacing($gap: 1rem);
         }
@@ -28,13 +30,16 @@
 }
 
 // the form
-.contact__form-field {
+.contact__form-field,
+.support__form-field {
 
-    .contact__form-label {
+    .contact__form-label,
+    .support__form-label {
         display: none;
     }
 
-    .contact__form-input {
+    .contact__form-input,
+    .support__form-input {
         min-width: 500px;
 
         @include media("<=phone"and "<=900px") {
@@ -45,7 +50,9 @@
 }
 
 .contact__form-input,
-.sign__up-input {
+.sign__up-input,
+.log-in__input,
+.support__form-input {
     @include mixins.colorSchemeMix($background-clr: var(--Contact-input-field-color), $color: black);
     @include mixins.borderProps($borderRadVal: 5px, $border: 0);
     font-size: 1.2rem;
@@ -53,7 +60,8 @@
 }
 
 // THE TEXT-AREA 
-.contact__form-textarea {
+.contact__form-textarea,
+.support__form-textarea {
     resize: none;
     margin-top: 0.5rem;
 
@@ -62,25 +70,53 @@
     }
 }
 
-.sign__up-form {
+.support__form-action {
+    @include mixins.flexDisplay($flex-direction: column);
+}
 
-    &-action {
-        @include mixins.flexDisplay($flex-direction: column, $align-items: center);
+// .sign__up-form,
+// .log-in__form {
+
+//     &-action {
+//         @include mixins.flexDisplay($flex-direction: column, $align-items: center);
+//     }
+
+//     &-option {
+//         @include mixins.flexDisplay($flex-direction: column);
+//         @include mixins.generalSpacing($gap: 1rem);
+//     }
+
+//     &-field {
+//         display: flex;
+//         gap: 2rem;
+//         align-items: center;
+//         justify-content: end;
+//     }
+
+//     &-input {
+//         background-color: var(--General-color-white);
+//     }
+// }
+
+.sign__up-other-options,
+.log-in__other-options {
+    @include mixins.flexDisplay();
+    gap: 1rem;
+
+    .sign__up-option-button,
+    .log-in__option-button {
+        padding: 0.6rem 0.7rem;
+        border-radius: 5px;
+        color: var(--General-color-white);
     }
 
-    &-option {
-        @include mixins.flexDisplay($flex-direction: column);
-        @include mixins.generalSpacing($gap: 1rem);
+    .sign__up-option-button:nth-of-type(1),
+    .log-in__option-button:nth-of-type(1) {
+        @include mixins.colorSchemeMix();
     }
 
-    &-field {
-        display: flex;
-        gap: 2rem;
-        align-items: center;
-        justify-content: end;
-    }
-
-    &-input {
-        background-color: var(--General-color-white);
+    .sign__up-option-button:nth-of-type(2),
+    .log-in__option-button:nth-of-type(2) {
+        @include mixins.colorSchemeMix();
     }
 }

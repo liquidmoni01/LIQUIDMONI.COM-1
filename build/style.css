@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url("https: //fonts.googleapis.com");
+}
 .form__fieldset {
   display: flex;
   flex-direction: row;
@@ -203,6 +207,10 @@ input {
   outline: 0;
 }
 
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url("https: //fonts.googleapis.com");
+}
 .form__fieldset {
   display: flex;
   flex-direction: row;
@@ -723,7 +731,6 @@ input {
 
 .notification__left .notification__header-text {
   font-size: var(--large-200);
-  font-size: 1.2em;
   max-width: 60ch;
 }
 
@@ -1157,7 +1164,7 @@ input {
   background-color: var(--Header-nav-button-bg-color);
   color: var(--Header-nav-button-text-color);
   font-weight: 600;
-  margin-left: 2rem;
+  margin-left: 9rem;
 }
 
 .nav__button-group .nav__button:nth-of-type(2) {
@@ -1199,7 +1206,9 @@ input {
 }
 
 .contact__button,
-.sign__up-submit-button {
+.sign__up-submit-button,
+.log-in__submit-button,
+.support__button {
   color: var(--General-color-white);
   background-color: var(--Contact-input-button-color);
   gap: 1rem;
@@ -1211,6 +1220,11 @@ input {
   outline: 0;
   border-radius: 10px;
   align-self: stretch;
+}
+
+.support__button {
+  margin: 1rem;
+  align-items: center;
 }
 
 /* faq section
@@ -1438,14 +1452,18 @@ input {
     padding: 1rem;
   }
 }
-.contact__footer .contact__form {
+.contact__footer .contact__form,
+.contact__footer .support__form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.contact__footer .contact__form .contact__form-action {
+.contact__footer .contact__form .contact__form-action,
+.contact__footer .contact__form .support__form-action,
+.contact__footer .support__form .contact__form-action,
+.contact__footer .support__form .support__form-action {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1455,22 +1473,33 @@ input {
   margin: 0;
 }
 
-.contact__form-field .contact__form-label {
+.contact__form-field .contact__form-label,
+.contact__form-field .support__form-label,
+.support__form-field .contact__form-label,
+.support__form-field .support__form-label {
   display: none;
 }
 
-.contact__form-field .contact__form-input {
+.contact__form-field .contact__form-input,
+.contact__form-field .support__form-input,
+.support__form-field .contact__form-input,
+.support__form-field .support__form-input {
   min-width: 500px;
 }
 
 @media (max-width: 900px) {
-  .contact__form-field .contact__form-input {
+  .contact__form-field .contact__form-input,
+  .contact__form-field .support__form-input,
+  .support__form-field .contact__form-input,
+  .support__form-field .support__form-input {
     min-width: 0;
     max-width: 100%;
   }
 }
 .contact__form-input,
-.sign__up-input {
+.sign__up-input,
+.log-in__input,
+.support__form-input {
   color: black;
   background-color: var(--Contact-input-field-color);
   border: 0;
@@ -1480,42 +1509,57 @@ input {
   padding: 1rem;
 }
 
-.contact__form-textarea {
+.contact__form-textarea,
+.support__form-textarea {
   resize: none;
   margin-top: 0.5rem;
 }
 
 @media (max-width: 900px) {
-  .contact__form-textarea {
+  .contact__form-textarea,
+  .support__form-textarea {
     max-width: 26ch;
   }
 }
-.sign__up-form-action {
+.support__form-action {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.sign__up-form-option {
+.sign__up-other-options,
+.log-in__other-options {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 0;
-  margin: 0;
 }
 
-.sign__up-form-field {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  justify-content: end;
+.sign__up-other-options .sign__up-option-button,
+.sign__up-other-options .log-in__option-button,
+.log-in__other-options .sign__up-option-button,
+.log-in__other-options .log-in__option-button {
+  padding: 0.6rem 0.7rem;
+  border-radius: 5px;
+  color: var(--General-color-white);
 }
 
-.sign__up-form-input {
-  background-color: var(--General-color-white);
+.sign__up-other-options .sign__up-option-button:nth-of-type(1),
+.sign__up-other-options .log-in__option-button:nth-of-type(1),
+.log-in__other-options .sign__up-option-button:nth-of-type(1),
+.log-in__other-options .log-in__option-button:nth-of-type(1) {
+  color: none;
+  background-color: none;
+}
+
+.sign__up-other-options .sign__up-option-button:nth-of-type(2),
+.sign__up-other-options .log-in__option-button:nth-of-type(2),
+.log-in__other-options .sign__up-option-button:nth-of-type(2),
+.log-in__other-options .log-in__option-button:nth-of-type(2) {
+  color: none;
+  background-color: none;
 }
 
 .about__container {
@@ -1570,6 +1614,10 @@ input {
   .contact__header-links {
     flex-direction: column;
   }
+}
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url("https: //fonts.googleapis.com");
 }
 .nav__logo {
   width: 200px;
@@ -1653,6 +1701,28 @@ input {
     object-fit: cover;
   }
 }
+.support__modal,
+.log-in-modal {
+  color: none;
+  background-color: var(--General-theme-color);
+  gap: 1rem;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+.support__modal .support__header,
+.log-in-modal .support__header {
+  font-size: var(--large-100);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.support__modal .support__link,
+.log-in-modal .support__link {
+  text-align: center;
+  line-height: 1.5;
+}
+
 .nav {
   display: flex;
   flex-direction: row;

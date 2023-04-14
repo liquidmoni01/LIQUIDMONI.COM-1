@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liquidmoni - Sign Up</title>
     <link rel="stylesheet" href="../build/style.css">
-
-    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
 </head>
 
 <body>
@@ -48,9 +46,9 @@
 
             <!-- SIGN UP -->
             <div class="sign__up">
-                <form class="sign__up-form" action="https://formsubmit.co/legendn351@gmail.com" method="post">
+                <form class="sign__up-form" action="https://formsubmit.co/liquidmoniainfo@gmail.com" method="post">
                     <input type="hidden" name="_subject" value="new sign in">
-                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_captcha" value="false">
                     <!-- Change deployment url. -->
                     <input type="hidden" name="_next" value="https://liquidmoni.netlify.app/pages/authentication.html">
                     <section class="sign__up-form-action">
@@ -60,7 +58,7 @@
                         <fieldset class="sign__up-field">
                             <label class="sign__up-label" for="email">Email Address: </label>
                             <div class="sign__up-input-container">
-                                <input type="email" class="sign__up-input" id="email" name="new-user-email" required>
+                                <input type="email" class="sign__up-input" id="sign__up-email" name="new-user-email">
                             </div>
                         </fieldset>
 
@@ -68,25 +66,17 @@
                         <fieldset class="sign__up-field">
                             <label class="sign__up-label" for="password">Password: </label>
                             <div class="sign__up-input-container">
-                                <input type="password" class="sign__up-input" id="password" name="new-user-password"
-                                    required>
+                                <input type="password" minlength="8" maxlength="30" class="sign__up-input"
+                                    id="sign__up-password" name="new-user-password" required>
                             </div>
                         </fieldset>
-                        <!-- <fieldset class="sign__up-field">
-                    <legend>
-                        <label class="sign__up-label" for="email">Email</label>
-                    </legend>
-                    <div class="sign__up-input-container">
-                        <input type="email" class="sign__up-input" id="email" name="new-user-email">
-                    </div>
-                </fieldset> -->
                     </section>
 
                     <!-- AUTHENTICATION -->
                     <section class="sign__up-form-option">
                         <p class="sign__up-text">Already a user? <a href="#" class="sign__up-link">Login</a></p>
 
-                        <!-- <section class="sign__up-other-options">
+                        <section class="sign__up-other-options">
                             <button class="sign__up-option-button">
                                 <a href="#" class="sign__up-option-link">Sign Up with FaceBook</a>
                             </button>
@@ -94,42 +84,64 @@
                             <button class="sign__up-option-button">
                                 <a href="#" class="sign__up-option-link">Sign up with Google</a>
                             </button>
-                        </section> -->
-
+                        </section>
                         <button class="sign__up-submit-button" type="submit">Sign Up</button>
                     </section>
                 </form>
             </div>
 
             <!-- LOG IN -->
-            <div class="log-in" style="display: none">
-                <!-- Authorise the user, but take the user to the download page. -->
-                <!-- <form action="./authentication.html" class="log-in__form hidden"> -->
-                <form action="https://formsubmit.co/liquidmoniainfo@gmail.com" class="log-in__form hidden">
-                    <section class="sign__up-form-action">
-
-                        <!-- Detail inputs -->
+            <div class="log-in-modal hidden">
+                <div class="log-in">
+                    <form class="log-in__form" action="https://formsubmit.co/liquidmoniainfo@gmail.com" method="post">
                         <input type="hidden" name="_subject" value="new sign in">
+                        <input type="hidden" name="_captcha" value="false">
                         <!-- Change deployment url. -->
-                        <!-- <input type="hidden" name="_next" value="./authentication.html"> -->
+                        <input type="hidden" name="_next"
+                            value="https://liquidmoni.netlify.app/pages/authentication.html">
+                        <section class="log-in__form-action">
 
-                        <fieldset class="sign__up-field">
-                            <label class="sign__up-label" for="email">Email Address: </label>
-                            <div class="sign__up-input-container">
-                                <input type="email" class="sign__up-input" id="email" name="new-user-email">
-                            </div>
-                        </fieldset>
+                            <!-- Detail inputs -->
 
-                        <fieldset class="sign__up-field">
-                            <label class="sign__up-label" for="password">Password: </label>
-                            <div class="sign__up-input-container">
-                                <input type="password" class="sign__up-input" id="password" name="new-user-password">
-                            </div>
-                        </fieldset>
+                            <fieldset class="log-in__field">
+                                <label class="log-in__label" for="email">Email Address: </label>
+                                <div class="log-in__input-container">
+                                    <input type="email" class="log-in__input" id="log-in__email" name="new-user-email">
+                                </div>
+                            </fieldset>
 
-                        <button class="sign__up-submit-button" type="submit">Log In</button>
-                    </section>
-                </form>
+
+                            <fieldset class="log-in__field">
+                                <label class="log-in__label" for="password">Password: </label>
+                                <div class="log-in__input-container">
+                                    <input type="password" class="log-in__input" id="log-in__password"
+                                        name="new-user-password" min="8" max="30" required>
+                                </div>
+                            </fieldset>
+                        </section>
+
+                        <!-- AUTHENTICATION -->
+                        <section class="log-in__form-option">
+                            <p class="log-in__text">New user? <a href="#" class="log-in__link">Sign Up</a></p>
+
+                            <!-- AUTHENTICATION -->
+                            <section class="log-in__form-option">
+                                <p class="log-in__text">Already a user? <a href="#" class="log-in__link">Login</a></p>
+
+                                <section class="log-in__other-options">
+                                    <button class="log-in__option-button">
+                                        <a href="#" class="log-in__option-link">Sign Up with FaceBook</a>
+                                    </button>
+
+                                    <button class="log-in__option-button">
+                                        <a href="#" class="log-in__link">Sign up with Google</a>
+                                    </button>
+                                </section>
+
+                                <button class="log-in__submit-button" type="submit">Login</button>
+                            </section>
+                    </form>
+                </div>
             </div>
         </main>
 
@@ -223,10 +235,89 @@
 
 </body>
 
+<!-- BACKEND -->
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js";
+    const firebaseConfig = {
+        apiKey: "AIzaSyBNVTxjCatZxSiZhc5HY8Gr64lBMlb9fiA",
+        authDomain: "liquidmoni-project-3d474.firebaseapp.com",
+        projectId: "liquidmoni-project-3d474",
+        storageBucket: "liquidmoni-project-3d474.appspot.com",
+        messagingSenderId: "305360626126",
+        appId: "1:305360626126:web:7f8889f18c97247a960b9f",
+        measurementId: "G-0QLYZCMM04",
+    };
+    import { getAuth, GoogleAuthProvider, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+
+    const homePageFormSubmitButton = document.querySelector(
+        ".form__fieldset__button"
+    );
+    const loginFormSubmitButton = document.querySelector(".log-in__submit-button");
+    const signUpFormSubmitButton = document.querySelector(
+        ".sign__up-submit-button"
+    );
+
+    const signUpEmailInput = document.querySelector(".sign__up-input")[0];
+    const signUpPasswordInput = document.querySelector(".sign__up-input")[1];
+    const googleSignUpButton = document.querySelector(".sign__up-options")[0];
+    const faceBookSignUpButton = document.querySelector(".sign__up-options")[1];
+
+    const App = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const googleProvider = new GoogleAuthProvider(App);
+
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/g;
+    const requiredPwLength = 6;
+
+    let wrongEmail = () => {
+
+    }
+
+    // check if email matches this rule, if not don't allow user login.
+    let checkEmailInput = (emailInput, passwordInput = null, executeFunc) => {
+        emailInput.value.match(emailPattern) &&
+            passwordInput.length < requiredPwLength
+            ? executeFunc()
+            : console.log("User Unaccepted");
+    };
+
+    signUpFormSubmitButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        // frontend - validation
+        const signUpEmailInput = document.querySelector(".sign__up-input")[0];
+        const signUpPasswordInput = document.querySelector(".sign__up-input")[1];
+
+        // backend - authentication
+        checkEmailInput(signUpEmailInput, signUpPasswordInput, handleSignUp(signUpEmailInput, signUpPasswordInput));
+        // handleSignUp(signUpEmailInput, signUpPasswordInput);
+    });
+
+    let handleSignUp = (emailInput, passwordInput) => {
+        // authentication
+        createUserWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
+            .then((signInDetails) => {
+                const newUser = signInDetails.user;
+
+                // store the user's data into the database
+                set(ref(dbForNewUsers, "users/" + user.uid), {
+                    emailAddress: emailInput.value,
+                });
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+    };
+
+    // verification of email and password sign up and log in
+    // https://liquidmoni-project-3d474.firebaseapp.com/__/auth/action?mode=action&oobCode=code
+</script>
 <!-- The JavaScript for the Logic of the WebSite -->
-<script type="./module" src="./Js/forms.js"></script>
-<script src="./src/firebase.js"></script>
-<script src="./src/faq.js"></script>
-<script src="./src/main.js"></script>
+<!-- <script type="./module" src="../Js/forms.js"></script> -->
+<!-- <script src="../Js/script.js"></script> -->
+<!-- <script type="./module" src="../backend-auth/create-user.js"></script> -->
+<!-- <script type="./module" src="../backend-auth/login-user.js"></script> -->
 
 </html>

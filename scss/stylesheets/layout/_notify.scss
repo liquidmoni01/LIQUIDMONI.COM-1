@@ -29,7 +29,6 @@
 
         &-text {
             font-size: var(--large-200);
-            font-size: 1.2em;
             max-width: 60ch;
 
             @include media("<=phone"and "<=tablet") {
