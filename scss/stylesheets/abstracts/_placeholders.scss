@@ -15,8 +15,8 @@
         margin-bottom: var(--large-300);
 
         @include media ("<=phone"and "<=tablet") {
-            flex-direction: column;
             align-items: flex-start;
+            flex-direction: column;
         }
 
         &__label {
@@ -27,7 +27,11 @@
             background: none;
             @include mixins.borderProps($border: 0);
             @include mixins.fonts($size: 1.5rem);
-            @include mixins.generalSpacing($padding: .5rem);
+            @include mixins.generalSpacing($padding: 0.5rem);
+
+            @include media("<=phone"and "<=tablet") {
+                font-size: var(--small-500);
+            }
         }
 
         &__email-input::placeholder {

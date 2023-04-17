@@ -18,9 +18,21 @@
     // @include mixins.positioning($position: relative, $left: 4rem);
     object-fit: cover;
     aspect-ratio: 3/4;
+    width: 400px;
 
     @include media ("<=phone"and "<=900px") {
         left: 0;
+        min-width: 100%;
+    }
+}
+
+.features__card__image {
+    width: 300px;
+    object-fit: cover;
+
+    @include media ("<=phone"and "<=900px") {
+        object-fit: scale-down;
+        max-width: 100%;
     }
 }
 

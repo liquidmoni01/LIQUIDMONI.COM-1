@@ -18,10 +18,10 @@ $border-radius: 30px;
 
 .features__header {
     @include mixins.fonts($size: var(--extra-large-200), $weight: 600);
-    margin-bottom: 2rem;
+    margin: 0.7rem;
 
     @include media ("<=phone"and "<=tablet") {
-        font-size: var(--medium-100);
+        font-size: var(--small-500);
     }
 
     +.features__text {
@@ -61,23 +61,15 @@ $border-radius: 30px;
             max-width: 40ch;
 
             @include media ("<=phone"and "<=900px") {
-                font-size: var(--small-200);
+                text-align: left;
+                font-size: var(--small-100);
+                padding-bottom: 0.5rem;
             }
         }
     }
 
-    .features__card__image-block {
-        border-radius: $border-radius;
-        width: 50px;
-        // flex: ;
-
-        .features__card__image {
-            @include backgroundImg.backgroundImgs($aspratio: 3/4);
-
-            @include media ("<=phone"and "<=900px") {
-                object-fit: scale-down;
-            }
-        }
+    .highlight {
+        background-color: var(--General-theme-color);
     }
 }
 
