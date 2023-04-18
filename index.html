@@ -9,10 +9,6 @@
     <!-- Stylesheets (From The Header to the contents to the footer) -->
     <link rel="stylesheet" href="./build/style.css">
     <style>
-        .hidden {
-            display: none;
-        }
-
         .invalid-validate:invalid {
             border: 1px solid red;
         }
@@ -26,6 +22,48 @@
 
 <body>
     <div class="main-wrapper">
+        <div class="support__modal">
+            <section class="support">
+                <h2 class="support__header">Support us</h2>
+                <button class="support__close">
+                    <img src="../images/svg-images/close.svg" alt="Support Close Button">
+                </button>
+                <form action="" class="support__form">
+                    <section class="support__form-action">
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- Detail inputs -->
+                        <input type="hidden" name="_subject" value="new sign in">
+                        <!-- Change deployment url. -->
+
+                        <!-- <input type="hidden" name="_next" value="https://jailbreak-101.github.io/LIQUIDMONI.COM/thank-you.html"> -->
+                        <input type="hidden" name="_next" value="">
+
+                        <fieldset class="support__form-field">
+                            <label class="support__form-label" for="username">Name: </label>
+                            <div class="support__form-input-container">
+                                <input type="text" class="support__form-input" id="username" name="username"
+                                    placeholder="Name" required>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="support__form-field">
+                            <label class="support__form-label" for="email">Email: </label>
+                            <div class="support__form-input-container">
+                                <input type="email" class="support__form-input" id="email" name="user-email"
+                                    placeholder="Email" required>
+                            </div>
+                        </fieldset>
+
+                        <textarea class="support__form-input support__form-textarea" name="user-message" id="message"
+                            cols="41" rows="10" placeholder="Message" required></textarea>
+                        <button type="submit" class="support__button">Submit</button>
+                        <p class="support__link">You can also support us by emailing<a href=""
+                                class="link">Support@liquidmoni.com</a></p>
+                    </section>
+                </form>
+            </section>
+        </div>
+
         <header class="header">
             <nav class="nav">
                 <a href="./index.html" class="nav__image-link">

@@ -33,46 +33,44 @@ let countryData = [
 const sendInput = document.getElementsByClassName("hero__phone-input")[0];
 const getInput = document.getElementsByClassName("hero__phone-input")[1];
 const dropdown = document.querySelector(".hero__phone-dropdown");
-const dropdownItems = Array.from(dropdown.children);
+// const dropdownItems = Array.from(dropdown.children);
 const dropdownBtn = document.querySelector(".hero__phone__dropdown-btn");
-const countryName = (document.querySelector(
-  ".hero__phone-country-name"
-).innerText = countryData[1].name);
-const countryImage = (document.querySelector(".hero__phone-country-image").src =
-  countryData[1].image);
+// const countryName = (document.querySelector(".hero__phone-country-name").innerText = countryData[1].name);
+// const countryImage = (document.querySelector(".hero__phone-country-image").src =
+// countryData[1].image);
 
 // eventListeners.
-dropdownBtn.addEventListener("click", () => handleDropdown);
+// dropdownBtn.addEventListener("click", () => handleDropdown);
 
 // selection process
 let handleDropdown = () => handleSelection;
 
 // select country
-let handleSelection = () => {
-  dropdown.classList.remove("hidden");
-  // dropdown.setAttribute("aria-expanded", true);
-  dropdownItems.map((country) => {
-    country.addEventListener("click", () => {
-      console.log();
-      console.log(country[0].children[1]);
+// let handleSelection = () => {
+//   dropdown.classList.remove("hidden");
+//   // dropdown.setAttribute("aria-expanded", true);
+//   dropdownItems.map((country) => {
+//     country.addEventListener("click", () => {
+//       console.log();
+//       console.log(country[0].children[1]);
 
-      countryData.map((data) => {
-        if (country[0].children[0].children[0].src === data.image) {
-          country[0].children[0].children[0].src === data.image;
-        }
-        if (country[0].children[1].innerText === data.name) {
-          country[0].children[0].children[0].src === data.image;
-        }
-      });
-    });
-  });
-};
+//       countryData.map((data) => {
+//         if (country[0].children[0].children[0].src === data.image) {
+//           country[0].children[0].children[0].src === data.image;
+//         }
+//         if (country[0].children[1].innerText === data.name) {
+//           country[0].children[0].children[0].src === data.image;
+//         }
+//       });
+//     });
+//   });
+// };
 
 // conversion process
-sendInput.addEventListener("keyup", (e) => {
-  let sendVal = e.target.value;
-  console.log(sendVal);
-});
+// sendInput.addEventListener("keyup", (e) => {
+//   let sendVal = e.target.value;
+//   console.log(sendVal);
+// });
 
 let convertVal = (e) => {
   // convert the inputted value to the selected country, and display converted value to the user.

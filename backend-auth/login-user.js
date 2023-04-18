@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { getDatabase } from "firebase/database";
+
 import { checkEmailInput, loginFormSubmitButton } from "../Js/forms";
 
 // const App2 = initializeApp(firebaseConfig);
@@ -26,7 +26,7 @@ let handleSignIn = (emailInput, passwordInput) => {
       console.log(passwordInput.value);
 
       // store the user's data into the database
-    })
+  })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
