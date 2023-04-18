@@ -3,9 +3,6 @@
 @use '../abstracts/breakpoints'as *;
 @use '../components/navigation';
 
-// .about {
-//     padding: 4rem;
-// }
 .about__contents {
     @include mixins.flexDisplay($flex-direction: column);
 }

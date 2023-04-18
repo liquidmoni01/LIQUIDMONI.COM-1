@@ -11,7 +11,7 @@
 
     @include media ("<=phone"and "<=tablet") {
         text-align: center;
-        padding: 2rem;
+        padding: 0;
     }
 }
 
@@ -21,18 +21,25 @@
     font-weight: 600;
     margin-bottom: 1.5rem;
     font-weight: 600;
+
+    @include media ("<=phone"and "<=tablet") {
+        font-size: var(--small-300);
+        padding-top: 1.5rem;
+    }
 }
 
 .benefits__text {
     color: var(--Benefits-text-color);
     font-size: var(--large-100);
     text-align: center;
-    max-width: 50ch;
+    max-width: 40ch;
     border-bottom: 1px solid var(--Benefits-rule-color);
     padding-bottom: var(--large-500);
 
     @include media ("<=phone"and "<=tablet") {
         font-size: var(--medium-100);
+        font-weight: 500;
+        padding: 2rem;
     }
 }
 
@@ -45,20 +52,21 @@
     @include mixins.flexDisplay($align-items: center);
     @include mixins.generalSpacing($gap: 0.4rem);
     font-weight: 600;
-    text-align: centerw;
-
-    @include media ("<=phone"and "<=900px") {
-        flex-direction: column;
-    }
+    text-align: center;
 }
 
 // specific image for this section.
 .map-image {
     @include mixins.imageSize(100%, 100%, cover);
 
-    @include media("<phone"and "<=tablet") {
-        object-fit: cover;
+    @include media("<=phone") {
+        max-width: 100%;
         aspect-ratio: 1;
+        object-fit: cover;
+        padding: 0;
+    }
+
+    @include media("<=tablet") {
         max-width: 100%;
     }
 }

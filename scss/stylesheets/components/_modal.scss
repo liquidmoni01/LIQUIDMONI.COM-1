@@ -1,0 +1,20 @@
+@use '../abstracts/mixins';
+
+// the modals
+.support__modal,
+.log-in-modal {
+
+    .support__header {
+        font-size: var(--large-100);
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .support__link {
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    @include mixins.colorSchemeMix($background-clr: var(--General-theme-color));
+    @include mixins.generalSpacing($margin: 2rem, $padding: 2rem);
+}

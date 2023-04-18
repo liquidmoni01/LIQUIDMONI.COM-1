@@ -53,12 +53,19 @@
 
 // pages styles
 .contact__button,
-.sign__up-submit-button {
+.sign__up-submit-button,
+.log-in__submit-button,
+.support__button {
     @include mixins.colorSchemeMix($background-clr: var(--Contact-input-button-color), $color: var(--General-color-white));
     @include mixins.generalSpacing($padding: 1.2rem);
     @include mixins.fonts($size: var(--small-200), $weight: 600);
     @include mixins.borderProps($borderRadVal: 10px, $border: 0);
     align-self: stretch;
+}
+
+.support__button {
+    margin: 1rem;
+    align-items: center;
 }
 
 // Button-padding: 12px, 18px, 12px, 18px

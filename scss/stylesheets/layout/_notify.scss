@@ -14,7 +14,7 @@
 
     @include media("<=phone"and "<=tablet") {
         flex-direction: column;
-        @include mixins.generalSpacing($padding: 2rem 4rem 0 4rem);
+        @include mixins.generalSpacing($padding: 2rem 2rem 0 2rem);
         text-align: center;
     }
 }
@@ -29,17 +29,16 @@
 
         &-text {
             font-size: var(--large-200);
-            font-size: 1.2em;
             max-width: 60ch;
 
             @include media("<=phone"and "<=tablet") {
-                font-size: var(--medium-200);
+                font-size: var(--medium-100);
             }
         }
     }
 
     .notification__text {
-        font-size: var(--small-400);
+        font-size: var(--small-500);
 
         @include media ("<=phone"and "<=tablet") {
             font-size: var(--small-200);
@@ -54,6 +53,10 @@
         b,
         span {
             flex-grow: 1;
+
+            @include media ("<=phone"and "<=tablet") {
+                text-align: left;
+            }
         }
 
         @include media ("<=phone"and "<=tablet") {
