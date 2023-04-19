@@ -40,6 +40,7 @@ const countryName = (document.querySelector(
 ).innerText = countryData[1].name);
 const countryImage = (document.querySelector(".hero__phone-country-image").src =
   countryData[1].image);
+const heroPhoneButton = document.querySelector(".hero__button");
 
 // eventListeners.
 dropdownBtn.addEventListener("click", () => handleDropdown);
@@ -71,53 +72,18 @@ let handleSelection = () => {
 // conversion process
 sendInput.addEventListener("keyup", (e) => {
   let sendVal = e.target.value;
+  // convertVal(sendVal);
   console.log(sendVal);
+  let dollarsToNaira = sendVal * 459;
+  getInput.inertext = dollarsToNaira.toString();
 });
 
-let convertVal = (e) => {
+let convertVal = (val) => {
   // convert the inputted value to the selected country, and display converted value to the user.
+  let dollarsToNaira = val * 459;
+  getInput.inertext = dollarsToNaira;
 };
 
+heroPhoneButton.addEventListener("click", (e) => e.preventDefault());
+
 // THE SUPPORT MODAL FOR ALL PAGES, WHEN WE CLICK THE SUPPORT BUTTON
-// let supportModal = () => {
-//   "
-//   <div class="support__modal">
-//             <section class="support">
-//                 <h2 class="support__header">Support us</h2>
-//                 <form action="" class="support__form">
-//                     <section class="support__form-action">
-//                         <input type="hidden" name="_captcha" value="false">
-//                         <!-- Detail inputs -->
-//                         <input type="hidden" name="_subject" value="new sign in">
-//                         <!-- Change deployment url. -->
-//                         <!-- <input type="hidden" name="_next" value="https://jailbreak-101.github.io/LIQUIDMONI.COM/thank-you.html"> -->
-//                         <input type="hidden" name="_next" value="">
-
-//                         <fieldset class="support__form-field">
-//                             <label class="support__form-label" for="username">Name: </label>
-//                             <div class="support__form-input-container">
-//                                 <input type="text" class="support__form-input" id="username" name="username"
-//                                     placeholder="Name" required>
-//                             </div>
-//                         </fieldset>
-
-//                         <fieldset class="support__form-field">
-//                             <label class="support__form-label" for="email">Email: </label>
-//                             <div class="support__form-input-container">
-//                                 <input type="email" class="support__form-input" id="email" name="user-email"
-//                                     placeholder="Email" required>
-//                             </div>
-//                         </fieldset>
-
-//                         <textarea class="support__form-input support__form-textarea" name="user-message" id="message"
-//                             cols="41" rows="10" placeholder="Message" required></textarea>
-
-//                         <button type="submit" class="support__button">Submit</button>
-
-//                         <p class="support__link">You can also support us by emailing<a href="" class="link">
-//                                 Support@liquidmoni.com</a></p>
-//                     </section>
-//                 </form>
-//             </section>
-//         </div>")
-// }
