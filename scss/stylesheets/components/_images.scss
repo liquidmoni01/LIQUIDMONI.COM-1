@@ -53,6 +53,8 @@
 // THE ABOUT PAGE BACKGROUND
 .about__hero-img {
     @include backgroundImgs();
+    width: 100%;
+    object-fit: cover;
 }
 
 // The Contact Page Background.
@@ -86,8 +88,8 @@
 
     @include media("<phone"and "<=tablet") {
         max-width: 100%;
-        width: 350px;
-        margin: 0 auto;
+        // width: 350px;
+        // margin: 0 auto;
         object-fit: cover;
     }
 }
