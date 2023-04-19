@@ -160,6 +160,10 @@ body {
   overflow-x: hidden;
 }
 
+.hidden {
+  display: none;
+}
+
 .faq-wrapper,
 .about__wrapper,
 .contact__wrapper,
@@ -1797,6 +1801,7 @@ input {
 }
 .support__modal,
 .log-in-modal {
+  position: absolute;
   color: none;
   background-color: var(--General-theme-color);
   gap: 1rem;
