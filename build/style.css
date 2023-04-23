@@ -647,11 +647,6 @@ input {
   aspect-ratio: 1;
 }
 
-@media (max-width: 768px) {
-  .contact__hero-image img {
-    object-fit: scale-down;
-  }
-}
 .about-us__hero__header {
   background-image: url("../images/dir/about-bg.png.svg");
   background-size: contain;
@@ -1878,11 +1873,6 @@ input {
   aspect-ratio: 1;
 }
 
-@media (max-width: 768px) {
-  .contact__hero-image img {
-    object-fit: scale-down;
-  }
-}
 .about-us__hero__header {
   background-image: url("../images/dir/about-bg.png.svg");
   background-size: contain;

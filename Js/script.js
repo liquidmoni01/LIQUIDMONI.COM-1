@@ -1,3 +1,8 @@
+// Support Modal
+
+
+// WORK ON THE DROPDOWN LOGIC
+
 // Hero Section Currency Converter.
 let countryData = [
   {
@@ -85,5 +90,12 @@ let convertVal = (val) => {
 };
 
 heroPhoneButton.addEventListener("click", (e) => e.preventDefault());
+
+// Webhook for the contact page.
+// {
+//   "form__data": {
+//     "name": "Liquid"
+//   }
+// }
 
 // THE SUPPORT MODAL FOR ALL PAGES, WHEN WE CLICK THE SUPPORT BUTTON

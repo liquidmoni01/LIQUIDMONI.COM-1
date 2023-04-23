@@ -53,11 +53,17 @@ const database = getDatabase();
 
 signUpButton.addEventListener("submit", (e) => {
   e.preventDefault();
+  alert("Welcome new user");
   handleSignUp(signUpEmail, signUpPassword);
+  // redirect to homepage
+  window.location.href = "../index.html";
 });
 
 loginFormSubmitButton.addEventListener("click", () => {
+  alert("Welcome back");
   handleSignIn(loginEmailInput, loginPasswordInput);
+  // redirect to homepage
+  window.location.href = "../index.html";
 });
 
 // sign-up
@@ -88,6 +94,8 @@ let handleSignIn = async (emailVal, passwordVal) => {
   }
 };
 
+// AUTHENTICATION TO BE FIXED
+
 // check login status
 let monitorAuthState = (async = () => {
   onAuthStateChanged(auth, (user) => {
@@ -101,6 +109,17 @@ let monitorAuthState = (async = () => {
     }
   });
 });
+
+// INFO@LIQUIDMONI.COM
+
+// Put down the following functions
+let showApp = () => {};
+
+let hideLoginError = () => {};
+
+let showLoginForm = () => {};
+
+let showLoginState = () => {};
 
 monitorAuthState();
 

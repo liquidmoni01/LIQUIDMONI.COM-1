@@ -95,11 +95,19 @@
                         <section class="contact__form-action">
                             <input type="hidden" name="_captcha" value="false">
                             <!-- Detail inputs -->
-                            <input type="hidden" name="_subject" value="new sign in">
+                            <input type="hidden" name="_subject" value="Contact/Help">
                             <!-- Change deployment url. -->
-                            <!-- <input type="hidden" name="_next" value="https://jailbreak-101.github.io/LIQUIDMONI.COM/thank-you.html"> -->
+                            <input type="hidden" name="_next" value="./thank-you.html">
                             <input type="hidden" name="_next" value="./thank-you.html">
 
+                            <!-- autoresponse to users after they've messaged us. -- This goes to the user's email address-->
+                            <input type="hidden" name="_autoresponse"
+                                value="Hi, We've gotten your response, and we'll get you your answer as soon as possible">
+
+                            <!-- Webhook for manipulating form data submitted by user. -->
+                            <input type="hidden" name="_webhook" value="./thank-you.html/webhook">
+
+                            <!-- LIQUIDMONI WILL HANDLE THIS ON THE GMAIL. -->
                             <fieldset class="contact__form-field">
                                 <label class="contact__form-label" for="username">Name: </label>
                                 <div class="contact__form-input-container">
@@ -195,7 +203,8 @@
 
 <!-- The JavaScript for the Logic of the WebSite -->
 <!-- <script src="./src/faq.js"></script> -->
-<script src="./src/main.js"></script>
+<script type="module" src="../Js/ui-forms.js"></script>
+<script type="module" src="../Js/firebase-forms.js"></script>
 <!-- <script src="./src/firebase.js"></script> -->
 
 </html>
