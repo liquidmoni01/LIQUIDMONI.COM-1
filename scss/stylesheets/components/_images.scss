@@ -70,7 +70,8 @@
         @include backgroundImgs();
 
         @include media("<phone"and "<=tablet") {
-            object-fit: scale-down;
+            // scale image to normal size
+            // object-fit: scale-down;
         }
     }
 }

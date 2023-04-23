@@ -1,6 +1,8 @@
 // THE DROPDOWN ON THE HERO SECTION'S PHONE FORM
 @use '../abstracts/mixins';
 
+// WORK ON THE CURRENCY DROPDOWN STYLES
+
 // logic styles 
 .hero__phone-country {
     @include mixins.flexDisplay();
@@ -34,12 +36,4 @@
             }
         }
     }
-
-    // .hero__phone-dropdown[aria-expanded=false] {
-    //     display: none;
-    // }
-
-    // .hero__phone-dropdown[aria-expanded=true] {
-    //     display: flex;
-    // }
 }

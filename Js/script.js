@@ -1,3 +1,5 @@
+// WORK ON THE DROPDOWN LOGIC
+
 // Hero Section Currency Converter.
 let countryData = [
   {
