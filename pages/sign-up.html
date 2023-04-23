@@ -67,13 +67,13 @@
                     <img class="nav__logo" src="../images/header/Liquid-moni.png" alt="the logo">
                 </a>
 
-                <fieldset class="nav__toggle-box">
-                    <label for="toggle" class="toggle__icon"><img src="../images/icon-hamburger.svg"
-                            alt="toggle"></label>
-                    <input type="checkbox" id="toggle" class="toggle">
-                </fieldset>
 
                 <section class="mini-nav">
+                    <!-- <fieldset class="nav__toggle-box"> -->
+                    <label for="toggle" class="toggle__icon"><img src="../images/svg-images/menu.png"
+                            alt="toggle"></label>
+                    <input type="checkbox" id="toggle" class="toggle">
+                    <!-- </fieldset> -->
                     <ul class="nav__list">
                         <li class="nav__item"><a href="./sign-up.html" class="nav__link">Send Money</a></li>
                         <li class="nav__item"><a href="./about.html" class="nav__link">About</a></li>
@@ -97,14 +97,11 @@
             <!-- https://formsubmit.co/liquidmoniainfo@gmail.com -->
             <div class="sign__up">
                 <form class="sign__up-form" action="https://formsubmit.co/liquidmoniainfo@gmail.com" method="post">
-                    <input type="hidden" name="_subject" value="new sign in">
+                    <input type="hidden" name="_subject" value="new user">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://liquidmoni.netlify.app/pages/authentication.html">
-                    <!-- Change deployment url. -->
+                    <!-- use next page as a modal to confirm user has signed up or signed in -->
+
                     <section class="sign__up-form-action">
-
-                        <!-- Detail inputs -->
-
                         <fieldset class="sign__up-field">
                             <label class="sign__up-label" for="email">Email Address: </label>
                             <div class="sign__up-input-container">
@@ -122,9 +119,10 @@
                         </fieldset>
                     </section>
 
-                    <!-- AUTHENTICATION -->
-                    <!-- <section class="sign__up-form-option">
-                        <p class="sign__up-text">Already a user? <a href="#" class="sign__up-link">Login</a></p>
+                    <!-- THIRD PARTY AUTHENTICATION -->
+                    <section class="sign__up-form-option">
+                        <p class="sign__up-text">Already a user? <button href="#" class="sign__up-log-in">Login</button>
+                        </p>
 
                         <section class="sign__up-other-options">
                             <button class="sign__up-option-button">
@@ -146,22 +144,18 @@
                     <button class="log-in__close"><img src="../images/svg-images/close.svg"
                             alt="Log in close button"></button>
                     <form class="log-in__form" action="https://formsubmit.co/liquidmoniainfo@gmail.com" method="post">
-                        <input type="hidden" name="_subject" value="new sign in">
+
+                        <input type="hidden" name="_subject" value="existing user">
                         <input type="hidden" name="_captcha" value="false">
-                        <!-- Change deployment url. -->
-                        <input type="hidden" name="_next"
-                            value="https://liquidmoni.netlify.app/pages/authentication.html">
+                        <!-- use next page as a modal to confirm user has signed up or signed in -->
+
                         <section class="log-in__form-action">
-
-                            <!-- Detail inputs -->
-
                             <fieldset class="log-in__field">
                                 <label class="log-in__label" for="email">Email Address: </label>
                                 <div class="log-in__input-container">
                                     <input type="email" class="log-in__input" id="log-in__email" name="new-user-email">
                                 </div>
                             </fieldset>
-
 
                             <fieldset class="log-in__field">
                                 <label class="log-in__label" for="password">Password: </label>
@@ -172,12 +166,11 @@
                             </fieldset>
                         </section>
 
-                        <!-- AUTHENTICATION -->
+                        <!-- OTHER AUTHENTICATION OPTIONS-->
                         <section class="log-in__form-option">
                             <p class="log-in__text">New user? <a href="#" class="log-in__link">Sign Up</a></p>
 
-                            <!-- AUTHENTICATION -->
-                            <!-- <section class="log-in__form-option">
+                            <section class="log-in__form-option">
                                 <p class="log-in__text">Already a user? <a href="#" class="log-in__link">Login</a></p>
 
                                 <section class="log-in__other-options">
@@ -208,13 +201,13 @@
                         Free</a>
 
                     <div class="footer__social-icons">
-                        <a href="#" class="footer__link"><img src="./images/footer/twitter.png" alt="Twiiter"
+                        <a href="#" class="footer__link"><img src="../images/footer/twitter.png" alt="Twiiter"
                                 class="footer__image"></a>
-                        <a href="#" class="footer__link"><img src="./images/footer/facebook.png" alt="Twitter"
+                        <a href="#" class="footer__link"><img src="../images/footer/facebook.png" alt="Twitter"
                                 class="footer__image"></a>
-                        <a href="#" class="footer__link"><img src="./images/footer/instagram.png" alt="Instagram"
+                        <a href="#" class="footer__link"><img src="../images/footer/instagram.png" alt="Instagram"
                                 class="footer__image"></a>
-                        <a href="#" class="footer__link"><img src="./images/footer/github.png" alt="GitHub"
+                        <a href="#" class="footer__link"><img src="../images/footer/github.png" alt="GitHub"
                                 class="footer__image"></a>
                     </div>
                 </section>
@@ -222,13 +215,12 @@
                 <hr class="footer__hr">
 
                 <section class="footer__bottom">
-                    <!-- <div class="footer__other-links"> -->
                     <div class="footer__category">
                         <p class="footer__category-title"><b>Company</b></p>
 
                         <ul class="footer__list">
-                            <li class="footer__list-item"><a href="./pages/about.html"> About</a></li>
-                            <li class="footer__list-item"><a href="#features"> Features</a></li>
+                            <li class="footer__list-item"><a href="./about.html"> About</a></li>
+                            <li class="footer__list-item"><a href="../index.html"> Features</a></li>
                             <li class="footer__list-item"><a href="#"> Works</a></li>
                             <li class="footer__list-item"><a href="#"> Career</a></li>
                         </ul>
@@ -240,7 +232,6 @@
 
                         <ul class="footer__list">
                             <li class="footer__list-item"><a href="#"> Customer Support</a></li>
-                            <!-- <li class="footer__list-item"><a href="#"> Delivery Details</a></li> -->
                             <li class="footer__list-item"><a href="#"> Terms and Conditions</a></li>
                             <li class="footer__list-item"><a href="#"> Privacy Policy</a></li>
                         </ul>
@@ -250,10 +241,8 @@
                         <p class="footer__category-title"><b>Resources</b></p>
 
                         <ul class="footer__list">
-                            <!-- <li class="footer__list-item"><a href="#"> Free eBooks</a></li> -->
                             <li class="footer__list-item"><a href="#"> Development Tutorial</a></li>
                             <li class="footer__list-item"><a href="#"> How to- Blog</a></li>
-                            <!-- <li class="footer__list-item"><a href="#"> Youtube Playlist</a></li> -->
                         </ul>
                         <!-- </div> -->
                     </div>

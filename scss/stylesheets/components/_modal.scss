@@ -3,6 +3,7 @@
 // the modals
 .support__modal,
 .log-in-modal {
+    position: absolute;
 
     .support__header {
         font-size: var(--large-100);
