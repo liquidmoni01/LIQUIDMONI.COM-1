@@ -160,6 +160,10 @@ body {
   overflow-x: hidden;
 }
 
+.hidden {
+  display: none;
+}
+
 .faq-wrapper,
 .about__wrapper,
 .contact__wrapper,
