@@ -1,6 +1,5 @@
 @use '../abstracts/mixins';
-
-// Create only file specific mixins, variables and function when needed
+@use '../abstracts/breakpoints'as *; // Create only file specific mixins, variables and function when needed
 
 .nav__button-group {
     @include mixins.flexDisplay($flex-direction: row, $justify-content: space-between);
@@ -13,11 +12,11 @@
         background-color: var(--Header-nav-button-bg-color);
         color: var(--Header-nav-button-text-color);
         font-weight: 600;
-        margin-left: 2rem;
-        // IF Button == Send Button 
-        // @if .nav__button::nth-of-type(2) {
-        //    background-color: ; 
-        // }
+        margin-left: 8rem;
+
+        @include media("<=phone"and "<=tablet") {
+            margin-left: 2rem;
+        }
     }
 
     .nav__button:nth-of-type(2) {

@@ -21,12 +21,6 @@
         }
     }
 
-    // .toggle:checked .nav__list {
-    //     @include media("<=phone"and "<=tablet") {
-    //         display: flex;
-    //     }
-    // }
-
     // The Nav-Menu
     @include media("<=phone"and "<=tablet") {
         display: flex;
@@ -80,7 +74,7 @@
             margin: 5rem;
             height: 100%;
             flex-direction: column;
-            z-index: 0;
+            z-index: 1;
 
             .nav__link {
                 background: none;

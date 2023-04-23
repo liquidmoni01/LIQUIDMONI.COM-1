@@ -9,10 +9,6 @@
     <!-- Stylesheets (From The Header to the contents to the footer) -->
     <link rel="stylesheet" href="./build/style.css">
     <style>
-        .hidden {
-            display: none;
-        }
-
         .invalid-validate:invalid {
             border: 1px solid red;
         }
@@ -26,6 +22,48 @@
 
 <body>
     <div class="main-wrapper">
+        <div class="support__modal">
+            <section class="support">
+                <h2 class="support__header">Support us</h2>
+                <button class="support__close">
+                    <img src="../images/svg-images/close.svg" alt="Support Close Button">
+                </button>
+                <form action="" class="support__form">
+                    <section class="support__form-action">
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- Detail inputs -->
+                        <input type="hidden" name="_subject" value="new sign in">
+                        <!-- Change deployment url. -->
+
+                        <!-- <input type="hidden" name="_next" value="https://jailbreak-101.github.io/LIQUIDMONI.COM/thank-you.html"> -->
+                        <input type="hidden" name="_next" value="">
+
+                        <fieldset class="support__form-field">
+                            <label class="support__form-label" for="username">Name: </label>
+                            <div class="support__form-input-container">
+                                <input type="text" class="support__form-input" id="username" name="username"
+                                    placeholder="Name" required>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="support__form-field">
+                            <label class="support__form-label" for="email">Email: </label>
+                            <div class="support__form-input-container">
+                                <input type="email" class="support__form-input" id="email" name="user-email"
+                                    placeholder="Email" required>
+                            </div>
+                        </fieldset>
+
+                        <textarea class="support__form-input support__form-textarea" name="user-message" id="message"
+                            cols="41" rows="10" placeholder="Message" required></textarea>
+                        <button type="submit" class="support__button">Submit</button>
+                        <p class="support__link">You can also support us by emailing<a href=""
+                                class="link">Support@liquidmoni.com</a></p>
+                    </section>
+                </form>
+            </section>
+        </div>
+
         <header class="header">
             <nav class="nav">
                 <a href="./index.html" class="nav__image-link">
@@ -62,16 +100,17 @@
                     <p class="hero__content-text">The Liquidmoni App makes it easy for you to receive and send money in
                         your local currency from
                         anywhere in the world.</p>
+                    <form action="https://formsubmit.co/liquidmoniainfo@gmail.com" class="form">
+                        <!-- subject of email -->
+                        <input type="hidden" name="_subject" value="notify on release">
+                        <!-- the target url of this form -->
+                        <input type="hidden" name="_next" value="https://liquidmoni.com/pages/thank-you.html">
+                        <!-- remove the captcha -->
+                        <input type="hidden" name="_captcha" value="true">
 
-                    <!-- IN THIS FORM, WE HAVE A MODIFIER CLASS FOR BOTH OF THE FORMS (similar to each other.) - Use nested BEM for the sake of this form -->
-                    <form action="#" class="form">
-                        <input type="hidden" name="_subject" value="new sign in">
-                        <!-- <input type="hidden" name="_captcha" value="true"> -->
-                        <!-- Change deployment url. -->
-                        <!-- <input type="hidden" name="_next" value="https://liquidmoni.netlify.app/pages/thank-you.html"> -->
+                        <!-- the form fieldsets and inputs -->
                         <div data-field class="form__fieldset">
                             <label class="form__fieldset__label" for="email">Email</label>
-                            <input type="hidden" name="_captcha" value="true">
                             <input data-email-input class="form__fieldset__email-input" type="email" id="email"
                                 name="email" placeholder="Enter email address">
                             <button data-email-button class="form__fieldset__button">Get
@@ -174,6 +213,7 @@
                                     <div class="hero__phone-input-block">
                                         <!-- <img src="./images/hero/nigeria.svg" alt="country-logo"> -->
                                         <input class="hero__phone-input" type="number" id="get" name="get" required>
+                                        <!-- <span class="hero__phone-input" id="get"></span> -->
                                     </div>
                                 </fieldset>
                             </div>
@@ -291,17 +331,21 @@
 
                     <section class="notification__footer">
 
-                        <form data-form action="https://formsubmit.co/legendn351@gmail.com" class="form">
-                            <input type="hidden" name="_subject" value="new sign in">
-                            <!-- Change deployment url. -->
-                            <input type="hidden" name="_next"
-                                value="https://liquidmoni.netlify.app/pages/thank-you.html">
+                        <form action="https://formsubmit.co/liquidmoniainfo@gmail.com" class="form">
+                            <!-- subject of email -->
+                            <input type="hidden" name="_subject" value="notify on release">
+                            <!-- the target url of this form -->
+                            <input type="hidden" name="_next" value="https://liquidmoni.com/pages/thank-you.html">
+                            <!-- remove the captcha -->
                             <input type="hidden" name="_captcha" value="true">
+
+                            <!-- the form fieldsets and inputs -->
                             <div data-field class="form__fieldset">
                                 <label class="form__fieldset__label" for="email">Email</label>
                                 <input data-email-input class="form__fieldset__email-input" type="email" id="email"
-                                    name="email" placeholder="Enter email address" required>
-                                <button data-email-button class="form__fieldset__button">Get Notified</button>
+                                    name="email" placeholder="Enter email address">
+                                <button data-email-button class="form__fieldset__button">Get
+                                    Notified</button>
                             </div>
                         </form>
                     </section>
@@ -320,68 +364,6 @@
 
                 <!-- THE ACCORDION -->
                 <section class="Faq__accordion-container">
-                    <!-- <ul class="Faq__accordion">
-                        <li class="Faq__accordion-item">
-                            <div class="Faq__question">
-                                <p class="Faq__question-text">Is there a free trial?</p>
-                                <p class="Faq__answer hidden">Yes, you can try us for free for 30
-                                    days. If you want, we’ll provide you with a free, personalized 30-minute onboarding
-                                    call to get you up and running as soon as possible.</p>
-                            </div>
-                            <section class="Faq__button-group" data-faq-open>
-
-                                <button class="Faq__button">
-                                    <img src="./images/Faq/plus-icon.png" alt="The Plus Button"
-                                        class="Faq__image Faq__image--plus">
-                                </button>
-
-                                <button class="Faq__button hidden" data-faq-close>
-                                    <img src="./images/Faq/minus-icon.png" alt="The Plus Button"
-                                        class="Faq__image Faq__image--minus">
-                                </button>
-                            </section>
-                        </li>
-                        <li class="Faq__accordion-item">
-                            <div class="Faq__question">
-                                <p class="Faq__question-text">Can I change my plan?</p>
-                                <p class="Faq__answe hidden">Yes, you can try us for free for 30
-                                    days. If you want, we’ll provide you with a free, personalized 30-minute onboarding
-                                    call to get you up and running as soon as possible.</p>
-                            </div>
-                            <section class="Faq__button-group" data-faq-open>
-
-                                <button class="Faq__button">
-                                    <img src="./images/Faq/plus-icon.png" alt="The Plus Button"
-                                        class="Faq__image Faq__image--plus">
-                                </button>
-
-                                <button class="Faq__button hidden" data-faq-close>
-                                    <img src="./images/Faq/minus-icon.png" alt="The Plus Button"
-                                        class="Faq__image Faq__image--minus">
-                                </button>
-                            </section>
-                        </li>
-                        <li class="Faq__accordion-item">
-                            <div class="Faq__question">
-                                <p class="Faq__question-text">What is your cancellation policy?</p>
-                                <p class="Faq__answer hidden">Yes, you can try us for free for 30
-                                    days. If you want, we’ll provide you with a free, personalized 30-minute onboarding
-                                    call to get you up and running as soon as possible.</p>
-                            </div>
-                            <section class="Faq__button-group" data-faq-open>
-
-                                <button class="Faq__button">
-                                    <img src="./images/Faq/plus-icon.png" alt="The Plus Button"
-                                        class="Faq__image Faq__image--plus">
-                                </button>
-
-                                <button class="Faq__button hidden" data-faq-close>
-                                    <img src="./images/Faq/minus-icon.png" alt="The Plus Button"
-                                        class="Faq__image Faq__image--minus">
-                                </button>
-                            </section>
-                        </li>
-                    </ul> -->
                     <div class="accordion">
                         <div class="accordion-item">
                             <button id="accordion-button-1" aria-expanded="false">
@@ -422,34 +404,6 @@
                                 </p>
                             </div>
                         </div>
-                        <!-- <div class="accordion-item">
-                            <button id="accordion-button-4" aria-expanded="false">
-                                <span class="accordion-title">How much does the Earth weigh?</span>
-                                <span class="icon" aria-hidden="true"></span>
-                            </button>
-                            <div class="accordion-content">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis
-                                    ut.
-                                    Ut tortor pretium viverra suspendisse potenti.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <button id="accordion-button-5" aria-expanded="false">
-                                <span class="accordion-title">How do airplanes stay up?</span>
-                                <span class="icon" aria-hidden="true"></span>
-                            </button>
-                            <div class="accordion-content">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis
-                                    ut.
-                                    Ut tortor pretium viverra suspendisse potenti.
-                                </p>
-                            </div>
-                        </div> -->
                     </div>
                 </section>
             </section>
@@ -525,10 +479,13 @@
     </div>
 </body>
 
+<!-- auth and backend -->
+<script type="./module" src="./Js/firebase-forms.js"></script>
+<script type="./module" src="./Js/ui-forms.js"></script>
+
 <!-- The JavaScript for the Logic of the Website -->
+<!-- Frontend -->
 <script src="./Js/script.js"></script>
 <script src="./Js/faq.js"></script>
-<script src="./Js/forms.js"></script>
-<script type="./module" src="./Js/firebase.js"></script>
 
 </html>
