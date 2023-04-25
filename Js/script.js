@@ -1,6 +1,5 @@
 // Support Modal
 
-
 // WORK ON THE DROPDOWN LOGIC
 
 // Hero Section Currency Converter.
@@ -54,25 +53,25 @@ const heroPhoneButton = document.querySelector(".hero__button");
 let handleDropdown = () => handleSelection;
 
 // select country
-// let handleSelection = () => {
-//   dropdown.classList.remove("hidden");
-//   // dropdown.setAttribute("aria-expanded", true);
-//   dropdownItems.map((country) => {
-//     country.addEventListener("click", () => {
-//       console.log();
-//       console.log(country[0].children[1]);
+let handleSelection = () => {
+  dropdown.classList.remove("hidden");
+  // dropdown.setAttribute("aria-expanded", true);
+  dropdownItems.map((country) => {
+    country.addEventListener("click", () => {
+      console.log();
+      console.log(country[0].children[1]);
 
-//       countryData.map((data) => {
-//         if (country[0].children[0].children[0].src === data.image) {
-//           country[0].children[0].children[0].src === data.image;
-//         }
-//         if (country[0].children[1].innerText === data.name) {
-//           country[0].children[0].children[0].src === data.image;
-//         }
-//       });
-//     });
-//   });
-// };
+      countryData.map((data) => {
+        if (country[0].children[0].children[0].src === data.image) {
+          country[0].children[0].children[0].src === data.image;
+        }
+        if (country[0].children[1].innerText === data.name) {
+          country[0].children[0].children[0].src === data.image;
+        }
+      });
+    });
+  });
+};
 
 // conversion process
 sendInput.addEventListener("keyup", (e) => {
