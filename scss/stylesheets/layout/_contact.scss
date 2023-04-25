@@ -13,3 +13,8 @@
         }
     }
 }
+
+.alert {
+    @include mixins.colorSchemeMix($background-clr: green, $color: white);
+    display: none;
+}

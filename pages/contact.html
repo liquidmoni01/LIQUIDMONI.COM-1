@@ -7,204 +7,253 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" href="../build/style.css">
-    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <!-- <script src="https://apps.elfsight.com/p/platform.js" defer></script> -->
 
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
     <!-- Google Fonts -->
 </head>
 
 <body>
     <div class="contact-wrapper">
-        <header class="header">
-            <nav class="nav">
-                <a href="../index.html" class="nav__image-link">
-                    <img class="nav__logo" src="../images/header/Liquid-moni.png" alt="the logo">
-                </a>
+        <div class="support__modal">
+            <section class="support">
+                <h2 class="support__header">Support us</h2>
+                <button class="support__close">
+                    <img src="../images/svg-images/close.svg" alt="Support Close Button">
+                </button>
+                <form action="" class="support__form">
+                    <section class="support__form-action">
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- Detail inputs -->
+                        <input type="hidden" name="_subject" value="new sign in">
+                        <!-- Change deployment url. -->
+
+                        <!-- <input type="hidden" name="_next" value="https://jailbreak-101.github.io/LIQUIDMONI.COM/thank-you.html"> -->
+                        <input type="hidden" name="_next" value="">
+
+                        <fieldset class="support__form-field">
+                            <label class="support__form-label" for="username">Name: </label>
+                            <div class="support__form-input-container">
+                                <input type="text" class="support__form-input" id="username" name="username"
+                                    placeholder="Name" required>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="support__form-field">
+                            <label class="support__form-label" for="email">Email: </label>
+                            <div class="support__form-input-container">
+                                <input type="email" class="support__form-input" id="email" name="user-email"
+                                    placeholder="Email" required>
+                            </div>
+                        </fieldset>
+
+                        <textarea class="support__form-input support__form-textarea" name="user-message" id="message"
+                            cols="41" rows="10" placeholder="Message" required></textarea>
+                        <button type="submit" class="support__button">Submit</button>
+                        <p class="support__link">You can also support us by emailing<a href=""
+                                class="link">Support@liquidmoni.com</a></p>
+                    </section>
+                </form>
+            </section>
+            <header class="header">
+                <nav class="nav">
+                    <a href="../index.html" class="nav__image-link">
+                        <img class="nav__logo" src="../images/header/Liquid-moni.png" alt="the logo">
+                    </a>
 
 
-                <section class="mini-nav">
-                    <!-- <fieldset class="nav__toggle-box"> -->
-                    <label for="toggle" class="toggle__icon"><img src="../images/svg-images/menu.png"
-                            alt="toggle"></label>
-                    <input type="checkbox" id="toggle" class="toggle">
-                    <!-- </fieldset> -->
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="./sign-up.html" class="nav__link">Send Money</a></li>
-                        <li class="nav__item"><a href="./about.html" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="./contact.html" class="nav__link">Contact</a>
-                        </li>
-                        <li class="nav__item"><a href="./faq.html" class="nav__link">FAQ</a></li>
-                        <li class="nav__item"><button class="nav__link">Support</button></li>
+                    <section class="mini-nav">
+                        <!-- <fieldset class="nav__toggle-box"> -->
+                        <label for="toggle" class="toggle__icon"><img src="../images/svg-images/menu.png"
+                                alt="toggle"></label>
+                        <input type="checkbox" id="toggle" class="toggle">
+                        <!-- </fieldset> -->
+                        <ul class="nav__list">
+                            <li class="nav__item"><a href="./sign-up.html" class="nav__link">Send Money</a></li>
+                            <li class="nav__item"><a href="./about.html" class="nav__link">About</a></li>
+                            <li class="nav__item"><a href="./contact.html" class="nav__link">Contact</a>
+                            </li>
+                            <li class="nav__item"><a href="./faq.html" class="nav__link">FAQ</a></li>
+                            <li class="nav__item"><button class="nav__link">Support</button></li>
 
 
-                        <div class="nav__button-group">
-                            <a href="./sign-up.html" class="nav__button">Download Soon</a>
-                        </div>
-                    </ul>
+                            <div class="nav__button-group">
+                                <a href="./sign-up.html" class="nav__button">Download Soon</a>
+                            </div>
+                        </ul>
+                    </section>
+                </nav>
+            </header>
+
+            <!-- Let the Layout persist from the home page to here. -->
+            <main class="contact">
+
+                <section class="contact__header">
+                    <div class="contact__hero-image">
+                        <img class="contact__image" src="../images/contact-us/contact-us-bg-text.png"
+                            alt="contact us background image">
+                    </div>
+
+                    <section class="contact__header-body">
+                        <section class="contact__header-links">
+                            <div class="contact__card">
+                                <div class="contact__img-block">
+                                    <img class="contact__img" src="../images/contact-us/mail.png" alt="mail-icon">
+                                </div>
+
+                                <div class="contact__detail-block">
+                                    <span class="contact__detail">Contact@liquidmoni.com</span>
+                                </div>
+                            </div>
+
+                            <div class="contact__card">
+                                <div class="contact__img-block">
+                                    <img class="contact__img" src="../images/contact-us/phone.png" alt="phone-icon">
+                                </div>
+
+                                <div class="contact__detail-block">
+                                    <span class="contact__detail">+44 7394 34037</span>
+                                </div>
+                            </div>
+
+                            <div class="contact__card">
+                                <div class="contact__img-block">
+                                    <img class="contact__img" src="../images/contact-us/map-pin.png" alt="map-icon">
+                                </div>
+
+                                <div class="contact__detail-block">
+                                    <span class="contact__detail">122, Shrubland Avenue, Croydon.</span>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
                 </section>
-            </nav>
-        </header>
+                <section class="contact__footer">
 
-        <!-- Let the Layout persist from the home page to here. -->
-        <main class="contact">
+                    <div class="contact-us">
+                        <form id="contact__form" class="contact__form" action="#" method="post">
+                            <h2 class="contact__head-text">We'd love to hear from you.</h2>
+                            <section class="contact__form-action">
+                                <input type="hidden" name="_captcha" value="false">
+                                <!-- Detail inputs -->
+                                <input type="hidden" name="_subject" value="Contact/Help">
+                                <!-- Change deployment url. -->
+                                <input type="hidden" name="_next" value="https://liquidmoni.com/thank-you.html">
+                                <input type="hidden" name="_next" value="./thank-you.html">
 
-            <section class="contact__header">
-                <div class="contact__hero-image">
-                    <img class="contact__image" src="../images/contact-us/contact-us-bg-text.png"
-                        alt="contact us background image">
-                </div>
+                                <!-- autoresponse to users after they've messaged us. -- This goes to the user's email address-->
+                                <input type="hidden" name="_autoresponse"
+                                    value="Hi, We've gotten your response, and we'll get you your answer as soon as possible">
 
-                <section class="contact__header-body">
-                    <section class="contact__header-links">
-                        <div class="contact__card">
-                            <div class="contact__img-block">
-                                <img class="contact__img" src="../images/contact-us/mail.png" alt="mail-icon">
-                            </div>
+                                <!-- Webhook for manipulating form data submitted by user. -->
+                                <input type="hidden" name="_webhook" value="./thank-you.html/webhook">
 
-                            <div class="contact__detail-block">
-                                <span class="contact__detail">Contact@liquidmoni.com</span>
-                            </div>
+                                <span class="alert">Message sent</span>
+
+                                <!-- LIQUIDMONI WILL HANDLE THIS ON THE GMAIL. -->
+                                <fieldset class="contact__form-field">
+                                    <label class="contact__form-label" for="username">Name: </label>
+                                    <div class="contact__form-input-container">
+                                        <input type="text" class="contact__form-input" id="username" name="username"
+                                            placeholder="Name" required>
+                                    </div>
+                                </fieldset>
+
+
+                                <fieldset class="contact__form-field">
+                                    <label class="contact__form-label" for="email">Email: </label>
+                                    <div class="contact__form-input-container">
+                                        <input type="email" class="contact__form-input" id="email" name="user-email"
+                                            placeholder="Email" required>
+                                    </div>
+                                </fieldset>
+
+                                <textarea class="contact__form-input contact__form-textarea" name="user-message"
+                                    id="message" cols="41" rows="10" placeholder="Message" required></textarea>
+
+                                <button type="submit" class="contact__button">Submit</button>
+                            </section>
+                        </form>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="footer">
+                <section class="footer__container">
+
+                    <section class="footer__top">
+                        <h3 class="footer__top-text">Learn how to grow 💪your business with <span
+                                class="footer__highlight">Liquidmoni</span></h3>
+
+                        <a href="./pages/sign-up.html" class="footer__button">Download For
+                            Free</a>
+
+                        <div class="footer__social-icons">
+                            <a href="#" class="footer__link"><img src="../images/footer/twitter.png" alt="Twiiter"
+                                    class="footer__image"></a>
+                            <a href="#" class="footer__link"><img src="../images/footer/facebook.png" alt="Twitter"
+                                    class="footer__image"></a>
+                            <a href="#" class="footer__link"><img src="../images/footer/instagram.png" alt="Instagram"
+                                    class="footer__image"></a>
+                            <a href="#" class="footer__link"><img src="../images/footer/github.png" alt="GitHub"
+                                    class="footer__image"></a>
+                        </div>
+                    </section>
+
+                    <hr class="footer__hr">
+
+                    <section class="footer__bottom">
+                        <div class="footer__category">
+                            <p class="footer__category-title"><b>Company</b></p>
+
+                            <ul class="footer__list">
+                                <li class="footer__list-item"><a href="./about.html"> About</a></li>
+                                <li class="footer__list-item"><a href="../index.html"> Features</a></li>
+                                <li class="footer__list-item"><a href="#"> Works</a></li>
+                                <li class="footer__list-item"><a href="#"> Career</a></li>
+                            </ul>
                         </div>
 
-                        <div class="contact__card">
-                            <div class="contact__img-block">
-                                <img class="contact__img" src="../images/contact-us/phone.png" alt="phone-icon">
-                            </div>
 
-                            <div class="contact__detail-block">
-                                <span class="contact__detail">+44 7394 34037</span>
-                            </div>
+                        <div class="footer__category">
+                            <p class="footer__category-title"><b>Help</b></p>
+
+                            <ul class="footer__list">
+                                <li class="footer__list-item"><a href="#"> Customer Support</a></li>
+                                <li class="footer__list-item"><a href="#"> Terms and Conditions</a></li>
+                                <li class="footer__list-item"><a href="#"> Privacy Policy</a></li>
+                            </ul>
                         </div>
 
-                        <div class="contact__card">
-                            <div class="contact__img-block">
-                                <img class="contact__img" src="../images/contact-us/map-pin.png" alt="map-icon">
-                            </div>
+                        <div class="footer__category">
+                            <p class="footer__category-title"><b>Resources</b></p>
 
-                            <div class="contact__detail-block">
-                                <span class="contact__detail">122, Shrubland Avenue, Croydon.</span>
-                            </div>
+                            <ul class="footer__list">
+                                <li class="footer__list-item"><a href="#"> Development Tutorial</a></li>
+                                <li class="footer__list-item"><a href="#"> How to- Blog</a></li>
+                            </ul>
+                            <!-- </div> -->
                         </div>
                     </section>
                 </section>
-            </section>
-            <section class="contact__footer">
 
-                <div class="contact-us">
-                    <form class="contact__form" action="https://formsubmit.co/legendn351@gmail.com" method="post">
-                        <h2 class="contact__head-text">We'd love to hear from you.</h2>
-                        <section class="contact__form-action">
-                            <input type="hidden" name="_captcha" value="false">
-                            <!-- Detail inputs -->
-                            <input type="hidden" name="_subject" value="Contact/Help">
-                            <!-- Change deployment url. -->
-                            <input type="hidden" name="_next" value="./thank-you.html">
-                            <input type="hidden" name="_next" value="./thank-you.html">
-
-                            <!-- autoresponse to users after they've messaged us. -- This goes to the user's email address-->
-                            <input type="hidden" name="_autoresponse"
-                                value="Hi, We've gotten your response, and we'll get you your answer as soon as possible">
-
-                            <!-- Webhook for manipulating form data submitted by user. -->
-                            <input type="hidden" name="_webhook" value="./thank-you.html/webhook">
-
-                            <!-- LIQUIDMONI WILL HANDLE THIS ON THE GMAIL. -->
-                            <fieldset class="contact__form-field">
-                                <label class="contact__form-label" for="username">Name: </label>
-                                <div class="contact__form-input-container">
-                                    <input type="text" class="contact__form-input" id="username" name="username"
-                                        placeholder="Name" required>
-                                </div>
-                            </fieldset>
-
-
-                            <fieldset class="contact__form-field">
-                                <label class="contact__form-label" for="email">Email: </label>
-                                <div class="contact__form-input-container">
-                                    <input type="email" class="contact__form-input" id="email" name="user-email"
-                                        placeholder="Email" required>
-                                </div>
-                            </fieldset>
-
-                            <textarea class="contact__form-input contact__form-textarea" name="user-message"
-                                id="message" cols="41" rows="10" placeholder="Message" required></textarea>
-
-                            <button type="submit" class="contact__button">Submit</button>
-                        </section>
-                    </form>
-                </div>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <section class="footer__container">
-
-                <section class="footer__top">
-                    <h3 class="footer__top-text">Learn how to grow 💪your business with <span
-                            class="footer__highlight">Liquidmoni</span></h3>
-
-                    <a href="./pages/sign-up.html" class="footer__button">Download For
-                        Free</a>
-
-                    <div class="footer__social-icons">
-                        <a href="#" class="footer__link"><img src="../images/footer/twitter.png" alt="Twiiter"
-                                class="footer__image"></a>
-                        <a href="#" class="footer__link"><img src="../images/footer/facebook.png" alt="Twitter"
-                                class="footer__image"></a>
-                        <a href="#" class="footer__link"><img src="../images/footer/instagram.png" alt="Instagram"
-                                class="footer__image"></a>
-                        <a href="#" class="footer__link"><img src="../images/footer/github.png" alt="GitHub"
-                                class="footer__image"></a>
-                    </div>
-                </section>
-
-                <hr class="footer__hr">
-
-                <section class="footer__bottom">
-                    <div class="footer__category">
-                        <p class="footer__category-title"><b>Company</b></p>
-
-                        <ul class="footer__list">
-                            <li class="footer__list-item"><a href="./about.html"> About</a></li>
-                            <li class="footer__list-item"><a href="../index.html"> Features</a></li>
-                            <li class="footer__list-item"><a href="#"> Works</a></li>
-                            <li class="footer__list-item"><a href="#"> Career</a></li>
-                        </ul>
-                    </div>
-
-
-                    <div class="footer__category">
-                        <p class="footer__category-title"><b>Help</b></p>
-
-                        <ul class="footer__list">
-                            <li class="footer__list-item"><a href="#"> Customer Support</a></li>
-                            <li class="footer__list-item"><a href="#"> Terms and Conditions</a></li>
-                            <li class="footer__list-item"><a href="#"> Privacy Policy</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer__category">
-                        <p class="footer__category-title"><b>Resources</b></p>
-
-                        <ul class="footer__list">
-                            <li class="footer__list-item"><a href="#"> Development Tutorial</a></li>
-                            <li class="footer__list-item"><a href="#"> How to- Blog</a></li>
-                        </ul>
-                        <!-- </div> -->
-                    </div>
-                </section>
-            </section>
-
-            <small class="footer__small-text">
-                &copy; 2023 Liquidmoni
-            </small>
-        </footer>
-    </div>
+                <small class="footer__small-text">
+                    &copy; 2023 Liquidmoni
+                </small>
+            </footer>
+        </div>
 </body>
 
 <!-- The JavaScript for the Logic of the WebSite -->
-<!-- <script src="./src/faq.js"></script> -->
-<script type="module" src="../Js/ui-forms.js"></script>
-<script type="module" src="../Js/firebase-forms.js"></script>
-<!-- <script src="./src/firebase.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+
+<script src="../Js/contact.js"></script>
+<script src="../Js/modal.js"></script>
+<script src="../Js/support.js"></script>
+
 
 </html>

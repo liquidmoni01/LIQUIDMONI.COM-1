@@ -4,6 +4,7 @@
 .support__modal,
 .log-in-modal {
     position: absolute;
+    display: none;
 
     .support__header {
         font-size: var(--large-100);
@@ -18,4 +19,13 @@
 
     @include mixins.colorSchemeMix($background-clr: var(--General-theme-color));
     @include mixins.generalSpacing($margin: 2rem, $padding: 2rem);
+}
+
+.alert,
+.log-in__note,
+.sign__up-note {
+    @include mixins.colorSchemeMix($background-clr: green, $color: white);
+    display: none;
+    padding: 1rem;
+    width: 100%;
 }

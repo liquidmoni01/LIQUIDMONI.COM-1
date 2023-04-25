@@ -1,7 +1,14 @@
 @use '../abstracts/mixins'as *;
 @use '../abstracts/breakpoints'as *;
 
-.sign__up {
+.sign__up,
+.log-in {
     @include flexDisplay();
     margin: 2rem;
+
+    &-form,
+    &__form {
+        @include flexDisplay($flex-direction: column, $align-items: center);
+        gap: 0.7rem;
+    }
 }

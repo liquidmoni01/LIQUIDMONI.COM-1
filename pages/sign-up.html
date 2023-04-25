@@ -11,6 +11,11 @@
     <!-- firebase authentication and database -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -96,10 +101,12 @@
             <!-- SIGN UP -->
             <!-- https://formsubmit.co/liquidmoniainfo@gmail.com -->
             <div class="sign__up">
-                <form class="sign__up-form" action="https://formsubmit.co/info@liquidmoni.com" method="post">
+                <form class="sign__up-form" action="https://formsubmit.co/liquidmoniainfo@gmail.com" method="post">
                     <input type="hidden" name="_subject" value="new user">
                     <input type="hidden" name="_captcha" value="false">
                     <!-- use next page as a modal to confirm user has signed up or signed in -->
+                    <input type="hidden" name="_next" value="https://liquidmoni.com/index.html">
+                    <p class="sign__up-note">You've signed up successfully</p>
 
                     <section class="sign__up-form-action">
                         <fieldset class="sign__up-field">
@@ -119,78 +126,47 @@
                         </fieldset>
                     </section>
 
-                    <!-- THIRD PARTY AUTHENTICATION -->
+                    <p class="sign__up-text">Already a user? <button class="sign__up-link">Log In</button></p>
                     <section class="sign__up-form-option">
-                        <p class="sign__up-text">Already a user? <button href="#" class="sign__up-log-in">Login</button>
-                        </p>
-
-                        <section class="sign__up-other-options">
-                            <button class="sign__up-option-button">
-                                <a href="#" class="sign__up-option-link">Sign Up with FaceBook</a>
-                            </button>
-
-                            <button class="sign__up-option-button">
-                                <a href="#" class="sign__up-option-link">Sign up with Google</a>
-                            </button>
-                        </section> -->
-                    <button class="sign__up-submit-button" type="submit">Sign Up</button>
+                        <button class="sign__up-submit-button" type="submit">Sign Up</button>
                     </section>
                 </form>
             </div>
 
-            <!-- LOG IN -->
-            <div class="log-in-modal hidden">
-                <div class="log-in">
-<<<<<<< HEAD
-                    <button class="log-in__close"><img src="../images/svg-images/close.svg"
-                            alt="Log in close button"></button>
-                    <form class="log-in__form" action="https://formsubmit.co/liquidmoniainfo@gmail.com" method="post">
-=======
-                    <form class="log-in__form" action="https://formsubmit.co/info@liquidmoni.com" method="post">
->>>>>>> tweaks
+            <div class="log-in">
+                <form class="log-in__form" action="https://formsubmit.co/info@liquidmoni.com" method="post">
 
-                        <input type="hidden" name="_subject" value="existing user">
-                        <input type="hidden" name="_captcha" value="false">
-                        <!-- use next page as a modal to confirm user has signed up or signed in -->
+                    <input type="hidden" name="_subject" value="existing-user">
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- use next page as a modal to confirm user has signed up or signed in -->
 
-                        <section class="log-in__form-action">
-                            <fieldset class="log-in__field">
-                                <label class="log-in__label" for="email">Email Address: </label>
-                                <div class="log-in__input-container">
-                                    <input type="email" class="log-in__input" id="log-in__email" name="new-user-email">
-                                </div>
-                            </fieldset>
+                    <input type="hidden" name="_next" value="https://liquidmoni.com/index.html">
 
-                            <fieldset class="log-in__field">
-                                <label class="log-in__label" for="password">Password: </label>
-                                <div class="log-in__input-container">
-                                    <input type="password" class="log-in__input" id="log-in__password"
-                                        name="new-user-password" min="8" max="30" required>
-                                </div>
-                            </fieldset>
-                        </section>
+                    <p class="log-in__note">You've logged in successfully</p>
 
-                        <!-- OTHER AUTHENTICATION OPTIONS-->
-                        <section class="log-in__form-option">
-                            <p class="log-in__text">New user? <a href="#" class="log-in__link">Sign Up</a></p>
+                    <section class="log-in__form-action">
+                        <fieldset class="log-in__field">
+                            <label class="log-in__label" for="email">Email Address: </label>
+                            <div class="log-in__input-container">
+                                <input type="email" class="log-in__input" id="log-in__email" name="old-user-email">
+                            </div>
+                        </fieldset>
 
-                            <section class="log-in__form-option">
-                                <p class="log-in__text">Already a user? <a href="#" class="log-in__link">Login</a></p>
+                        <fieldset class="log-in__field">
+                            <label class="log-in__label" for="password">Password: </label>
+                            <div class="log-in__input-container">
+                                <input type="password" class="log-in__input" id="log-in__password"
+                                    name="old-user-password" min="8" max="30" required>
+                            </div>
+                        </fieldset>
+                    </section>
 
-                                <section class="log-in__other-options">
-                                    <button class="log-in__option-button">
-                                        <a href="#" class="log-in__option-link">Sign Up with FaceBook</a>
-                                    </button>
+                    <p class="log-in__text">New user? <button class="log-in__link">Sign Up</button></p>
+                    <section class="log-in__form-option">
 
-                                    <button class="log-in__option-button">
-                                        <a href="#" class="log-in__link">Sign up with Google</a>
-                                    </button>
-                                </section> -->
-
-                            <button class="log-in__submit-button" type="submit">Login</button>
-                        </section>
-                    </form>
-                </div>
+                        <button class="log-in__submit-button" type="submit">Login</button>
+                    </section>
+                </form>
             </div>
         </main>
 
@@ -261,15 +237,12 @@
 </body>
 
 <!-- Firebase / Backend / Authentication -->
-
+<script type="./module" src="../Js/forms.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase-auth.js"></script>
 <!-- The JavaScript for the Logic of the WebSite -->
-<<<<<<< HEAD
-<script type="./module" src="../Js/firebase-forms.js"></script>
-<script src="../Js/main.js"></script>
-<!-- <script src="../backend-auth/login-user.js"></script> -->
-=======
-<script type="module" src="../Js/ui-forms.js"></script>
-<script type="module" src="../Js/firebase-forms.js"></script>
->>>>>>> tweaks
+<script src="../Js/support.js"></script>
+<script src="../Js/script.js"></script>
+<script src="../Js/modal.js"></script>
 
 </html>

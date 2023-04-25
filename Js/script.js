@@ -34,67 +34,84 @@ let countryData = [
   },
 ];
 
-const sendInput = document.getElementsByClassName("hero__phone-input")[0];
-const getInput = document.getElementsByClassName("hero__phone-input")[1];
-const dropdown = document.querySelector(".hero__phone-dropdown");
-// const dropdownItems = Array.from(dropdown.children);
-const dropdownBtn = document.querySelector(".hero__phone__dropdown-btn");
-const countryName = (document.querySelector(
-  ".hero__phone-country-name"
-).innerText = countryData[1].name);
-const countryImage = (document.querySelector(".hero__phone-country-image").src =
-  countryData[1].image);
-const heroPhoneButton = document.querySelector(".hero__button");
+// const sendInput = document.getElementsByClassName("hero__phone-input")[0];
+// const getInput = document.getElementsByClassName("hero__phone-input")[1];
+// const dropdown = document.querySelector(".hero__phone-dropdown");
+// // const dropdownItems = Array.from(dropdown.children);
+// const dropdownBtn = document.querySelector(".hero__phone__dropdown-btn");
+// const countryName = (document.querySelector(
+//   ".hero__phone-country-name"
+// ).innerText = countryData[1].name);
+// const countryImage = (document.querySelector(".hero__phone-country-image").src =
+//   countryData[1].image);
+// const heroPhoneButton = document.querySelector(".hero__button");
 
 // eventListeners.
 // dropdownBtn.addEventListener("click", () => handleDropdown);
 
 // selection process
-let handleDropdown = () => handleSelection;
+// let handleDropdown = () => handleSelection;
 
-// select country
-let handleSelection = () => {
-  dropdown.classList.remove("hidden");
-  // dropdown.setAttribute("aria-expanded", true);
-  dropdownItems.map((country) => {
-    country.addEventListener("click", () => {
-      console.log();
-      console.log(country[0].children[1]);
+// // select country
+// let handleSelection = () => {
+//   dropdown.classList.remove("hidden");
+//   // dropdown.setAttribute("aria-expanded", true);
+//   dropdownItems.map((country) => {
+//     country.addEventListener("click", () => {
+//       console.log();
+//       console.log(country[0].children[1]);
 
-      countryData.map((data) => {
-        if (country[0].children[0].children[0].src === data.image) {
-          country[0].children[0].children[0].src === data.image;
-        }
-        if (country[0].children[1].innerText === data.name) {
-          country[0].children[0].children[0].src === data.image;
-        }
-      });
-    });
-  });
-};
+//       countryData.map((data) => {
+//         if (country[0].children[0].children[0].src === data.image) {
+//           country[0].children[0].children[0].src === data.image;
+//         }
+//         if (country[0].children[1].innerText === data.name) {
+//           country[0].children[0].children[0].src === data.image;
+//         }
+//       });
+//     });
+//   });
+// };
 
 // conversion process
-sendInput.addEventListener("keyup", (e) => {
-  let sendVal = e.target.value;
-  // convertVal(sendVal);
-  console.log(sendVal);
-  let dollarsToNaira = sendVal * 459;
-  getInput.inertext = dollarsToNaira.toString();
-});
+// sendInput.addEventListener("keyup", (e) => {
+//   let sendVal = e.target.value;
+//   // convertVal(sendVal);
+//   console.log(sendVal);
+//   let dollarsToNaira = sendVal * 459;
+//   getInput.inertext = dollarsToNaira.toString();
+// });
 
-let convertVal = (val) => {
-  // convert the inputted value to the selected country, and display converted value to the user.
-  let dollarsToNaira = val * 459;
-  getInput.inertext = dollarsToNaira;
+// let convertVal = (val) => {
+//   // convert the inputted value to the selected country, and display converted value to the user.
+//   let dollarsToNaira = val * 459;
+//   getInput.inertext = dollarsToNaira;
+// };
+
+// heroPhoneButton.addEventListener("click", (e) => e.preventDefault());
+
+// SIGN UP AND LOG IN
+// FRONTEND ACTIONS.
+const signUpContainer = document.querySelector(".sign__up");
+const logInContainer = document.querySelector(".log-in");
+const logInSwitch = document.querySelector(".sign__up-link");
+const signUpSwitch = document.querySelector(".log-in__link");
+
+logInContainer.classList.add("hidden");
+
+let handleSwitch = (currentUI, selectedUI) => {
+  currentUI.classList.add("hidden");
+  selectedUI.classList.remove("hidden");
 };
 
-heroPhoneButton.addEventListener("click", (e) => e.preventDefault());
+logInSwitch.addEventListener("click", (e) => {
+  e.preventDefault();
+  handleSwitch(signUpContainer, logInContainer);
+});
 
-// Webhook for the contact page.
-// {
-//   "form__data": {
-//     "name": "Liquid"
-//   }
-// }
+signUpSwitch.addEventListener("click", (e) => {
+  e.preventDefault();
+  handleSwitch(logInContainer, signUpContainer);
+});
 
 // THE SUPPORT MODAL FOR ALL PAGES, WHEN WE CLICK THE SUPPORT BUTTON
